@@ -67,7 +67,6 @@ export const Overlay = () => {
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           <h1 className="logo">
             <img src={clogo} width={310} height={250} alt="Logo" />
-            <img src={clogo} className="logo-img" alt="Logo" />
           </h1>
           <p className="intro__scroll">Slowly Scroll to begin the journey</p>
           <button className="explore" onClick={() => setPlay(true)}>
