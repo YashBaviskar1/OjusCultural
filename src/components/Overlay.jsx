@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { usePlay } from "../contexts/Play";
-import { useNavigate } from "react-router-dom"; // Add this import
+import { useNavigate } from "react-router-dom";
 import clogo from "../assets/clogo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import backgroundMusic from "/song.mp3"; // Replace with your audio file path
 
 const cardData = [
   { text: "INFORMALS: 26H", image: "informals.jpg" },
@@ -21,7 +22,10 @@ export const Overlay = () => {
   const sectionRef = useRef(null);
   const [scrollAtBottom, setScrollAtBottom] = useState(false);
   const [sectionVisible, setSectionVisible] = useState(false);
-  const navigate = useNavigate(); // Add this hook
+  const navigate = useNavigate();
+  // Audio state and ref
+  const [isPlaying, setIsPlaying] = useState(true); // Start with true for autoplay
+  const audioRef = useRef(new Audio(backgroundMusic));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,10 +50,34 @@ export const Overlay = () => {
     }
   }, [scrollAtBottom]);
 
-  // Function to handle card click and navigate to sub-cards page
+  // Audio control effect
+  useEffect(() => {
+    const audio = audioRef.current;
+    audio.loop = true; // Loop the audio
+
+    if (isPlaying) {
+      audio.play().catch((error) => {
+        console.log("Autoplay blocked:", error);
+        setIsPlaying(false); // Reset to paused if autoplay fails
+      });
+    } else {
+      audio.pause();
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, [isPlaying]);
+
   const handleCardClick = (category) => {
-    const categoryKey = category.split(":")[0].toLowerCase().replace(" ", "-"); // e.g., "informals"
+    const categoryKey = category.split(":")[0].toLowerCase().replace(" ", "-");
     navigate(`/events/${categoryKey}`);
+  };
+
+  const toggleAudio = () => {
+    setIsPlaying((prev) => !prev);
   };
 
   return (
@@ -58,15 +86,21 @@ export const Overlay = () => {
         hasScroll ? "overlay--scrolled" : ""
       } ${sectionVisible ? "overlay--hidden" : ""}`}
     >
-      {/* Navbar */}
-      <nav className="navbar"></nav>
+      {/* Navbar with logo on left and toggle button on right */}
+      <nav className="navbar">
+Login
+        <div className="audio-toggle">
+          <button onClick={toggleAudio} className="audio-btn">
+            {isPlaying ? "Pause" : "Play"}
+          </button>
+        </div>
+      </nav>
 
       <div className={`loader ${progress === 100 ? "loader--disappear" : ""}`} />
 
       {progress === 100 && (
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           <h1 className="logo">
-            <img src={clogo} width={310} height={250} alt="Logo" />
             <img src={clogo} className="logo-img" alt="Logo" />
           </h1>
           <p className="intro__scroll">Slowly Scroll to begin the journey</p>
@@ -92,7 +126,7 @@ export const Overlay = () => {
               <div
                 key={index}
                 className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
-                onClick={() => handleCardClick(card.text)} // Add click handler
+                onClick={() => handleCardClick(card.text)}
               >
                 <div className="card bg-dark text-white card-overlay">
                   <img src={card.image} className="card-img" alt={card.text} />
@@ -114,12 +148,39 @@ export const Overlay = () => {
           left: 0;
           width: 100%;
           padding: 15px 20px;
-          color: white;
-          font-size: 1.5rem;
-          font-weight: bold;
           z-index: 1000;
           display: flex;
           align-items: center;
+          justify-content: space-between;
+        }
+
+        .navbar-logo {
+          display: flex;
+          align-items: center;
+        }
+
+        .navbar-logo-img {
+          width: 50px;
+          height: auto;
+        }
+
+        .audio-toggle {
+          margin-right: 20px;
+        }
+
+        .audio-btn {
+          background-color: #fff;
+          color: #1e1e2f;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+        }
+
+        .audio-btn:hover {
+          background-color: #ddd;
         }
 
         .overlay--hidden {
@@ -159,7 +220,7 @@ export const Overlay = () => {
           overflow: hidden;
           border-radius: 10px;
           width: 100%;
-          cursor: pointer; /* Add cursor pointer to indicate clickability */
+          cursor: pointer;
         }
 
         .card-overlay img {
@@ -192,28 +253,59 @@ export const Overlay = () => {
           height: auto;
         }
 
-        @media (max-width: 1024px) {
-          .section-title {
-            font-size: 1.8rem;
-          }
-        }
-
         @media (max-width: 768px) {
-          .navbar {
-            font-size: 1.2rem;
-            padding: 10px 15px;
+          .auto-scroll-section {
+            padding: 10px;
+            min-height: auto;
           }
 
           .section-title {
             font-size: 1.5rem;
+            margin-bottom: 15px;
+          }
+
+          .card-overlay {
+            margin-bottom: 10px;
+          }
+
+          .card-overlay img {
+            height: 150px;
           }
 
           .card-title {
             font-size: 1rem;
           }
 
+          .container {
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+
+          .row {
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          .col-12 {
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+
+          .navbar {
+            padding: 10px 15px;
+          }
+
+          .navbar-logo-img {
+            width: 40px;
+          }
+
           .logo-img {
             width: 250px;
+          }
+
+          .audio-btn {
+            padding: 6px 12px;
+            font-size: 0.9rem;
           }
         }
 
@@ -222,16 +314,20 @@ export const Overlay = () => {
             font-size: 1.3rem;
           }
 
+          .card-overlay img {
+            height: 120px;
+          }
+
           .card-title {
             font-size: 0.9rem;
           }
 
-          .card-overlay img {
-            height: 180px;
-          }
-
           .logo-img {
             width: 200px;
+          }
+
+          .navbar-logo-img {
+            width: 35px;
           }
         }
       `}</style>
