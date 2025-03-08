@@ -26,37 +26,6 @@ export const Overlay = () => {
   // Audio state and ref
   const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef(new Audio(backgroundMusic));
-  // Timer state
-  const [timeLeft, setTimeLeft] = useState({});
-  const [timerEnded, setTimerEnded] = useState(false);
-
-  // Target date: March 8, 2025, 00:00:00
-  const targetDate = new Date("March 8, 2025 00:00:00").getTime();
-
-  // Timer logic
-  useEffect(() => {
-    const updateTimer = () => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance <= 0) {
-        setTimerEnded(true);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(timerInterval);
-      } else {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
-    };
-
-    updateTimer(); // Initial call
-    const timerInterval = setInterval(updateTimer, 1000); // Update every second
-
-    return () => clearInterval(timerInterval); // Cleanup
-  }, [targetDate]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -144,55 +113,30 @@ export const Overlay = () => {
         <p className="outro__text">Scroll Below to explore the events..</p>
       </div>
 
-      {/* Conditionally render timer or events */}
-      {timerEnded ? (
-        <div
-          ref={sectionRef}
-          className={`auto-scroll-section ${sectionVisible ? "active" : ""}`}
-        >
-          <h2 className="section-title">Explore the Events</h2>
-          <div className="container">
-            <div className="row justify-content-center">
-              {cardData.map((card, index) => (
-                <div
-                  key={index}
-                  className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
-                  onClick={() => handleCardClick(card.text)}
-                >
-                  <div className="card bg-dark text-white card-overlay">
-                    <img src={card.image} className="card-img" alt={card.text} />
-                    <div className="card-img-overlay d-flex justify-content-center align-items-center">
-                      <h5 className="card-title text-center">{card.text}</h5>
-                    </div>
+      <div
+        ref={sectionRef}
+        className={`auto-scroll-section ${sectionVisible ? "active" : ""}`}
+      >
+        <h2 className="section-title">Explore the Events</h2>
+        <div className="container">
+          <div className="row justify-content-center">
+            {cardData.map((card, index) => (
+              <div
+                key={index}
+                className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+                onClick={() => handleCardClick(card.text)}
+              >
+                <div className="card bg-dark text-white card-overlay">
+                  <img src={card.image} className="card-img" alt={card.text} />
+                  <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                    <h5 className="card-title text-center">{card.text}</h5>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      ) : (
-        <div className="timer-section">
-          <h2 className="timer-title">Events Start In:</h2>
-          <div className="timer">
-            <div className="timer-unit">
-              <span>{timeLeft.days || 0}</span>
-              <p>Days</p>
-            </div>
-            <div className="timer-unit">
-              <span>{timeLeft.hours || 0}</span>
-              <p>Hours</p>
-            </div>
-            <div className="timer-unit">
-              <span>{timeLeft.minutes || 0}</span>
-              <p>Minutes</p>
-            </div>
-            <div className="timer-unit">
-              <span>{timeLeft.seconds || 0}</span>
-              <p>Seconds</p>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
 
       {/* Styles */}
       <style jsx>{`
@@ -303,49 +247,6 @@ export const Overlay = () => {
           height: auto;
         }
 
-        /* Timer Styles */
-        .timer-section {
-          width: 100vw;
-          height: 100vh;
-          background: linear-gradient(135deg, #1e1e2f, #3a3a5e);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          color: white;
-        }
-
-        .timer-title {
-          font-size: 2.5rem;
-          margin-bottom: 20px;
-          text-align: center;
-        }
-
-        .timer {
-          display: flex;
-          gap: 20px;
-        }
-
-        .timer-unit {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          background: rgba(255, 255, 255, 0.1);
-          padding: 15px;
-          border-radius: 10px;
-          min-width: 80px;
-        }
-
-        .timer-unit span {
-          font-size: 2rem;
-          font-weight: bold;
-        }
-
-        .timer-unit p {
-          font-size: 1rem;
-          margin-top: 5px;
-        }
-
         @media (max-width: 768px) {
           .auto-scroll-section {
             padding: 10px;
@@ -400,27 +301,6 @@ export const Overlay = () => {
             padding: 6px 12px;
             font-size: 0.9rem;
           }
-
-          .timer-title {
-            font-size: 2rem;
-          }
-
-          .timer {
-            gap: 15px;
-          }
-
-          .timer-unit {
-            padding: 10px;
-            min-width: 60px;
-          }
-
-          .timer-unit span {
-            font-size: 1.5rem;
-          }
-
-          .timer-unit p {
-            font-size: 0.9rem;
-          }
         }
 
         @media (max-width: 480px) {
@@ -442,29 +322,6 @@ export const Overlay = () => {
 
           .navbar-login {
             font-size: 1rem;
-          }
-
-          .timer-title {
-            font-size: 1.5rem;
-          }
-
-          .timer {
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-          }
-
-          .timer-unit {
-            padding: 8px;
-            min-width: 50px;
-          }
-
-          .timer-unit span {
-            font-size: 1.2rem;
-          }
-
-          .timer-unit p {
-            font-size: 0.8rem;
           }
         }
       `}</style>
