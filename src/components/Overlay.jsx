@@ -141,7 +141,7 @@ export const Overlay = () => {
       {/* Styles */}
       <style jsx>{`
         .navbar {
-          position: fixed;
+          position: sticky;
           top: 0;
           left: 0;
           width: 100%;
@@ -206,7 +206,8 @@ export const Overlay = () => {
 
         .section-title {
           font-size: 2rem;
-          margin-bottom: 20px;
+          margin-bottom: 40px;
+          margin: 30px
         }
 
         .card-overlay {
@@ -305,7 +306,7 @@ export const Overlay = () => {
 
         @media (max-width: 480px) {
           .section-title {
-            font-size: 1.3rem;
+            font-size: 2rem;
           }
 
           .card-overlay img {
