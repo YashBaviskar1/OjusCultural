@@ -28,7 +28,7 @@ const eventsData = {
     },
     {
       "id": 3,
-      "name": "JUST DANCE",
+      "name": "KARAOKE",
       "date": "2025-03-10T20:00:00Z",
       "venue": "Main Stage",
       "time": "1H",
@@ -39,7 +39,7 @@ const eventsData = {
     },
     {
       "id": 4,
-      "name": "JUST DANCE",
+      "name": "TIC TAC TOE",
       "date": "2025-03-10T20:00:00Z",
       "venue": "Main Stage",
       "time": "2H",
@@ -61,7 +61,7 @@ const eventsData = {
     },
     {
       "id": 6,
-      "name": "IPL AUCTION",
+      "name": "ANDHADHUN",
       "date": "2025-03-11T14:00:00Z",
       "venue": "Conference Room",
       "time": "2H",

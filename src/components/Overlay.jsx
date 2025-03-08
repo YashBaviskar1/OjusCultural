@@ -4,7 +4,6 @@ import { usePlay } from "../contexts/Play";
 import { useNavigate } from "react-router-dom";
 import clogo from "../assets/clogo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import backgroundMusic from "/song.mp3"; // Replace with your audio file path
 
 export const Overlay = () => {
   const { progress } = useProgress();
@@ -13,8 +12,6 @@ export const Overlay = () => {
   const [scrollAtBottom, setScrollAtBottom] = useState(false);
   const [sectionVisible, setSectionVisible] = useState(false);
   const navigate = useNavigate();
-  const [isPlaying, setIsPlaying] = useState(true);
-  const audioRef = useRef(new Audio(backgroundMusic));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,32 +36,9 @@ export const Overlay = () => {
     }
   }, [scrollAtBottom]);
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    audio.loop = true;
-
-    if (isPlaying) {
-      audio.play().catch((error) => {
-        console.log("Autoplay blocked:", error);
-        setIsPlaying(false);
-      });
-    } else {
-      audio.pause();
-    }
-
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, [isPlaying]);
-
   const handleCardClick = (category) => {
     const categoryKey = category.split(":")[0].toLowerCase().replace(" ", "-");
     navigate(`/events/${categoryKey}`);
-  };
-
-  const toggleAudio = () => {
-    setIsPlaying((prev) => !prev);
   };
 
   return (
@@ -75,11 +49,6 @@ export const Overlay = () => {
     >
       <nav className="navbar">
         <div className="navbar-login">Login</div>
-        <div className="audio-toggle">
-          {/* <button onClick={toggleAudio} className="audio-btn">
-            {isPlaying ? "Pause" : "Play"}
-          </button> */}
-        </div>
       </nav>
 
       <div className={`loader ${progress === 100 ? "loader--disappear" : ""}`} />
@@ -225,25 +194,6 @@ export const Overlay = () => {
           font-weight: bold;
         }
 
-        .audio-toggle {
-          margin-right: 20px;
-        }
-
-        .audio-btn {
-          background-color: #fff;
-          color: #1e1e2f;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-
-        .audio-btn:hover {
-          background-color: #ddd;
-        }
-
         .overlay--hidden {
           pointer-events: none;
           z-index: -1;
@@ -387,16 +337,11 @@ export const Overlay = () => {
           .logo-img {
             width: 250px;
           }
-
-          .audio-btn {
-            padding: 6px 12px;
-            font-size: 0.9rem;
-          }
         }
 
         @media (max-width: 480px) {
           .section-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
 
           .card-overlay img {
@@ -419,3 +364,5 @@ export const Overlay = () => {
     </div>
   );
 };
+
+export default Overlay;
