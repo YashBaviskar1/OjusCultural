@@ -6,7 +6,7 @@ export const TextSection = ({ title, subtitle, ...props }) => {
     <group {...props}>
       {!!title && (
         <Text
-          color="white"
+          color="#3C474B"
           anchorX={"left"}
           anchorY="bottom"
           fontSize={0.52}
@@ -23,12 +23,12 @@ export const TextSection = ({ title, subtitle, ...props }) => {
       )}
 
       <Text
-        color="white"
+        color="black"
         anchorX={"left"}
         anchorY="top"
-        fontSize={0.2}
+        fontSize={0.3}
         maxWidth={2.5}
-        font={"./fonts/Inter-Regular.ttf"}
+        font={"./fonts/ring.TTF"}
       >
         {subtitle}
         <meshStandardMaterial

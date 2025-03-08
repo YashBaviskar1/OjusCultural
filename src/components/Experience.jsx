@@ -10,7 +10,6 @@ import { Airplane } from "./Airplane";
 import { Background } from "./Background";
 import { Cloud } from "./Cloud";
 import { TextSection } from "./TextSection";
-import { Lion } from "./lion";
 
 const LINE_NB_POINTS = 1000;
 const CURVE_DISTANCE = 250;
@@ -52,7 +51,7 @@ export const Experience = () => {
         ),
         // imageSrc: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         title: "Welcome APSITians",
-        subtitle: `Get ready to explore the three realms of the world with us!`,
+        subtitle: `get ready to explore the three realms of the world with us`,
         
       },
       {
@@ -63,7 +62,7 @@ export const Experience = () => {
           curvePoints[2].z
         ),
         title: "Heaven",
-        subtitle: `"A place of serenity and light, where dreams take flight and souls find peace"`,
+        subtitle: `A place of serenity and light where dreams take flight and souls find peace`,
         // imageSrc: "https://images.unsplash.com/photo-1532210317995-cc56d90177d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
       },
       {
@@ -74,7 +73,7 @@ export const Experience = () => {
           curvePoints[3].z
         ),
         title: "Earth",
-        subtitle: `"A realm of balance, where choices shape destinies and every action leaves a mark"`,
+        subtitle: `A realm of balance where choices shape destinies and every action leaves a mark`,
         // imageSrc: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
       },
       {
@@ -85,7 +84,7 @@ export const Experience = () => {
           curvePoints[4].z - 12
         ),
         title: "Hell",
-        subtitle: `"A world of chaos and reckoning, where echoes of choices past forge the path ahead"`,
+        subtitle: `A world of chaos and reckoning where echoes of choices past forge the path ahead`,
         // imageSrc: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
       },
     ];

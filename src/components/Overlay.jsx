@@ -6,16 +6,6 @@ import clogo from "../assets/clogo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import backgroundMusic from "/song.mp3"; // Replace with your audio file path
 
-const cardData = [
-  { text: "INFORMALS: 26H", image: "informals.jpg" },
-  { text: "FINE ARTS: 5H", image: "finearts.jpg" },
-  { text: "PERFORMING ARTS: 2H", image: "performingarts.jpg" },
-  { text: "RECREATIONAL: 3H", image: "recreational.jpg" },
-  { text: "PASS N GO: 1H", image: "passngo.jpg" },
-  { text: "THEME BASED: 4H", image: "themebased.jpg" },
-  { text: "GAMING & SPORTS: 8H", image: "gaming.jpg" },
-];
-
 export const Overlay = () => {
   const { progress } = useProgress();
   const { play, end, setPlay, hasScroll } = usePlay();
@@ -23,7 +13,6 @@ export const Overlay = () => {
   const [scrollAtBottom, setScrollAtBottom] = useState(false);
   const [sectionVisible, setSectionVisible] = useState(false);
   const navigate = useNavigate();
-  // Audio state and ref
   const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef(new Audio(backgroundMusic));
 
@@ -50,7 +39,6 @@ export const Overlay = () => {
     }
   }, [scrollAtBottom]);
 
-  // Audio control effect
   useEffect(() => {
     const audio = audioRef.current;
     audio.loop = true;
@@ -85,13 +73,12 @@ export const Overlay = () => {
         hasScroll ? "overlay--scrolled" : ""
       } ${sectionVisible ? "overlay--hidden" : ""}`}
     >
-      {/* Navbar with "Login" text on left and toggle button on right */}
       <nav className="navbar">
         <div className="navbar-login">Login</div>
         <div className="audio-toggle">
-          <button onClick={toggleAudio} className="audio-btn">
+          {/* <button onClick={toggleAudio} className="audio-btn">
             {isPlaying ? "Pause" : "Play"}
-          </button>
+          </button> */}
         </div>
       </nav>
 
@@ -120,20 +107,100 @@ export const Overlay = () => {
         <h2 className="section-title">Explore the Events</h2>
         <div className="container">
           <div className="row justify-content-center">
-            {cardData.map((card, index) => (
-              <div
-                key={index}
-                className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
-                onClick={() => handleCardClick(card.text)}
-              >
-                <div className="card bg-dark text-white card-overlay">
-                  <img src={card.image} className="card-img" alt={card.text} />
-                  <div className="card-img-overlay d-flex justify-content-center align-items-center">
-                    <h5 className="card-title text-center">{card.text}</h5>
-                  </div>
+            {/* Card 1: Informals */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("INFORMALS: 26H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img src="/informals.jpg" className="card-img" alt="INFORMALS: 26H" />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">INFORMALS</h5>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Card 2: Fine Arts */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("FINE ARTS: 5H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img src="/finearts.webp" className="card-img" alt="FINE ARTS: 5H" />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">FINE ARTS</h5>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Performing Arts */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("PERFORMING ARTS: 2H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img
+                  src="/performingarts.jpg"
+                  className="card-img"
+                  alt="PERFORMING ARTS: 2H"
+                />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">PERFORMING ARTS</h5>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Recreational */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("RECREATIONAL: 3H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img src="/recreational.jpeg" className="card-img" alt="RECREATIONAL: 3H" />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">RECREATIONAL</h5>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 5: Pass N Go */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("PASS N GO: 1H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img src="/passandgo.jpg" className="card-img" alt="PASS N GO: 1H" />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">PASS N GO</h5>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 6: Theme Based */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("THEME BASED: 4H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img src="/themebased.jpg" className="card-img" alt="THEME BASED: 4H" />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">THEME BASED</h5>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 7: Gaming & Sports */}
+            <div
+              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
+              onClick={() => handleCardClick("GAMING & SPORTS: 8H")}
+            >
+              <div className="card bg-dark text-white card-overlay">
+                <img src="/gamingandsports.jpg" className="card-img" alt="GAMING & SPORTS: 8H" />
+                <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                  <h5 className="card-title text-center">GAMING & SPORTS</h5>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -141,7 +208,7 @@ export const Overlay = () => {
       {/* Styles */}
       <style jsx>{`
         .navbar {
-          position: sticky;
+          position: fixed;
           top: 0;
           left: 0;
           width: 100%;
@@ -185,7 +252,18 @@ export const Overlay = () => {
         .auto-scroll-section {
           width: 100vw;
           min-height: 100vh;
-          background: linear-gradient(135deg, #1e1e2f, #3a3a5e);
+          background: linear-gradient(
+            45deg,
+            #0a0a0a,  /* Deep Black */
+            #1a1a1a,  /* Dark Black */
+            #2b2b2b,  /* Medium Black */
+            #3c3c3c,  /* Light Black */
+            #4d4d4d,  /* Lighter Black (shine highlight) */
+            #2b2b2b,  /* Medium Black */
+            #1c1c1c   /* Slightly Darker Black */
+          );
+          background-size: 200% 200%;
+          animation: gradientAnimation 12s ease infinite;
           color: white;
           display: flex;
           flex-direction: column;
@@ -204,10 +282,22 @@ export const Overlay = () => {
           position: relative;
         }
 
+        @keyframes gradientAnimation {
+          0% {
+            background-position: 0% 0%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
+        }
+
         .section-title {
           font-size: 2rem;
           margin-bottom: 40px;
-          margin: 30px
+          margin: 50px;
         }
 
         .card-overlay {
@@ -268,7 +358,7 @@ export const Overlay = () => {
           }
 
           .card-title {
-            font-size: 1rem;
+            font-size: 1.2rem;
           }
 
           .container {
@@ -314,7 +404,7 @@ export const Overlay = () => {
           }
 
           .card-title {
-            font-size: 0.9rem;
+            font-size: 1.2rem;
           }
 
           .logo-img {
