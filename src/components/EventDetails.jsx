@@ -407,7 +407,7 @@ const SubCardsPage = () => {
       </h2>
       <button
         className="back-btn"
-        onClick={() => navigate("/#events-section")}
+        onClick={() => navigate("/")}
       >
         Back
       </button>

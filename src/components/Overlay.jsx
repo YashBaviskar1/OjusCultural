@@ -215,7 +215,7 @@ export const Overlay = () => {
       {progress === 100 && (
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           <h1 className="logo">
-            <img src={clogo} width={310} height={250} alt="Logo" />
+            <img src={clogo} width={310} height={260} alt="Logo" />
           </h1>
           <p className="intro__scroll">Slowly Scroll to begin the journey</p>
           <button className="explore" onClick={() => setPlay(true)}>
@@ -421,6 +421,10 @@ export const Overlay = () => {
           height: auto;
         }
 
+        .logo{
+            padding-bottom: 50px;
+            }
+
         @media (max-width: 768px) {
           .auto-scroll-section {
             padding: 10px;
@@ -462,6 +466,9 @@ export const Overlay = () => {
           .logo-img {
             width: 250px;
           }
+            .logo{
+            padding-bottom: 50px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -480,6 +487,9 @@ export const Overlay = () => {
           .logo-img {
             width: 200px;
           }
+            .logo{
+            padding-bottom: 50px;
+            }
         }
       `}</style>
     </div>
