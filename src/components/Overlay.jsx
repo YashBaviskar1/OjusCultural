@@ -422,7 +422,7 @@ export const Overlay = () => {
         }
 
         .logo{
-            padding-bottom: 50px;
+            padding-bottom: 70px;
             }
 
         @media (max-width: 768px) {
@@ -467,7 +467,7 @@ export const Overlay = () => {
             width: 250px;
           }
             .logo{
-            padding-bottom: 50px;
+            padding-bottom: 70px;
             }
         }
 
@@ -488,7 +488,7 @@ export const Overlay = () => {
             width: 200px;
           }
             .logo{
-            padding-bottom: 50px;
+            padding-bottom: 70px;
             }
         }
       `}</style>
