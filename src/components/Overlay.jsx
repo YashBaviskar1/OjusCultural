@@ -5,6 +5,167 @@ import { useNavigate } from "react-router-dom";
 import clogo from "../assets/clogo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsMobileMenuOpen(false); // Close menu after navigation
+  };
+
+  return (
+    <nav className="navbar fixed-top">
+      <div className="navbar-brand">
+        OJUS 25
+      </div>
+
+      {/* Hamburger Icon */}
+      <div
+        className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Navigation Links */}
+      <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
+        <li>
+          <button onClick={() => handleNavigation("/login")}>Login</button>
+        </li>
+        <li>
+          <button onClick={() => handleNavigation("/gallery")}>Gallery</button>
+        </li>
+        <li>
+          <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
+        </li>
+      </ul>
+
+      {/* Navbar Styles */}
+      <style jsx>{`
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 15px 20px;
+          z-index: 2000;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .navbar-brand {
+          color: white;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .nav-links {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .nav-links button {
+          color: white;
+          font-size: 1.2rem;
+          font-weight: bold;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links button:hover {
+          color: #ffcc00;
+        }
+
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+          z-index: 2001; /* Above the menu */
+        }
+
+        .hamburger span {
+          width: 30px;
+          height: 3px;
+          background: white;
+          transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+          .hamburger {
+            display: flex;
+          }
+
+          .nav-links {
+            position: fixed;
+            top: 0;
+            right: ${isMobileMenuOpen ? "0" : "-100%"};
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            transition: right 0.5s ease-in-out;
+            z-index: 2000;
+          }
+
+          .nav-links.open {
+            right: 0; /* Slide in from right */
+          }
+
+          .nav-links button {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .navbar {
+            padding: 10px 15px;
+          }
+
+          .navbar-brand {
+            font-size: 1.2rem;
+          }
+
+          .hamburger span {
+            width: 25px;
+            height: 2px;
+          }
+
+          .nav-links button {
+            font-size: 1.3rem;
+          }
+        }
+      `}</style>
+    </nav>
+  );
+};
+
 export const Overlay = () => {
   const { progress } = useProgress();
   const { play, end, setPlay, hasScroll } = usePlay();
@@ -47,9 +208,7 @@ export const Overlay = () => {
         hasScroll ? "overlay--scrolled" : ""
       } ${sectionVisible ? "overlay--hidden" : ""}`}
     >
-      <nav className="navbar">
-        <div className="navbar-login">Login</div>
-      </nav>
+      <Navbar />
 
       <div className={`loader ${progress === 100 ? "loader--disappear" : ""}`} />
 
@@ -174,26 +333,8 @@ export const Overlay = () => {
         </div>
       </div>
 
-      {/* Styles */}
+      {/* Overlay Styles */}
       <style jsx>{`
-        .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          padding: 15px 20px;
-          z-index: 1000;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .navbar-login {
-          color: white;
-          font-size: 1.5rem;
-          font-weight: bold;
-        }
-
         .overlay--hidden {
           pointer-events: none;
           z-index: -1;
@@ -202,16 +343,7 @@ export const Overlay = () => {
         .auto-scroll-section {
           width: 100vw;
           min-height: 100vh;
-          background: linear-gradient(
-            45deg,
-            #0a0a0a,  /* Deep Black */
-            #1a1a1a,  /* Dark Black */
-            #2b2b2b,  /* Medium Black */
-            #3c3c3c,  /* Light Black */
-            #4d4d4d,  /* Lighter Black (shine highlight) */
-            #2b2b2b,  /* Medium Black */
-            #1c1c1c   /* Slightly Darker Black */
-          );
+          background: #000000;
           background-size: 200% 200%;
           animation: gradientAnimation 12s ease infinite;
           color: white;
@@ -223,6 +355,7 @@ export const Overlay = () => {
           opacity: 0;
           transition: opacity 0.5s ease-in-out;
           padding: 20px;
+          margin-top: 70px; /* Space for fixed navbar */
         }
 
         .auto-scroll-section.active {
@@ -326,14 +459,6 @@ export const Overlay = () => {
             padding-right: 5px;
           }
 
-          .navbar {
-            padding: 10px 15px;
-          }
-
-          .navbar-login {
-            font-size: 1.2rem;
-          }
-
           .logo-img {
             width: 250px;
           }
@@ -354,10 +479,6 @@ export const Overlay = () => {
 
           .logo-img {
             width: 200px;
-          }
-
-          .navbar-login {
-            font-size: 1rem;
           }
         }
       `}</style>

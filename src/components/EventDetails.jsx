@@ -436,16 +436,7 @@ const SubCardsPage = () => {
         .sub-cards-page {
           width: 100vw;
           min-height: 100vh;
-          background: linear-gradient(
-            45deg,
-            #0a0a0a,  /* Deep Black */
-            #1a1a1a,  /* Dark Black */
-            #2b2b2b,  /* Medium Black */
-            #3c3c3c,  /* Light Black */
-            #4d4d4d,  /* Lighter Black (shine highlight) */
-            #2b2b2b,  /* Medium Black */
-            #1c1c1c   /* Slightly Darker Black */
-          );
+          background: #000000;
           background-size: 200% 200%;
           animation: gradientAnimation 12s ease infinite;
           color: white;
@@ -498,7 +489,29 @@ const SubCardsPage = () => {
           width: 100%;
           height: 220px; /* Fixed height to match previous image height */
           cursor: pointer;
-          background: rgba(0, 0, 0, 0.8); /* Dark background since no image */
+          animation: gradientAnimation 12s ease infinite;
+          background: linear-gradient(
+            45deg,
+            #0a0a0a,  /* Deep Black */
+            #1a1a1a,  /* Dark Black */
+            #2b2b2b,  /* Medium Black */
+            #3c3c3c,  /* Light Black */
+            #4d4d4d,  /* Lighter Black (shine highlight) */
+            #2b2b2b,  /* Medium Black */
+            #1c1c1c   /* Slightly Darker Black */
+          );
+        }
+          
+        @keyframes gradientAnimation {
+          0% {
+            background-position: 0% 0%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
         }
 
         .card-img-overlay {

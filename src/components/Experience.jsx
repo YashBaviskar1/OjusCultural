@@ -239,8 +239,8 @@
     const airplane = useRef();
     const tl = useRef();
     const backgroundColors = useRef({
-      colorA: "#3535cc",
-      colorB: "#abaadd",
+      colorA: "#718F94",
+      colorB: "#010001",
     });
     const planeInTl = useRef();
     const planeOutTl = useRef();
@@ -275,7 +275,7 @@
       tl.current.to(backgroundColors.current, {
         duration: 1,
         colorA: "#8B0000",
-        colorB: "#2B1B17",
+        colorB: "#010001",
       });
       tl.current.pause();
 
