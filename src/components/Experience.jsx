@@ -62,7 +62,7 @@
             curvePoints[2].z
           ),
           title: "Heaven",
-          subtitle: `A place of serenity and light where dreams take flight and souls find peace`,
+          subtitle: `a place of serenity and light where dreams take flight and souls find peace`,
           // imageSrc: "https://images.unsplash.com/photo-1532210317995-cc56d90177d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
         },
         {
@@ -73,7 +73,7 @@
             curvePoints[3].z
           ),
           title: "Earth",
-          subtitle: `A realm of balance where choices shape destinies and every action leaves a mark`,
+          subtitle: `a realm of balance where choices shape destinies and every action leaves a mark`,
           // imageSrc: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
         },
         {
@@ -84,7 +84,7 @@
             curvePoints[4].z - 12
           ),
           title: "Hell",
-          subtitle: `A world of chaos and reckoning where echoes of choices past forge the path ahead`,
+          subtitle: `a world of chaos and reckoning where echoes of choices past forge the path ahead`,
           // imageSrc: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
         },
       ];

@@ -61,6 +61,7 @@ const Navbar = () => {
           color: white;
           font-size: 1.5rem;
           font-weight: bold;
+          font-family: "Ring";
         }
 
         .nav-links {
@@ -70,6 +71,7 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           gap: 20px;
+          font-family: "Ring";
         }
 
         .nav-links button {
