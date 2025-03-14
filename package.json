@@ -11,15 +11,19 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.10",
     "@react-three/drei": "^9.56.28",
     "@react-three/fiber": "^8.11.5",
     "@react-three/postprocessing": "^2.7.1",
     "bootstrap": "^5.3.3",
     "gsap": "^3.11.5",
     "lamina": "^1.1.23",
+    "mdb-react-ui-kit": "^6.0.0",
+    "photoswipe": "^5.4.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.2.0",
+    "react-photoswipe-gallery": "^3.1.0",
     "react-router-dom": "^7.2.0",
     "three": "^0.150.1"
   },

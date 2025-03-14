@@ -10,7 +10,7 @@ import EventDetailPage from "./components/EventDetailPage";
 import GameMap from "./components/Schedule";
 import Login from "./components/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import MyGallery from "./components/Gallery";
 
 
 function App() {
@@ -54,7 +54,11 @@ function App() {
         <Route path="/events/:category" element={<SubCardsPage />} />
         <Route path="/events/:category/:eventId" element={<EventDetailPage />} />
         <Route path="/schedule" element={<GameMap />} />
+<<<<<<< HEAD
         <Route path="/login" element = {<Login />} />
+=======
+        <Route path="/gallery" element={<MyGallery />} />
+>>>>>>> upstream/main
       </Routes>
     </Router>
   );
