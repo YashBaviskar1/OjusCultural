@@ -283,7 +283,7 @@ export const Overlay = () => {
       {progress === 100 && (
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           <h1 className="logo">
-            <img src={clogo} width={310} height={260} alt="Logo" />
+            <img src="https://res.cloudinary.com/divma6tu0/image/upload/v1741954718/dept%20logos/qdutcbdds3ckshwobiiv.png" width={310} height={260} alt="Logo" />
           </h1>
           <p className="intro__scroll">Slowly Scroll to begin the journey</p>
           <button className="explore" onClick={() => setPlay(true)}>
@@ -302,7 +302,7 @@ export const Overlay = () => {
         id="auto-scroll-section"
       >
         <h2 className="section-title">Explore the Events</h2>
-        <div className="container">
+        <div className="container"> 
           <div className="row justify-content-center">
             {/* Card 1: Informals */}
             <div
