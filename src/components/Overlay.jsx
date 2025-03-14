@@ -475,7 +475,7 @@ export const Overlay = () => {
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("https://as1.ftcdn.net/jpg/08/12/81/14/1000_F_812811466_gdDRF0COWQIxStMWzwBXDvlkKacUaKfo.jpg");
+            background: url("https://res.cloudinary.com/divma6tu0/image/upload/v1741980716/events/brxkonxjvnfouzysu3k0.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -492,8 +492,8 @@ export const Overlay = () => {
             width: 100%;
             height: 200px; /* Adjust this value to control the height of the dark overlay */
             background: linear-gradient(to bottom, 
-              rgba(0, 0, 0, 1) 50%,
-              rgba(0, 0, 0, 0.5) 70%,
+              rgba(0, 0, 0, 1) 60%,
+              rgba(0, 0, 0, 0.5) 90%,
               rgba(0, 0, 0, 0) 100%
             );
             z-index: -1;
@@ -523,6 +523,7 @@ export const Overlay = () => {
           font-size: 2rem;
           margin-bottom: 40px;
           margin: 50px;
+          padding: 20px;
         }
 
         .card-overlay {
