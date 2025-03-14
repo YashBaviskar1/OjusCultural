@@ -8,6 +8,7 @@ import { usePlay } from "./contexts/Play";
 import SubCardsPage from "./components/EventDetails";
 import EventDetailPage from "./components/EventDetailPage";
 import GameMap from "./components/Schedule";
+import Login from "./components/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyGallery from "./components/Gallery";
 
@@ -53,6 +54,7 @@ function App() {
         <Route path="/events/:category" element={<SubCardsPage />} />
         <Route path="/events/:category/:eventId" element={<EventDetailPage />} />
         <Route path="/schedule" element={<GameMap />} />
+        <Route path="/login" element = {<Login />} />
         <Route path="/gallery" element={<MyGallery />} />
       </Routes>
     </Router>

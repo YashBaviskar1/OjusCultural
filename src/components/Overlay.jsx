@@ -8,12 +8,44 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
+  const [user, setUser] = useState(null)
   const handleNavigation = (path) => {
     navigate(path);
     setIsMobileMenuOpen(false); // Close menu after navigation
   };
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = localStorage.getItem('accessToken');
+      if (!token) return;
 
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/get', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+        } else {
+          localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    setUser(null);
+    navigate('/login');
+  };
   return (
     <nav className="navbar fixed-top">
       <div className="navbar-brand">
@@ -32,16 +64,28 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
-        <li>
-          <button onClick={() => handleNavigation("/login")}>Login</button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation("/gallery")}>Gallery</button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
-        </li>
-      </ul>
+  {user ? (
+    <div className="d-flex align-items-center gap-3">
+      <span className="navbar-text">Hello, {user.name}</span>
+      <button 
+        onClick={handleLogout}
+        className="btn btn-outline-danger"
+      >
+        Logout
+      </button>
+    </div>
+  ) : (
+    <li>
+      <button onClick={() => handleNavigation("/login")}>Login</button>
+    </li>
+  )}
+  <li>
+    <button onClick={() => handleNavigation("/gallery")}>Gallery</button>
+  </li>
+  <li>
+    <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
+  </li>
+</ul>
 
       {/* Navbar Styles */}
       <style jsx>{`

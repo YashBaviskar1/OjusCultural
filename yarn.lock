@@ -1606,10 +1606,10 @@ material-ripple-effects@2.0.1:
   resolved "https://registry.npmjs.org/material-ripple-effects/-/material-ripple-effects-2.0.1.tgz"
   integrity sha512-hHlUkZAuXbP94lu02VgrPidbZ3hBtgXBtjlwR8APNqOIgDZMV8MCIcsclL8FmGJQHvnORyvoQgC965vPsiyXLQ==
 
-mdb-react-ui-kit@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/mdb-react-ui-kit/-/mdb-react-ui-kit-6.0.0.tgz"
-  integrity sha512-oCUIpTbxqQHfHomdKNKkGAYF/VP9UBHynyeIv09ugOZXwK3g8FAQMmddYQROMd9f+BVxNfn8SL9eLG6ugTJApA==
+mdb-react-ui-kit@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.npmjs.org/mdb-react-ui-kit/-/mdb-react-ui-kit-6.3.0.tgz"
+  integrity sha512-Ps9PUTfg4+28pl7LpKTAiTM5AHGifm75OUsF8pP7ztuEizvh+9kNM+Bwe8A9R0zy9ynbPtXuavlnwC1wJ85eCQ==
   dependencies:
     "@popperjs/core" "2.11.5"
     clsx "1.1.1"
