@@ -175,6 +175,8 @@ export const Overlay = () => {
   const [scrollAtBottom, setScrollAtBottom] = useState(false);
   const [sectionVisible, setSectionVisible] = useState(false);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -199,10 +201,76 @@ export const Overlay = () => {
     }
   }, [scrollAtBottom]);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLoadingProgress((oldProgress) => {
+        const newProgress = oldProgress + 1;
+        if (newProgress === 100) {
+          clearInterval(timer);
+          setTimeout(() => setLoading(false), 500); // Add small delay before hiding
+          return 100;
+        }
+        return newProgress;
+      });
+    }, 30); // Adjust timing as needed
+
+    return () => clearInterval(timer);
+  }, []);
+
   const handleCardClick = (category) => {
     const categoryKey = category.split(":")[0].toLowerCase().replace(" ", "-");
     navigate(`/events/${categoryKey}`);
   };
+
+  if (loading) {
+    return (
+      <div className="preloader">
+        <div className="progress-bar">
+          <div 
+            className="progress-fill"
+            style={{ width: `${loadingProgress}%` }}
+          />
+        </div>
+        <div className="progress-text">{loadingProgress}%</div>
+        <style jsx>{`
+          .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+          }
+
+          .progress-bar {
+            width: 200px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            overflow: hidden;
+          }
+
+          .progress-fill {
+            height: 100%;
+            background: #fff;
+            transition: width 0.3s ease-out;
+          }
+
+          .progress-text {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-family: "Ring";
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   return (
     <div
