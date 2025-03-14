@@ -180,11 +180,9 @@ export const Overlay = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (
-        window.innerHeight + window.scrollY >=
-        document.body.scrollHeight - 10
-      ) {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 10) {
         setScrollAtBottom(true);
+        setSectionVisible(true);
       }
     };
 
@@ -276,7 +274,7 @@ export const Overlay = () => {
     <div
       className={`overlay ${play ? "overlay--disable" : ""} ${
         hasScroll ? "overlay--scrolled" : ""
-      } ${sectionVisible ? "overlay--hidden" : ""}`}
+      }`}
     >
       <Navbar />
 
@@ -301,6 +299,7 @@ export const Overlay = () => {
       <div
         ref={sectionRef}
         className={`auto-scroll-section ${sectionVisible ? "active" : ""}`}
+        id="auto-scroll-section"
       >
         <h2 className="section-title">Explore the Events</h2>
         <div className="container">
@@ -449,7 +448,7 @@ export const Overlay = () => {
             width: 100%;
             height: 200px; /* Adjust this value to control the height of the dark overlay */
             background: linear-gradient(to bottom, 
-              rgba(0, 0, 0, 0.8) 50%,
+              rgba(0, 0, 0, 1) 50%,
               rgba(0, 0, 0, 0.5) 70%,
               rgba(0, 0, 0, 0) 100%
             );
