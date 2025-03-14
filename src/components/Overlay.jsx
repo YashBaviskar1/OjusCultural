@@ -4,7 +4,7 @@ import { usePlay } from "../contexts/Play";
 import { useNavigate } from "react-router-dom";
 import clogo from "../assets/clogo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { APIURL } from '../url.config';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Navbar = () => {
       if (!token) return;
 
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/get', {
+        const response = await fetch(`${APIURL}/api/get/`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
