@@ -54,11 +54,8 @@ function App() {
         <Route path="/events/:category" element={<SubCardsPage />} />
         <Route path="/events/:category/:eventId" element={<EventDetailPage />} />
         <Route path="/schedule" element={<GameMap />} />
-<<<<<<< HEAD
         <Route path="/login" element = {<Login />} />
-=======
         <Route path="/gallery" element={<MyGallery />} />
->>>>>>> upstream/main
       </Routes>
     </Router>
   );
