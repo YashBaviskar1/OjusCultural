@@ -345,19 +345,48 @@ export const Overlay = () => {
         .auto-scroll-section {
           width: 100vw;
           min-height: 100vh;
-          background: #000000;
-          background-size: 200% 200%;
-          animation: gradientAnimation 12s ease infinite;
+          position: relative;
           color: white;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           text-align: center;
-          opacity: 0;
+          opacity: 0.5;
           transition: opacity 0.5s ease-in-out;
           padding: 20px;
-          margin-top: 70px; /* Space for fixed navbar */
+          margin-top: 70px;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://as1.ftcdn.net/jpg/08/12/81/14/1000_F_812811466_gdDRF0COWQIxStMWzwBXDvlkKacUaKfo.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(3px) brightness(0.6);
+            z-index: -1;
+          }
+
+          /* Add dark gradient overlay */
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px; /* Adjust this value to control the height of the dark overlay */
+            background: linear-gradient(to bottom, 
+              rgba(0, 0, 0, 0.8) 50%,
+              rgba(0, 0, 0, 0.5) 70%,
+              rgba(0, 0, 0, 0) 100%
+            );
+            z-index: -1;
+          }
         }
 
         .auto-scroll-section.active {

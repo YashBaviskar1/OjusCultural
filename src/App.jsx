@@ -7,6 +7,10 @@ import { Overlay } from "./components/Overlay";
 import { usePlay } from "./contexts/Play";
 import SubCardsPage from "./components/EventDetails";
 import EventDetailPage from "./components/EventDetailPage";
+import GameMap from "./components/Schedule";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
   const { play, end } = usePlay();
@@ -48,6 +52,7 @@ function App() {
         {/* Sub-cards page route */}
         <Route path="/events/:category" element={<SubCardsPage />} />
         <Route path="/events/:category/:eventId" element={<EventDetailPage />} />
+        <Route path="/schedule" element={<GameMap />} />
       </Routes>
     </Router>
   );
