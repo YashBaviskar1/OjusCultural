@@ -392,7 +392,9 @@ const EventDetailPage = () => {
     day: '2-digit',
     year: 'numeric',
   }); // e.g., "March 10, 2025"
-
+  const handleRegistration = () => {
+    console.log(`Registered Event is : ${event.name}`)
+  }
   return (
     <div className="event-detail-page">
       <h2 className="event-title">{event.name}</h2>
@@ -412,8 +414,9 @@ const EventDetailPage = () => {
           <p><strong>Category:</strong> {event.category}</p>
           <p><strong>Description:</strong> {event.description}</p>
         </div>
+        <button className="register-btn" onClick={handleRegistration} >Register</button>
       </div>
-
+    
       {/* Styles */}
       <style jsx>{`
         .event-detail-page {
@@ -535,6 +538,21 @@ const EventDetailPage = () => {
             padding: 8px 15px;
             font-size: 0.9rem;
           }
+        }
+        .register-btn {
+          margin-top: 20px;
+          padding: 10px 20px;
+          font-size: 1.2rem;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        .register-btn:hover {
+          background-color: #0056b3;
         }
       `}</style>
     </div>
