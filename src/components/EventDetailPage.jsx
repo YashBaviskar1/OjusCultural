@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 // Events data from the JSON document
 const eventsData = {
   "events": [
@@ -393,8 +392,9 @@ const EventDetailPage = () => {
     year: 'numeric',
   }); // e.g., "March 10, 2025"
   const handleRegistration = () => {
-    console.log(`Registered Event is : ${event.name}`)
-  }
+    console.log(`Registered Event is: ${event.name}`);
+    navigate("/register", { state: { eventName: event.name } });
+  };
   return (
     <div className="event-detail-page">
       <h2 className="event-title">{event.name}</h2>
