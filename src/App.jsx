@@ -11,7 +11,7 @@ import GameMap from "./components/Schedule";
 import Login from "./components/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyGallery from "./components/Gallery";
-
+import EventRegistration from "./components/EventRegistration";
 
 function App() {
   const { play, end } = usePlay();
@@ -56,6 +56,7 @@ function App() {
         <Route path="/schedule" element={<GameMap />} />
         <Route path="/login" element = {<Login />} />
         <Route path="/gallery" element={<MyGallery />} />
+        <Route path="/register" element = {<EventRegistration />} />
       </Routes>
     </Router>
   );
