@@ -50,6 +50,7 @@ const Navbar = () => {
     <nav className="navbar fixed-top">
       <div className="navbar-brand">
         OJUS 25
+      {/* <img src="https://res.cloudinary.com/divma6tu0/image/upload/v1741952275/dept%20logos/soa5h1tqlwvqmgwuocvy.ico" width="120" height="120" alt="Ojus Logo" /> */}
       </div>
 
       {/* Hamburger Icon */}

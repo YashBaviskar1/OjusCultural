@@ -1,196 +1,196 @@
 
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #111;
-    width: 100%;
-    background-color: black !important;
-  }
-  
-  /* Styles for the ring and animation */
-  .ring {
-    position: relative;
-    width: 700px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .ring i {
-    position: absolute;
-    inset: 0;
-    border: 2px solid #000;
-    transition: 0.5s;
-  }
-  .ring i:nth-child(1) {
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    animation: animate 6s linear infinite;
-  }
-  .ring i:nth-child(2) {
-    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
-    animation: animate 4s linear infinite;
-  }
-  .ring i:nth-child(3) {
-    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
-    animation: animate2 10s linear infinite;
-  }
-  
-  .ring:hover i {
-    border: 6px solid var(--clr);
-    filter: drop-shadow(0 0 20px var(--clr));
-  }
-  
-  /* Keyframe animations for rotation */
-  @keyframes animate {
-    0% {
-      transform: rotate(0deg);
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+      width: 100%;
+      background-color: black !important;
     }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes animate2 {
-    0% {
-      transform: rotate(360deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  
-  /* Styles for the login form */
-  .login {
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .login h2 {
-    font-size: 2em;
-    color: white;
-  }
-  
-  .login .inputBx {
-    position: relative;
-    padding: 5px;
-    width: 100%;
-
-  }
-  .login .inputBx input {
-    margin-left: 80px;
-    position: relative;
-    width: 100%;
-    padding: 12px 20px;
-    background: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 40px;
-    font-size: 13px;
-    color: white;
-    box-shadow: none;
-    outline: none;
-  }
-  .login .inputBx input[type="submit"] {
-    width: 100%;
-    background: #0078ff;
-    background: linear-gradient(45deg, #ff357a, #fff172);
-    border: none;
-    cursor: pointer;
-  }
-  .login .inputBx input::placeholder {
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .login .links {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  .login .links a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 1024px) {
+    
+    /* Styles for the ring and animation */
     .ring {
-      width: 400px;
-      height: 400px;
+      position: relative;
+      width: 700px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-  
+    .ring i {
+      position: absolute;
+      inset: 0;
+      border: 2px solid #000;
+      transition: 0.5s;
+    }
+    .ring i:nth-child(1) {
+      border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+      animation: animate 6s linear infinite;
+    }
+    .ring i:nth-child(2) {
+      border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+      animation: animate 4s linear infinite;
+    }
+    .ring i:nth-child(3) {
+      border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+      animation: animate2 10s linear infinite;
+    }
+    
+    .ring:hover i {
+      border: 6px solid var(--clr);
+      filter: drop-shadow(0 0 20px var(--clr));
+    }
+    
+    /* Keyframe animations for rotation */
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes animate2 {
+      0% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    
+    /* Styles for the login form */
     .login {
-      width: 90%;
-      padding: 1em;
-      gap: 10px;
-    }
-  
-    .login h2 {
-      font-size: 1.8em;
-    }
-  
-    .login .inputBx input {
-      font-size: 1.1em;
-      padding: 10px 18px;
-    }
-  
-    .login .inputBx input[type="submit"] {
-      font-size: 1.1em;
-    }
-  
-    .login .links {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
-    }
-  
-    .login .links a {
-      margin-top: 10px;
-    }
-  }
-  
-  /* Mobile (up to 600px) */
-  @media (max-width: 600px) {
-    .ring {
+      position: absolute;
       width: 300px;
-      height: 300px;
-    }
-  
-    .login {
-      width: 80%;
-      padding: 1em;
-      gap: 8px;
-    }
-  
-    .login h2 {
-      font-size: 1.5em;
-    }
-  
-    .login .inputBx input {
-      font-size: 1em;
-      padding: 8px 15px;
-    }
-  
-    .login .inputBx input[type="submit"] {
-      font-size: 1em;
-    }
-  
-    .login .links {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
+      gap: 20px;
     }
-  
+    .login h2 {
+      font-size: 2em;
+      color: white;
+    }
+    
+    .login .inputBx {
+      position: relative;
+      padding: 5px;
+      width: 100%;
+
+    }
+    .login .inputBx input {
+      margin-left: 80px;
+      position: relative;
+      width: 100%;
+      padding: 12px 20px;
+      background: transparent;
+      border: 2px solid #ffffff;
+      border-radius: 40px;
+      font-size: 13px;
+      color: white;
+      box-shadow: none;
+      outline: none;
+    }
+    .login .inputBx input[type="submit"] {
+      width: 100%;
+      background: #0078ff;
+      background: linear-gradient(45deg, #ff357a, #fff172);
+      border: none;
+      cursor: pointer;
+    }
+    .login .inputBx input::placeholder {
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .login .links {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
     .login .links a {
-      margin-top: 8px;
+      color: white;
+      text-decoration: none;
     }
-  }
-  
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .ring {
+        width: 400px;
+        height: 400px;
+      }
+    
+      .login {
+        width: 90%;
+        padding: 1em;
+        gap: 10px;
+      }
+    
+      .login h2 {
+        font-size: 1.8em;
+      }
+    
+      .login .inputBx input {
+        font-size: 1.1em;
+        padding: 10px 18px;
+      }
+    
+      .login .inputBx input[type="submit"] {
+        font-size: 1.1em;
+      }
+    
+      .login .links {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+      }
+    
+      .login .links a {
+        margin-top: 10px;
+      }
+    }
+    
+    /* Mobile (up to 600px) */
+    @media (max-width: 600px) {
+      .ring {
+        width: 300px;
+        height: 300px;
+      }
+    
+      .login {
+        width: 80%;
+        padding: 1em;
+        gap: 8px;
+      }
+    
+      .login h2 {
+        font-size: 1.5em;
+      }
+    
+      .login .inputBx input {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+    
+      .login .inputBx input[type="submit"] {
+        font-size: 1em;
+      }
+    
+      .login .links {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+      }
+    
+      .login .links a {
+        margin-top: 8px;
+      }
+    }
+    

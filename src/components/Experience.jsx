@@ -55,7 +55,7 @@
           
         },
         {
-          cameraRailDist: 1.5,
+          cameraRailDist: 3,
           position: new Vector3(
             curvePoints[2].x + 2,
             curvePoints[2].y,
@@ -66,7 +66,7 @@
           // imageSrc: "https://images.unsplash.com/photo-1532210317995-cc56d90177d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
         },
         {
-          cameraRailDist: -1,
+          cameraRailDist: -2,
           position: new Vector3(
             curvePoints[3].x - 3,
             curvePoints[3].y,
@@ -77,7 +77,7 @@
           // imageSrc: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
         },
         {
-          cameraRailDist: 1.5,
+          cameraRailDist: 2,
           position: new Vector3(
             curvePoints[4].x + 3.5,
             curvePoints[4].y,
