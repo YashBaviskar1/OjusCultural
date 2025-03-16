@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { APIURL } from "../url.config";
+import { useState, useEffect } from "react";
 // Events data from the JSON document
 const eventsData = {
   "events": [
@@ -372,8 +374,43 @@ const eventsData = {
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
+  const [setUser, setUserData] = useState(null)
 
-  // Filter events by category and get the event by index
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = localStorage.getItem('accessToken');
+      if (!token) return;
+
+      try {
+        const response = await fetch(`${APIURL}/api/get/`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          const userData = await response.json();
+          console.log(userData)
+          setUser(userData);
+        } else {
+          localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+
+
+
+
+
+
+
   const eventsInCategory = eventsData.events.filter(
     (event) => event.category.toLowerCase().replace(" ", "-") === category
   );
@@ -393,6 +430,7 @@ const EventDetailPage = () => {
   }); // e.g., "March 10, 2025"
   const handleRegistration = () => {
     console.log(`Registered Event is: ${event.name}`);
+    
     navigate("/register", { state: { eventName: event.name } });
   };
   return (
@@ -414,6 +452,7 @@ const EventDetailPage = () => {
           <p><strong>Category:</strong> {event.category}</p>
           <p><strong>Description:</strong> {event.description}</p>
         </div>
+
         <button className="register-btn" onClick={handleRegistration} >Register</button>
       </div>
     
