@@ -268,6 +268,7 @@ export const Overlay = () => {
   if (loading) {
     return (
       <div className="preloader">
+        <div className="progress-text1">Preparing the Balance of Realms...</div>
         <div className="progress-bar">
           <div 
             className="progress-fill"
@@ -307,6 +308,12 @@ export const Overlay = () => {
           .progress-text {
             color: #fff;
             margin-top: 20px;
+            font-size: 1.2rem;
+            font-family: "Ring";
+          }
+            .progress-text1 {
+            color: #fff;
+            margin-bottom: 20px;
             font-size: 1.2rem;
             font-family: "Ring";
           }
