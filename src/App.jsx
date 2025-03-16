@@ -12,7 +12,7 @@ import Login from "./components/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyGallery from "./components/Gallery";
 import EventRegistration from "./components/EventRegistration";
-
+import ComingSoon from "./components/ComingSoon";
 function App() {
   const { play, end } = usePlay();
 
@@ -57,6 +57,7 @@ function App() {
         <Route path="/login" element = {<Login />} />
         <Route path="/gallery" element={<MyGallery />} />
         <Route path="/register" element = {<EventRegistration />} />
+        <Route path="/ghanekar" element = {<ComingSoon />} />
       </Routes>
     </Router>
   );
