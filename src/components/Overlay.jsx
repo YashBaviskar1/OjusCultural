@@ -86,6 +86,9 @@ const Navbar = () => {
   <li>
     <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
   </li>
+  <li>
+  <button onClick={() => handleNavigation("/ghanekar")}>Ghanekar</button>
+  </li>
 </ul>
 
       {/* Navbar Styles */}
