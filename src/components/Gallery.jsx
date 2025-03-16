@@ -20,13 +20,13 @@ export default function Gallery() {
           {/* Column 1 */}
           <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
             <img
-              src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043782/IMG_0708_utvti5.jpg"
               className="w-100 shadow-1-strong rounded mb-4 gallery-image"
               alt="Boat on Calm Water"
               onClick={(e) => handleImageClick(e.target.src)}
             />
             <img
-              src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043779/IMG_8486_p0frfi.jpg"
               className="w-100 shadow-1-strong rounded mb-4 gallery-image"
               alt="Wintry Mountain Landscape"
               onClick={(e) => handleImageClick(e.target.src)}
@@ -36,31 +36,31 @@ export default function Gallery() {
           {/* Column 2 */}
           <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
             <img
-              src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043778/ljkhgv_abb69i.jpg"
+              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
+              alt="Yosemite National Park"
+              onClick={(e) => handleImageClick(e.target.src)}
+            />
+            {/* <img
+              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043794/IMG_0648_ywvtlv.jpg"
+              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
+              alt="Boat on Calm Water"
+              onClick={(e) => handleImageClick(e.target.src)}
+            /> */}
+          </MDBCol>
+
+          {/* Column 3 */}
+          <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
+          <img
+              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043778/jhui_uleclm.jpg"
               className="w-100 shadow-1-strong rounded mb-4 gallery-image"
               alt="Mountains in the Clouds"
               onClick={(e) => handleImageClick(e.target.src)}
             />
             <img
-              src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Boat on Calm Water"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-          </MDBCol>
-
-          {/* Column 3 */}
-          <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
-            <img
-              src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043793/IMG_0756_tkyylh.jpg"
               className="w-100 shadow-1-strong rounded mb-4 gallery-image"
               alt="Waves at Sea"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-            <img
-              src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Yosemite National Park"
               onClick={(e) => handleImageClick(e.target.src)}
             />
           </MDBCol>
