@@ -1,7 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { APIURL } from "../url.config";
-import { useState, useEffect } from "react";
 // Events data from the JSON document
 const eventsData = {
   "events": [
@@ -374,43 +372,8 @@ const eventsData = {
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
-  const [setUser, setUserData] = useState(null)
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const token = localStorage.getItem('accessToken');
-      if (!token) return;
-
-      try {
-        const response = await fetch(`${APIURL}/api/get/`, {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-
-        if (response.ok) {
-          const userData = await response.json();
-          console.log(userData)
-          setUser(userData);
-        } else {
-          localStorage.removeItem('accessToken');
-          localStorage.removeItem('refreshToken');
-        }
-      } catch (error) {
-        console.error('Error fetching user:', error);
-      }
-    };
-
-    fetchUser();
-  }, []);
-
-
-
-
-
-
-
-
+  // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
     (event) => event.category.toLowerCase().replace(" ", "-") === category
   );
@@ -430,7 +393,6 @@ const EventDetailPage = () => {
   }); // e.g., "March 10, 2025"
   const handleRegistration = () => {
     console.log(`Registered Event is: ${event.name}`);
-    
     navigate("/register", { state: { eventName: event.name } });
   };
   return (
@@ -452,148 +414,11 @@ const EventDetailPage = () => {
           <p><strong>Category:</strong> {event.category}</p>
           <p><strong>Description:</strong> {event.description}</p>
         </div>
-
         <button className="register-btn" onClick={handleRegistration} >Register</button>
       </div>
     
       {/* Styles */}
-      <style jsx>{`
-        .event-detail-page {
-          width: 100vw;
-          min-height: 100vh;
-          background: linear-gradient(
-            45deg,
-            #0a0a0a,  /* Deep Black */
-            #1a1a1a,  /* Dark Black */
-            #2b2b2b,  /* Medium Black */
-            #3c3c3c,  /* Light Black */
-            #4d4d4d,  /* Lighter Black (shine highlight) */
-            #2b2b2b,  /* Medium Black */
-            #1c1c1c   /* Slightly Darker Black */
-          );
-          background-size: 200% 200%;
-          animation: gradientAnimation 12s ease infinite;
-          color: white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 40px 20px;
-        }
-
-        @keyframes gradientAnimation {
-          0% {
-            background-position: 0% 0%;
-          }
-          50% {
-            background-position: 100% 100%;
-          }
-          100% {
-            background-position: 0% 0%;
-          }
-        }
-
-        .event-title {
-          font-size: 2.5rem;
-          margin-bottom: 30px;
-          margin-top: 33px;
-          text-align: center;
-          color: #ffffff;
-          font-weight: bold;
-        }
-
-       .back-btn {
-          position: absolute;
-          top: 20px;
-          left: 20px;
-          padding: 5px 10px;
-          color: #333;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-
-        .back-btn:hover {
-          background-color: #ddd;
-        }
-
-        .event-content {
-          max-width: 800px;
-          width: 100%;
-          padding: 20px;
-        }
-
-        .event-details {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-          padding: 20px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .event-details p {
-          font-size: 1.2rem;
-          margin-bottom: 15px;
-          line-height: 1.5;
-        }
-
-        .event-details strong {
-          color: #ffffff; /* Lighter black from gradient for contrast */
-          font-weight: bold;
-          margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-          .event-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-          }
-
-          .event-details p {
-            font-size: 1rem;
-          }
-
-          .event-content {
-            padding: 15px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .event-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-          }
-
-          .event-details p {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-          }
-
-          .event-content {
-            padding: 10px;
-          }
-
-          .back-btn {
-            padding: 8px 15px;
-            font-size: 0.9rem;
-          }
-        }
-        .register-btn {
-          margin-top: 20px;
-          padding: 10px 20px;
-          font-size: 1.2rem;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-        }
-
-        .register-btn:hover {
-          background-color: #0056b3;
-        }
-      `}</style>
+     
     </div>
   );
 };
