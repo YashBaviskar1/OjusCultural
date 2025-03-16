@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.schedule-container {
+  background-color: #0d0d0d; /* Darker black for a cinematic effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.waviy {
+  position: relative;
+  font-size: 80px;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, 
+    #ff0000, /* Theatrical deep red */
+    #ff8800, /* Golden spotlight */
+    #ffcc00, /* Vibrant gold */
+    #8a2be2, /* Rich purple */
+    #0047ab, /* Deep stage blue */
+    #ff0000 /* Loop back to deep red */
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waviy 2.5s infinite, gradientShift 4s ease-in-out infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes waviy {
+  0%, 40%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
