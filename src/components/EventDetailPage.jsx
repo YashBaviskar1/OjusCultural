@@ -414,7 +414,7 @@ const EventDetailPage = () => {
           <p><strong>Category:</strong> {event.category}</p>
           <p><strong>Description:</strong> {event.description}</p>
         </div>
-        <button className="register-btn" onClick={handleRegistration} >Register</button>
+{/*         <button className="register-btn" onClick={handleRegistration} >Register</button> */}
       </div>
     
       {/* Styles */}
