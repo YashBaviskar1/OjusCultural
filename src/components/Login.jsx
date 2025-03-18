@@ -58,7 +58,7 @@ const Login = () => {
             <input 
               type="password" 
               placeholder="Password : FIRSTNAME@moodle_id"
-              value={password}
+              value={password.toUpperCase()}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
