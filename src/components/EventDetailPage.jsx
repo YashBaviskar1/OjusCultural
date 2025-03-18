@@ -393,7 +393,12 @@ const EventDetailPage = () => {
   }); // e.g., "March 10, 2025"
   const handleRegistration = () => {
     console.log(`Registered Event is: ${event.name}`);
-    navigate("/register", { state: { eventName: event.name } });
+    const Auth = !!localStorage.getItem("accessToken");
+    if(Auth){
+      navigate("/register", { state: { eventName: event.name } });
+    } else {
+      navigate("/login")
+    }
   };
   return (
     <div className="event-detail-page">
