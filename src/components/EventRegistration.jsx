@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { APIURL } from "../url.config";
 const EventRegistration = () => {
   const location = useLocation();
   const eventName = location.state?.eventName || "Unknown Event";
+  const [user, setUser] = useState(null)
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = localStorage.getItem("accessToken");
+      if (!token) return;
+
+      try {
+        const response = await fetch(`${APIURL}/api/get/`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+          console.log("Fetched User Data:", userData);
+        } else {
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("refreshToken");
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
   const handleRegistration = () => {
     console.log(`Registered Event is: ${eventName}`);
   };
@@ -29,9 +57,10 @@ const EventRegistration = () => {
       <div className="card p-4 shadow-lg w-100" style={{ maxWidth: "400px", backgroundColor: "rgba(255, 255, 255, 0.9)", borderRadius: "15px" }}>
         <h2 className="text-center mb-3">Event Registration</h2>
         <p className="fw-bold">Event: {eventName}</p>
-        <p className="fw-bold">Name: My Name</p>
-        <p className="fw-bold">Department: Dept</p>
-        <p className="fw-bold">Year: FE</p>
+        <p className="fw-bold">Name: {user?.name || "My Name"}</p>
+        <p className="fw-bold">Department: {user?.department || "Dept"}</p>
+        <p className="fw-bold">Year: {user?.year || "FE"}</p>
+
 
         {/* Phone Number Field with Fixed +91 */}
         <div className="input-group mb-3">

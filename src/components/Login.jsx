@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import './login.css';
 import { APIURL } from '../url.config';
+
 const Login = () => {
   const [moodleId, setMoodleId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const location = useLocation(); // Get current location
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,7 +30,10 @@ const Login = () => {
       if (response.ok) {
         localStorage.setItem('accessToken', data.access);
         localStorage.setItem('refreshToken', data.refresh);
-        navigate('/');
+        
+        // Redirect to the original page user wanted to access (or home if none)
+        const redirectPath = location.state?.from || "/";
+        navigate(redirectPath);
       } else {
         setError(data.error || 'Login failed');
       }
@@ -70,6 +75,5 @@ const Login = () => {
     </div>
   );
 };
-
 
 export default Login;

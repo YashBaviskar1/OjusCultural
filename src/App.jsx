@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MyGallery from "./components/Gallery";
 import EventRegistration from "./components/EventRegistration";
 import ComingSoon from "./components/ComingSoon";
+import ProtectedRoute from "./components/ProctectedRoutes";
 function App() {
   const { play, end } = usePlay();
 
@@ -58,7 +59,11 @@ function App() {
         <Route path="/gallery" element={<MyGallery />} />
         <Route path="/register" element = {<EventRegistration />} />
         <Route path="/ghanekar" element = {<ComingSoon />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/register" element={<EventRegistration />} />
+        </Route>
       </Routes>
+
     </Router>
   );
 }
