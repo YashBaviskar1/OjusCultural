@@ -3,15 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // Events data from the JSON document (unchanged)
 const eventsData = {
+  {
   "events": [
     {
       "id": 1,
       "name": "MR & MRS APSIT FASHION SHOW",
       "date": "2025-03-10T18:00:00Z",
-      "venue": "Main Hall",
+      "venue": "008(Auditorium) (V-2)",
       "time": "8:00-10:10:00",
-      "heads": "Vaishnavi Bhojak, Mitali Nerpagar",
-      "phone_no": "+9183122781, +9183122782",
+      "heads": "Mitali Nerpagar (Head), Furqan Ali Syed (Co-head)",
+      "phone_no": "8855071947",
       "category": "Informals",
       "description": "A grand fashion show event."
     },
@@ -19,354 +20,315 @@ const eventsData = {
       "id": 2,
       "name": "JUST DANCE",
       "date": "2025-03-10T20:00:00Z",
-      "venue": "Main Stage",
-      "time": "2H",
-      "heads": "Prathamesh Pawar, Nayan Pingat",
-      "phone_no": "+9183122783, +9183122784",
+      "venue": "{Day-1,2: 207} (Full Day)",
+      "time": "Full Day",
+      "heads": "Nayan Pingat (Head), Darshan Sanap (Co-head), Kavya Prajapatti (Co-head)",
       "category": "Informals",
       "description": "A high-energy dance competition."
     },
     {
       "id": 3,
-      "name": "KARAOKE",
-      "date": "2025-03-10T20:00:00Z",
-      "venue": "Main Stage",
-      "time": "1H",
-      "heads": "Pawan Boda",
-      "phone_no": "+9183122783",
+      "name": "Karaoke",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 005}",
+      "time": "Varied",
+      "heads": "Pawan Boda (Head), Daivik Thakur (Co-head)",
       "category": "Informals",
-      "description": "A high-energy kaorke."
+      "description": "A fun and interactive karaoke event."
     },
     {
       "id": 4,
-      "name": "TIC TAC TOE",
-      "date": "2025-03-10T20:00:00Z",
-      "venue": "Main Stage",
-      "time": "2H",
-      "heads": "Aaryan Ghawali, Vinit Rane",
-      "phone_no": "+9183122783, +9183122784",
+      "name": "TIC TAC TOE, Roll the can, Beer pong, Guess the props by song",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 211} (V-3)",
+      "time": "Varied",
+      "heads": "Aaryan Ghawali (Head), Preeti Yadav (Head), Kaushal SE/A (Co-head) (8451873334)",
       "category": "Informals",
-      "description": "Roll the can-Beer pong-Guess the props by song"
+      "description": "A collection of small fun games."
     },
     {
       "id": 5,
       "name": "IPL AUCTION",
-      "date": "2025-03-11T14:00:00Z",
-      "venue": "Conference Room",
-      "time": "2H",
-      "heads": "Harshal Patil, Soham Shivangan",
-      "phone_no": "+9183122785, +9183122786",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1: 201 / Day-2: 112(seminar hall)} (V-8)",
+      "time": "Varied",
+      "heads": "Harshal Patil (Head), Soham Shivangan (Head), Rishabh Mishra (Co-head), Shreyash Gowda (Co-head)",
       "category": "Informals",
-      "description": "A thrilling auction-style event inspired by IPL."
+      "description": "A simulated IPL auction event."
     },
     {
       "id": 6,
       "name": "ANDHADHUN",
-      "date": "2025-03-11T14:00:00Z",
-      "venue": "Conference Room",
-      "time": "2H",
-      "heads": "Ayush Kanase, Shivam Patil",
-      "phone_no": "+9183122785, +9183122786",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1: 210} (V-2)",
+      "time": "Varied",
+      "heads": "Ayush Kanase (Head), Shivam Patil (Head)",
       "category": "Informals",
-      "description": "Andhadhun game "
+      "description": "A mystery-solving event."
     },
     {
       "id": 7,
       "name": "ESCAPE ROOM",
-      "date": "2025-03-11T16:00:00Z",
-      "venue": "Room 101",
-      "time": "2H",
-      "heads": "Abbas, Praniti",
-      "phone_no": "+9183122787, +9183122788",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 101,102} (V-15)",
+      "time": "Varied",
+      "heads": "Abbas (Head), Praniti (Head)",
       "category": "Informals",
-      "description": "An immersive escape room experience."
+      "description": "A challenging escape room experience."
     },
     {
       "id": 8,
       "name": "SQUID GAME (TASK)",
-      "date": "2025-03-12T10:00:00Z",
-      "venue": "Outdoor Arena",
-      "time": "2H",
-      "heads": "Swaraj, Ojas",
-      "phone_no": "+9183122800, +9183122801",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 204,205} (V-10)",
+      "time": "Varied",
+      "heads": "Swaraj (Head), Ojas (Head)",
       "category": "Informals",
-      "description": "A thrilling Squid Game-inspired challenge."
+      "description": "A series of competitive challenges."
     },
     {
       "id": 9,
       "name": "TREASURE HUNT",
-      "date": "2025-03-12T12:00:00Z",
-      "venue": "Campus Grounds",
-      "time": "3H",
-      "heads": "Ananya, Asmita, Rutu Desai",
-      "phone_no": "+9183122802, +9183122803, +9183122804",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 203} (V-12)",
+      "time": "Varied",
+      "heads": "Ananya (Head), Vaishnavi Bhojak (Head), Asmita (Head), Rutu Desai (Head)",
       "category": "Informals",
-      "description": "An adventurous treasure hunt across campus."
+      "description": "An adventurous treasure hunt game."
     },
     {
       "id": 10,
       "name": "FUNFAIR",
-      "date": "2025-03-12T15:00:00Z",
-      "venue": "Fairground",
-      "time": "2H",
-      "heads": "Nikhil Sahani, Ritesh Pandey",
-      "phone_no": "+9183122805, +9183122806",
+      "date": "2025-03-11T18:00:00Z",
+      "venue": "{Day-2: 210} (V-6)",
+      "time": "Varied",
+      "heads": "Nikhil Sahani (Head), Prathamesh Pawar (Head), Ritesh Pandey (Head), Ujjala Thakur (Co-head) (9892894667)",
       "category": "Informals",
-      "description": "A funfair with multiple stalls and activities."
+      "description": "A funfair with various activities."
     },
     {
       "id": 11,
       "name": "THE COUCH GAME",
-      "date": "2025-03-12T17:00:00Z",
-      "venue": "Game Lounge",
-      "time": "2H",
-      "heads": "Manthan More, Unnati Jain",
-      "phone_no": "+9183122807, +9183122808",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 202} (V-7)",
+      "time": "Varied",
+      "heads": "Manthan More (Head), Unnati Jain (Head)",
       "category": "Informals",
-      "description": "A fun and engaging couch game experience."
+      "description": "A fun and engaging team game."
     },
     {
       "id": 12,
       "name": "HORROR ROOM",
-      "date": "2025-03-12T19:00:00Z",
-      "venue": "Haunted Room",
-      "time": "2H",
-      "heads": "Pranav Sathe, Parshva Shah",
-      "phone_no": "+9183122809, +9183122810",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 103} (V-11)",
+      "time": "Varied",
+      "heads": "Pranav Sathe (Head), Parshva Shah (Head), Sonika Sawant (Head)",
       "category": "Informals",
-      "description": "A spine-chilling horror experience."
+      "description": "A thrilling horror experience."
     },
     {
       "id": 13,
       "name": "ROCKET LEAGUE IRL",
-      "date": "2025-03-12T21:00:00Z",
-      "venue": "Sports Arena",
-      "time": "2H",
-      "heads": "Lucky Sharma, Maulik Zambad",
-      "phone_no": "+9183122811, +9183122812",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 213} (V-3)",
+      "time": "Varied",
+      "heads": "Lucky Sharma (Head), Maulik Zambad (Head)",
       "category": "Informals",
-      "description": "A real-life version of the Rocket League game."
+      "description": "A real-life version of Rocket League."
     },
-    {
+	    {
       "id": 14,
-      "name": "FACEMASK & FACE PAINTING",
-      "date": "2025-03-12T10:00:00Z",
-      "venue": "Art Room",
-      "time": "1H",
+      "name": "Facemask & Face Painting",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 004} (V-1)",
+      "time": "5H",
       "heads": "Anisha Tiwari",
-      "phone_no": "+9183122789",
       "category": "Fine Arts",
-      "description": "A creative face mask and painting event."
+      "description": "An artistic event focused on facemask and face painting."
     },
     {
       "id": 15,
-      "name": "BRACELET MAKING",
-      "date": "2025-03-12T11:00:00Z",
-      "venue": "Craft Zone",
-      "time": "1H",
+      "name": "Braiding",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 004} (V-1)",
+      "time": "5H",
       "heads": "Sajni Shetty",
-      "phone_no": "+9183122790",
       "category": "Fine Arts",
-      "description": "Design and create beautiful bracelets."
+      "description": "A creative hairstyling event featuring braiding techniques."
     },
     {
       "id": 16,
-      "name": "BRAIDING",
-      "date": "2025-03-12T12:00:00Z",
-      "venue": "Styling Hub",
-      "time": "1H",
-      "heads": "Sanskruti Shelke",
-      "phone_no": "+9183122791",
+      "name": "Bracelet Making, Keychain Making, Earrings",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 004}",
+      "time": "5H",
+      "heads": "Sanskruti Shelke, Radhika Lakhani",
       "category": "Fine Arts",
-      "description": "Learn different braiding styles and techniques."
+      "description": "A craft-based event where participants create bracelets, keychains, and earrings."
     },
     {
       "id": 17,
-      "name": "Keychain Making & Earrings",
-      "date": "2025-03-12T13:00:00Z",
-      "venue": "Handicraft Corner",
-      "time": "1H",
-      "heads": "Radhika Lakhani",
-      "phone_no": "+9183122792",
-      "category": "Fine Arts",
-      "description": "Create custom keychains and earrings."
-    },
-    {
-      "id": 18,
       "name": "Canvas Painting",
-      "date": "2025-03-12T14:00:00Z",
-      "venue": "Painting Studio",
-      "time": "1H",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 004} (V-1)",
+      "time": "5H",
       "heads": "Vaishanavi Jadhav",
-      "phone_no": "+9183122793",
       "category": "Fine Arts",
-      "description": "Express creativity through canvas painting."
+      "description": "A painting event that allows participants to express creativity on canvas."
+    },
+	{
+      "id": 18,
+      "name": "Dance",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "Em Team",
+      "time": "2H",
+      "heads": "Em Team",
+      "category": "Performing Arts",
+      "description": "A dance performance showcasing various styles."
     },
     {
       "id": 19,
-      "name": "DANCE",
-      "date": "2025-03-12T15:00:00Z",
-      "venue": "Auditorium",
+      "name": "Singing",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "Em Team",
       "time": "2H",
       "heads": "Em Team",
-      "phone_no": "+9183122794",
       "category": "Performing Arts",
-      "description": "An energetic dance performance showcasing various styles."
+      "description": "A singing event featuring talented vocalists."
     },
     {
       "id": 20,
-      "name": "SINGING",
-      "date": "2025-03-12T17:00:00Z",
-      "venue": "Music Hall",
+      "name": "Skit",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "Em Team",
       "time": "2H",
       "heads": "Em Team",
-      "phone_no": "+9183122795",
       "category": "Performing Arts",
-      "description": "A mesmerizing singing competition with talented vocalists."
+      "description": "A short drama performance prepared by the participants."
     },
     {
       "id": 21,
-      "name": "SKIT",
-      "date": "2025-03-12T19:00:00Z",
-      "venue": "Drama Stage",
-      "time": "2H",
-      "heads": "Em Team",
-      "phone_no": "+9183122796",
-      "category": "Performing Arts",
-      "description": "A theatrical skit performance with engaging storytelling."
-    },
-    {
-      "id": 22,
-      "name": "APSITS GOT LATENT",
-      "date": "2025-03-12T21:00:00Z",
-      "venue": "Main Stage",
+      "name": "APSIT's Got Latent",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1: 008(Auditorium)} (V-2)",
       "time": "2H",
       "heads": "Swayam Sangave, Piyush Mahankal",
-      "phone_no": "+9183122797",
       "category": "Performing Arts",
-      "description": "A talent show featuring diverse and exciting performances."
+      "description": "A talent show where participants showcase their hidden talents."
+    },
+	{
+      "id": 22,
+      "name": "Paintball",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: College Turf} (V-2)",
+      "time": "3H",
+      "heads": "Arpit Chopda",
+      "category": "Recreational",
+      "description": "A thrilling paintball game experience."
     },
     {
       "id": 23,
-      "name": "PAINTBALL",
-      "date": "2025-03-13T14:00:00Z",
-      "venue": "Outdoor Field",
-      "time": "1H",
-      "heads": "Arpit Chopda",
-      "phone_no": "+9183122792",
+      "name": "Giant Jenga",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: Flagpost area}",
+      "time": "3H",
+      "heads": "Chinmay Sawant",
       "category": "Recreational",
-      "description": "A competitive paintball match."
+      "description": "A larger-than-life version of the classic Jenga game."
     },
     {
       "id": 24,
-      "name": "ELIMINATOR",
-      "date": "2025-03-13T14:00:00Z",
-      "venue": "Outdoor Field",
-      "time": "1H",
-      "heads": "CHINMAY SAWANT",
-      "phone_no": "+9183122792",
+      "name": "Human Foosball",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1: Flagpost area} (V-2)",
+      "time": "3H",
+      "heads": "Shailesh Mittapelli",
       "category": "Recreational",
-      "description": "A competitive paintball match."
+      "description": "A fun and interactive game of human-sized foosball."
     },
-    {
+	{
       "id": 25,
-      "name": "PAINTBALL",
-      "date": "2025-03-13T14:00:00Z",
-      "venue": "Outdoor Field",
-      "time": "1H",
-      "heads": "Arpit Chopda",
-      "phone_no": "+9183122792",
-      "category": "Recreational",
-      "description": "A competitive paintball match."
-    },
-    {
-      "id": 26,
-      "name": "JENGA",
-      "date": "2025-03-13T10:00:00Z",
-      "venue": "Game Zone",
+      "name": "Jenga",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: Nescafe} (V-2)",
       "time": "1H",
       "heads": "Darshan Jain",
-      "phone_no": "+9183122798",
       "category": "Pass N Go",
-      "description": "A thrilling game of balance and strategy with Jenga."
+      "description": "A fun and strategic game of Jenga."
+    },
+	    {
+      "id": 26,
+      "name": "Doors of Fate",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 104} (V-6)",
+      "time": "4H",
+      "heads": "Vinit Rane, Chinmay Sawant",
+      "category": "Theme Based",
+      "description": "An interactive event based on choices and fate."
     },
     {
       "id": 27,
-      "name": "DOORS OF FATE",
-      "date": "2025-03-13T11:00:00Z",
-      "venue": "Mystery Arena",
-      "time": "2H",
-      "heads": "Preeti Yadav, Chinmay Sawant",
-      "phone_no": "+9183122799, +9183122799",
-      "category": "Theme Based",
-      "description": "An interactive experience where participants choose their fate through mysterious doors."
-    },
-    {
-      "id": 28,
-      "name": "HELL'S PORTAL VS HEAVEN'S PORTAL",
-      "date": "2025-03-13T13:00:00Z",
-      "venue": "Fantasy Realm",
-      "time": "2H",
+      "name": "Hell's Portal vs Heaven's Portal",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 212} (V-6)",
+      "time": "4H",
       "heads": "Divya Keni, Abhirami",
-      "phone_no": "+9183122800, +9183122799",
       "category": "Theme Based",
-      "description": "A battle between good and evil in a thrilling theme-based adventure."
+      "description": "A thrilling event exploring the themes of heaven and hell."
+    }, 
+	{
+      "id": 28,
+      "name": "BGMI",
+      "date": "2025-03-11T18:00:00Z",
+      "venue": "{Day-2: 201}",
+      "time": "8H",
+      "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
+      "category": "Gaming & Sports",
+      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament."
     },
     {
       "id": 29,
-      "name": "BGMI",
-      "date": "2025-03-14T16:00:00Z",
-      "venue": "Gaming Zone",
-      "time": "1H",
-      "heads": "Hrishikesh Mishra",
-      "phone_no": "+9183122793",
+      "name": "Valorant",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1: 301}",
+      "time": "8H",
+      "heads": "Karan Vethody, Jay Patil",
       "category": "Gaming & Sports",
-      "description": "A competitive BGMI tournament."
+      "description": "A high-stakes Valorant eSports competition."
     },
     {
       "id": 30,
-      "name": "VALORANT",
-      "date": "2025-03-14T18:00:00Z",
-      "venue": "Gaming Zone",
-      "time": "2H",
-      "heads": "Karan Vethody, Jay Patil",
-      "phone_no": "+9183122794, +9183122795",
+      "name": "Scatterball",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: BCR} (Full Day) (V-4)",
+      "time": "Full Day",
+      "heads": "Hitesh Kesharwani, Yash Madhavi (Co-head)",
       "category": "Gaming & Sports",
-      "description": "A competitive Valorant gaming tournament."
+      "description": "A fast-paced, action-packed ball game."
     },
     {
       "id": 31,
-      "name": "STUMBLE GUYS* SCATTERBALL",
-      "date": "2025-03-14T19:00:00Z",
-      "venue": "Gaming Zone",
-      "time": "1H",
-      "heads": "Hitesh Kesharwani",
-      "phone_no": "+9183122796",
+      "name": "FIFA",
+      "date": "2025-03-11T18:00:00Z",
+      "venue": "{Day-2: 301}",
+      "time": "8H",
+      "heads": "Prakhar Asthana",
       "category": "Gaming & Sports",
-      "description": "A fun and chaotic gaming event."
+      "description": "A FIFA video game competition."
     },
     {
       "id": 32,
-      "name": "FIFA",
-      "date": "2025-03-14T20:00:00Z",
-      "venue": "Gaming Zone",
-      "time": "1H",
-      "heads": "Prakhar Asthana",
-      "phone_no": "+9183122797",
+      "name": "Neon Cricket",
+      "date": "2025-03-10T18:00:00Z",
+      "venue": "{Day-1,2: 206} (V-1)",
+      "time": "8H",
+      "heads": "Nishant Rathod, Sandesh Sarode, Lavanya Bakre (Co-head)",
       "category": "Gaming & Sports",
-      "description": "A FIFA gaming tournament."
-    },
-    {
-      "id": 33,
-      "name": "NEON PICKLEBALL",
-      "date": "2025-03-14T21:00:00Z",
-      "venue": "Sports Court",
-      "time": "2H",
-      "heads": "Nishant Rathod, Sandesh Sarode",
-      "phone_no": "+9183122798, +9183122799",
-      "category": "Gaming & Sports",
-      "description": "An exciting neon-themed pickleball match."
+      "description": "A unique cricket game played under neon lights."
     }
+  ]
+}
+
   ]
 };
 
