@@ -50,7 +50,6 @@ const Navbar = () => {
     <nav className="navbar fixed-top">
       <div className="navbar-brand">
         OJUS 25
-      {/* <img src="https://res.cloudinary.com/divma6tu0/image/upload/v1741952275/dept%20logos/soa5h1tqlwvqmgwuocvy.ico" width="120" height="120" alt="Ojus Logo" /> */}
       </div>
 
       {/* Hamburger Icon */}
@@ -65,31 +64,30 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
-  {user ? (
-    <div className="d-flex align-items-center gap-3">
-      <span className="navbar-text">Hello, {user.name}</span>
-      <button 
-        onClick={handleLogout}
-        className="btn btn-outline-danger"
-      >
-        Logout
-      </button>
-    </div>
-  ) : (
-    <li>
-      <button onClick={() => handleNavigation("/login")}>Login</button>
-    </li>
-  )}
-  <li>
-    <button onClick={() => handleNavigation("/gallery")}>Gallery</button>
-  </li>
-  <li>
-    <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
-  </li>
-  <li>
-  <button onClick={() => handleNavigation("/ghanekar")}>Ghanekar</button>
-  </li>
-</ul>
+        <li>
+          <button onClick={() => handleNavigation("/gallery")}>Gallery</button>
+        </li>
+        <li>
+          <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
+        </li>
+       <div>
+       {user ? (
+          <div className="d-flex align-items-center gap-3">
+            <span className="navbar-text">Hello, {user.name}</span>
+            <button
+              onClick={handleLogout}
+              className="btn btn-outline-danger"
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <li>
+            <button onClick={() => handleNavigation("/login")}>Login</button>
+          </li>
+        )}
+       </div>
+      </ul>
 
       {/* Navbar Styles */}
       <style jsx>{`
@@ -271,9 +269,8 @@ export const Overlay = () => {
   if (loading) {
     return (
       <div className="preloader">
-        <div className="progress-text1">Preparing the Balance of Realms...</div>
         <div className="progress-bar">
-          <div 
+          <div
             className="progress-fill"
             style={{ width: `${loadingProgress}%` }}
           />
@@ -314,12 +311,6 @@ export const Overlay = () => {
             font-size: 1.2rem;
             font-family: "Ring";
           }
-            .progress-text1 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            font-family: "Ring";
-          }
         `}</style>
       </div>
     );
@@ -327,9 +318,8 @@ export const Overlay = () => {
 
   return (
     <div
-      className={`overlay ${play ? "overlay--disable" : ""} ${
-        hasScroll ? "overlay--scrolled" : ""
-      }`}
+      className={`overlay ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""
+        }`}
     >
       <Navbar />
 
@@ -338,7 +328,7 @@ export const Overlay = () => {
       {progress === 100 && (
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           <h1 className="logo">
-            <img src="https://res.cloudinary.com/divma6tu0/image/upload/v1741954718/dept%20logos/qdutcbdds3ckshwobiiv.png" width={310} height={260} alt="Logo" />
+            <img src="https://res.cloudinary.com/divma6tu0/image/upload/v1741954718/dept%20logos/qdutcbdds3ckshwobiiv.png" height={260} style={{ width: '100%' }} alt="Logo" />
           </h1>
           <p className="intro__scroll">Slowly Scroll to begin the journey</p>
           <button className="explore" onClick={() => setPlay(true)}>
@@ -357,7 +347,7 @@ export const Overlay = () => {
         id="auto-scroll-section"
       >
         <h2 className="section-title">Explore the Events</h2>
-        <div className="container"> 
+        <div className="container">
           <div className="row justify-content-center">
             {/* Card 1: Informals */}
             <div
@@ -650,4 +640,4 @@ export const Overlay = () => {
   );
 };
 
-export default Overlay;
+export default Overlay;
