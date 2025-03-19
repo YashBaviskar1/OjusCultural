@@ -412,7 +412,7 @@ const SubCardsPage = () => {
         Back
       </button>
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="top row justify-content-center">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -433,6 +433,11 @@ const SubCardsPage = () => {
 
       {/* Styles */}
       <style jsx>{`
+
+        .top{
+          margin-top: 35rem;
+        }
+
         .sub-cards-page {
           width: 100vw;
           min-height: 100vh;
@@ -544,6 +549,10 @@ const SubCardsPage = () => {
           .section-title {
             font-size: 1.5rem;
             margin-bottom: 20px;
+          }
+
+          .top{
+          margin-top: 65rem
           }
 
           .card-overlay {
