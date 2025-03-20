@@ -34,9 +34,23 @@ const EventRegistration = () => {
 
     fetchUser();
   }, []);
+  const Events = [
+    { id: 1, name: "MR & MRS APSIT FASHION SHOW" },
+    { id: 29, name: "BGMI" }
+  ];
   const handleRegistration = () => {
-    console.log(`Registered Event is: ${eventName}`);
+    const eventName = "MR & MRS APSIT FASHION SHOW"; 
+    const event = Events.find(e => e.name === eventName); 
+  
+    if (event) {
+      alert("Registration successful for the event");
+      console.log(`Registered Event is: ${eventName}`);
+      console.log(`Event ID: ${event.id}`); 
+    } else {
+      console.log("Event not found!");
+    }
   };
+  
 
   return (
     <div 

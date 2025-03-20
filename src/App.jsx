@@ -14,6 +14,8 @@ import MyGallery from "./components/Gallery";
 import EventRegistration from "./components/EventRegistration";
 import ComingSoon from "./components/ComingSoon";
 import ProtectedRoute from "./components/ProctectedRoutes";
+import Schedule from "./components/Schedule";
+import Teams from "./components/Teams"
 function App() {
   const { play, end } = usePlay();
 
@@ -59,6 +61,8 @@ function App() {
         <Route path="/gallery" element={<MyGallery />} />
         <Route path="/register" element = {<EventRegistration />} />
         <Route path="/ghanekar" element = {<ComingSoon />} />
+        <Route path="/schedule" element = {<Schedule />} />
+        <Route path = "/team" element = {<Teams />}/>
         <Route element={<ProtectedRoute />}>
           <Route path="/register" element={<EventRegistration />} />
         </Route>

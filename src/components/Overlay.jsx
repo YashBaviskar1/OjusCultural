@@ -72,8 +72,8 @@ const Navbar = () => {
         </li>
        <div>
        {user ? (
-          <div className="d-flex align-items-center gap-3">
-            <span className="navbar-text">Hello, {user.name}</span>
+          <div className="d-flex align-items-center gap-3" id="a">
+            <span className="navbar-text" style={{ color:'yellow' }}>Hello, {user.name}</span>
             <button
               onClick={handleLogout}
               className="btn btn-outline-danger"
@@ -165,6 +165,10 @@ const Navbar = () => {
         @media (max-width: 768px) {
           .hamburger {
             display: flex;
+          }
+
+          #a{
+          flex-direction: column;
           }
 
           .nav-links {
@@ -640,4 +644,4 @@ export const Overlay = () => {
   );
 };
 
-export default Overlay;
+export default Overlay;
