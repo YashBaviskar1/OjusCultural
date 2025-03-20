@@ -331,7 +331,7 @@ const eventsData = {
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
-
+  const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
     (event) => event.category.toLowerCase().replace(" ", "-") === category
@@ -359,6 +359,9 @@ const EventDetailPage = () => {
       navigate("/login")
     }
   };
+  const shouldShowRegistration = reg.some(
+    (regName) => regName.toLowerCase() === event.name.toLowerCase()
+  );
   return (
     <div className="event-detail-page">
       <h2 className="event-title">{event.name}</h2>
@@ -378,7 +381,11 @@ const EventDetailPage = () => {
           <p><strong>Category:</strong> {event.category}</p>
           <p><strong>Description:</strong> {event.description}</p>
         </div>
-        <button className="register-btn" onClick={handleRegistration} >Register</button>
+        {shouldShowRegistration && (
+          <button className="register-btn" onClick={handleRegistration}>
+            Register
+          </button>
+        )}
       </div>
     
       {/* Styles */}
