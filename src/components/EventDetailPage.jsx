@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Events data from the JSON document
 const eventsData = {
-{
+
   "events": [
     {
       "id": 1,
@@ -326,8 +326,6 @@ const eventsData = {
       "description": "A unique cricket game played under neon lights."
     }
   ]
-}
-
 };
 
 const EventDetailPage = () => {
