@@ -18,7 +18,7 @@ function App() {
   const { play, end } = usePlay();
 
   return (
-    <Router basename="/cultural">
+    <Router >
       <Routes>
         {/* Main page route */}
         <Route
