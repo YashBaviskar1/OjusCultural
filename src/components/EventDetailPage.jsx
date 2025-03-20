@@ -350,13 +350,47 @@ const EventDetailPage = () => {
     day: '2-digit',
     year: 'numeric',
   }); // e.g., "March 10, 2025"
-  const handleRegistration = () => {
-    console.log(`Registered Event is: ${event.name}`);
-    const Auth = !!localStorage.getItem("accessToken");
-    if(Auth){
-      navigate("/register", { state: { eventName: event.name } });
-    } else {
-      navigate("/login")
+  const handleRegistration = async () => {
+    const accessToken = localStorage.getItem("accessToken");
+  
+    if (!accessToken) {
+      alert("Please login first");
+      navigate("/login");
+      return;
+    }
+  
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/events/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+        },
+        body: JSON.stringify({
+          event: event.id // Ensure this matches backend event IDs
+        })
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        if (data.error === "Email and phone number are required for first registration") {
+          navigate("/register", { 
+            state: { 
+              eventId: event.id,
+              eventName: event.name,
+              needsInfo: true 
+            }
+          });
+        } else {
+          alert(`Error: ${data.error}`);
+        }
+      } else {
+        alert("Successfully registered for the event!");
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert("Registration failed. Please try again.");
     }
   };
   const shouldShowRegistration = reg.some(
