@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // Events data from the JSON document (unchanged)
 const eventsData = {
-  {
   "events": [
     {
       "id": 1,
@@ -329,8 +328,6 @@ const eventsData = {
   ]
 }
 
-  ]
-};
 
 // Transform events data into subCardData structure (image removed)
 const subCardData = eventsData.events.reduce((acc, event) => {
