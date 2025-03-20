@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/cultural/(.*)", "destination": "/$1" }
+  ]
+}
