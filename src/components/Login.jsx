@@ -78,7 +78,7 @@ const Login = () => {
             type="password"
             placeholder="Enter your password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value.toUpperCase())}
             required
             className="glass-input py-2"
           />
