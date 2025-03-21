@@ -3,117 +3,116 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { APIURL } from "../url.config";
 // Events data from the JSON document
 const eventsData = {
-
   "events": [
     {
       "id": 1,
+	  "backend_id" : 1,
       "name": "MR & MRS APSIT FASHION SHOW",
       "date": "2025-03-25T18:00:00Z",
-      "venue": "008(Auditorium)",
-      "time": "10:00 AM to 12:30 PM",
+      "venue": "008(Auditorium) ",
+      "time": ":10:00 AM to 12:30 PM",
       "heads": "Mitali Nerpagar ",
-      "phone_no": "8355832904",
+      "phone_no": "8355839204",
       "category": "Informals",
-      "description": "Step onto the ramp and showcase your style with elegance and confidence. Participants will compete in themed fashion rounds, flaunting their charisma. Judges will evaluate based on style, confidence, and stage presence.The ultimate fashion icons will be crowned as Mr. & Mrs. APSIT!"
+      "description": "A grand fashion show event."
     },
     {
       "id": 2,
       "name": "JUST DANCE",
-      "date": "2025-03-10T20:00:00Z",
-      "venue": "{Day-1,2: 207} (Full Day)",
+      "date": "2025-03-24T20:00:00Z",
+      "venue": "207",
       "time": "Full Day",
-      "heads": "Nayan Pingat (Head), Darshan Sanap (Co-head), Kavya Prajapatti (Co-head)",
+      "heads": "Nayan Pingat (Head)",
+      "phone_no": "8767369835",
       "category": "Informals",
       "description": "A high-energy dance competition."
     },
     {
       "id": 3,
       "name": "Karaoke",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 005}",
-      "time": "Varied",
-      "heads": "Pawan Boda (Head), Daivik Thakur (Co-head)",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "005",
+      "time": "Full day",
+      "heads": "Pawan Boda",
+      "phone_no":"9082747148",
       "category": "Informals",
       "description": "A fun and interactive karaoke event."
-    },
-    {
-      "id": 4,
-      "name": "TIC TAC TOE, Roll the can, Beer pong, Guess the props by song",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 211} (V-3)",
-      "time": "Varied",
-      "heads": "Aaryan Ghawali (Head), Preeti Yadav (Head), Kaushal SE/A (Co-head) (8451873334)",
-      "category": "Informals",
-      "description": "A collection of small fun games."
     },
     {
       "id": 5,
       "name": "IPL AUCTION",
       "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1: 201 / Day-2: 112(seminar hall)} (V-8)",
-      "time": "Varied",
-      "heads": "Harshal Patil , Soham Shivangan ",
+      "venue": " Day-1: 201 / Day-2: 112(seminar hall)} ",
+      "time": "11:00 AM to 3:00 PM / 11:00 AM to 4:00 PM",
+      "heads": "Harshal Patil , Soham Shivangan",
+      "phone_no":"9222474104, 9767205460",
       "category": "Informals",
       "description": "A simulated IPL auction event."
     },
     {
       "id": 6,
       "name": "ANDHADHUN",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1: 210} (V-2)",
-      "time": "Varied",
-      "heads": "Ayush Kanase (Head), Shivam Patil (Head)",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "209",
+      "time": "11:00 AM to 3:00 PM",
+      "heads": "Ayush Kanase , Shivam Patil",
+      "phone_no":"9867228830, 7058221605",
       "category": "Informals",
       "description": "A mystery-solving event."
     },
     {
       "id": 7,
       "name": "ESCAPE ROOM",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 101,102} (V-15)",
-      "time": "Varied",
-      "heads": "Abbas (Head), Praniti (Head)",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "Day-1 : 101 / Day 2 :102 ",
+      "time": "11:00 AM to 3:00 PM / 11:00AM to 4:00PM ",
+      "heads": "PRANITI AHIRE, ABBAS SANGAMESHWARI",
+      "phone_no":"8097092120, 8591246669",
       "category": "Informals",
       "description": "A challenging escape room experience."
     },
     {
       "id": 8,
-      "name": "SQUID GAME (TASK)",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 204,205} (V-10)",
-      "time": "Varied",
-      "heads": "Swaraj (Head), Ojas (Head)",
+      "name": "SQUID GAME",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "204",
+      "time": "Day 1 : 11:00 AM to 3:00 PM / Day 2 : 11:00 AM to 3:00 PM",
+      "heads": "Swaraj Paranjape, Ojas patrikar",
+      "phone_no":"9920131934, 8085846892",
       "category": "Informals",
       "description": "A series of competitive challenges."
     },
     {
       "id": 9,
-      "backend_id" : 36,
+	  "backend_id" : 36,
       "name": "TREASURE HUNT",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 203} (V-12)",
-      "time": "Varied",
-      "heads": "Ananya (Head), Vaishnavi Bhojak (Head), Asmita (Head), Rutu Desai (Head)",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "203",
+      "time": "11:00 AM to 3:00 PM / 10:00 AM to 12:00 AM",
+      "heads": "Vaishanvi Bhojak, Aanya Singh, Rutu Desai",
+      "phone_no":"8591067050, 9324357482, 7448168628",
       "category": "Informals",
       "description": "An adventurous treasure hunt game."
     },
     {
       "id": 10,
       "name": "FUNFAIR",
-      "date": "2025-03-11T18:00:00Z",
-      "venue": "{Day-2: 210} (V-6)",
-      "time": "Varied",
-      "heads": "Nikhil Sahani (Head), Prathamesh Pawar (Head), Ritesh Pandey (Head), Ujjala Thakur (Co-head) (9892894667)",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "210",
+      "time": "Day 1 : 11:00 AM to 3:00 PM / Day 2 : 11:00 AM to 3:00 PM",
+      "heads": "Ritesh Pandey, Nikhil Sawant, Prathamesh Pawar",
+      "phone_no":"9960435308, 9137369097, 8169605420",
       "category": "Informals",
       "description": "A funfair with various activities."
     },
     {
       "id": 11,
       "name": "THE COUCH GAME",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 202} (V-7)",
-      "time": "Varied",
-      "heads": "Manthan More (Head), Unnati Jain (Head)",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "210",
+      "time": "11:00 AM to 3:00 PM",
+      "heads": "Manthan More , Unnati Jain ",
+      "phone_no":"7020834048, 9320005645",
       "category": "Informals",
       "description": "A fun and engaging team game."
     },
@@ -121,19 +120,21 @@ const eventsData = {
       "id": 12,
       "name": "HORROR ROOM",
       "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 103} (V-11)",
-      "time": "Varied",
-      "heads": "Pranav Sathe (Head), Parshva Shah (Head), Sonika Sawant (Head)",
+      "venue": "103",
+      "time": "DAY 1 : 12:00 AM TO 5:00 PM / DAY2 : 12:00 AM TO 3:00 PM",
+      "heads": "SONIKA SAWANT, PARSHV SHAH, PRANAV SATHE",
+      "phone_no":"8657434372, 9921617179, 9067253739",
       "category": "Informals",
       "description": "A thrilling horror experience."
     },
     {
       "id": 13,
       "name": "ROCKET LEAGUE IRL",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 213} (V-3)",
-      "time": "Varied",
-      "heads": "Lucky Sharma (Head), Maulik Zambad (Head)",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "213",
+      "time": "Day 1 : 11:00 AM to 3:00 PM / Day 2 : 11:00 AM to 3:00 PM",
+      "heads": "Lucky Sharma (Head)",
+      "phone_no":"9670240625",
       "category": "Informals",
       "description": "A real-life version of Rocket League."
     },
@@ -144,6 +145,7 @@ const eventsData = {
       "venue": "{Day-1,2: 004} (V-1)",
       "time": "5H",
       "heads": "Anisha Tiwari",
+      "phone_no":"9967488072",
       "category": "Fine Arts",
       "description": "An artistic event focused on facemask and face painting."
     },
@@ -154,6 +156,7 @@ const eventsData = {
       "venue": "{Day-1,2: 004} (V-1)",
       "time": "5H",
       "heads": "Sajni Shetty",
+      "phone_no":"6361869221",
       "category": "Fine Arts",
       "description": "A creative hairstyling event featuring braiding techniques."
     },
@@ -164,6 +167,7 @@ const eventsData = {
       "venue": "{Day-1,2: 004}",
       "time": "5H",
       "heads": "Sanskruti Shelke, Radhika Lakhani",
+      "phone_no":"9076157274",
       "category": "Fine Arts",
       "description": "A craft-based event where participants create bracelets, keychains, and earrings."
     },
@@ -174,46 +178,18 @@ const eventsData = {
       "venue": "{Day-1,2: 004} (V-1)",
       "time": "5H",
       "heads": "Vaishanavi Jadhav",
+      "phone_no":"6381844986",
       "category": "Fine Arts",
       "description": "A painting event that allows participants to express creativity on canvas."
-    },
-	{
-      "id": 18,
-      "name": "Dance",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "Em Team",
-      "time": "2H",
-      "heads": "Em Team",
-      "category": "Performing Arts",
-      "description": "A dance performance showcasing various styles."
-    },
-    {
-      "id": 19,
-      "name": "Singing",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "Em Team",
-      "time": "2H",
-      "heads": "Em Team",
-      "category": "Performing Arts",
-      "description": "A singing event featuring talented vocalists."
-    },
-    {
-      "id": 20,
-      "name": "Skit",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "Em Team",
-      "time": "2H",
-      "heads": "Em Team",
-      "category": "Performing Arts",
-      "description": "A short drama performance prepared by the participants."
     },
     {
       "id": 21,
       "name": "APSIT's Got Latent",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1: 008(Auditorium)} (V-2)",
-      "time": "2H",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "008",
+      "time": "2PM to 5 PM",
       "heads": "Swayam Sangave, Piyush Mahankal",
+      "phone_no":"8087619562, 7758854971",
       "category": "Performing Arts",
       "description": "A talent show where participants showcase their hidden talents."
     },
@@ -224,6 +200,7 @@ const eventsData = {
       "venue": "{Day-1,2: College Turf} (V-2)",
       "time": "3H",
       "heads": "Arpit Chopda",
+      "phone_no":"9022331132",
       "category": "Recreational",
       "description": "A thrilling paintball game experience."
     },
@@ -234,6 +211,7 @@ const eventsData = {
       "venue": "{Day-1,2: Flagpost area}",
       "time": "3H",
       "heads": "Chinmay Sawant",
+      "phone_no":"9960351165",
       "category": "Recreational",
       "description": "A larger-than-life version of the classic Jenga game."
     },
@@ -244,6 +222,7 @@ const eventsData = {
       "venue": "{Day-1: Flagpost area} (V-2)",
       "time": "3H",
       "heads": "Shailesh Mittapelli",
+      "phone_no":"9970752318",
       "category": "Recreational",
       "description": "A fun and interactive game of human-sized foosball."
     },
@@ -260,42 +239,46 @@ const eventsData = {
 	    {
       "id": 26,
       "name": "Doors of Fate",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 104} (V-6)",
-      "time": "4H",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "104",
+      "time": "Day 1 : 11AM to 3:00PM / DAY 2 : 11:00 AM to 3:00 PM",
+      "phone_no":"7045464624, 7021344084",
       "heads": "Vinit Rane, Chinmay Sawant",
-      "category": "Theme Based",
+      "category": "Informals",
       "description": "An interactive event based on choices and fate."
     },
     {
       "id": 27,
       "name": "Hell's Portal vs Heaven's Portal",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 212} (V-6)",
-      "time": "4H",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "212",
+      "time": "DAY 1 : 11:00 AM to 3:00 PM / DAY 2 : 11: AM to 3:00 PM",
       "heads": "Divya Keni, Abhirami",
-      "category": "Theme Based",
+      "phone_no":"9324547628, 8691960219",
+      "category": "Informals",
       "description": "A thrilling event exploring the themes of heaven and hell."
     }, 
 	{
       "id": 28,
-      "backend_id" : 35,
+	  "backend_id" : 35,
       "name": "BGMI",
       "date": "2025-03-11T18:00:00Z",
       "venue": "{Day-2: 201}",
       "time": "8H",
       "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
+      "phone_no":"9321839469",
       "category": "Gaming & Sports",
       "description": "A competitive Battlegrounds Mobile India (BGMI) tournament."
     },
     {
       "id": 29,
-      "backend_id" : 34,
+	  "backend_id" : 34,
       "name": "Valorant",
-      "date": "2025-03-24T18:00:00Z",
+      "date": "2025-03-10T18:00:00Z",
       "venue": "{Day-1: 301}",
       "time": "8H",
       "heads": "Karan Vethody, Jay Patil",
+      "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
       "description": "A high-stakes Valorant eSports competition."
     },
@@ -306,13 +289,14 @@ const eventsData = {
       "venue": "{Day-1,2: BCR} (Full Day) (V-4)",
       "time": "Full Day",
       "heads": "Hitesh Kesharwani, Yash Madhavi (Co-head)",
+      "phone_no":"9834791967",
       "category": "Gaming & Sports",
       "description": "A fast-paced, action-packed ball game."
     },
     {
       "id": 31,
-      "backend_id" : 37,
       "name": "FIFA",
+	  "backend_id" : 37,
       "date": "2025-03-11T18:00:00Z",
       "venue": "{Day-2: 301}",
       "time": "8H",
@@ -327,17 +311,127 @@ const eventsData = {
       "venue": "{Day-1,2: 206} (V-1)",
       "time": "8H",
       "heads": "Nishant Rathod, Sandesh Sarode, Lavanya Bakre (Co-head)",
+      "phone_no":"8850409126, 9021677152",
       "category": "Gaming & Sports",
       "description": "A unique cricket game played under neon lights."
-    }
-  ]
-};
-
+    },
+    {
+      "id": 33,
+      "name": "Challenge Carnival",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "211",
+      "time": "8H",
+      "heads": "AARYAN GHAWALI, PREETI YADAV",
+      "phone_no":"7304372657, 842501072",
+      "category": "Informals",
+      "description": "Party Packed Mini Games"
+    },
+    {
+      "id": 34,
+      "name": "Creator's Quest",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "College Campus",
+      "time": "everywhere everytime",
+      "heads": "AARYAN GHAWALI, PREETI YADAV",
+      "phone_no":"7304372657, 842501072",
+      "category": "Informals",
+      "description": "Unleash your inner story telling!"
+    },
+    {
+      "id": 35,
+      "name": "Twister",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "Saraswati Idol",
+      "time": "9:00AM to 5:00PM",
+      "heads": "ANIKET CHOPADA",
+      "phone_no":"9960351165",
+      "category": "Informals",
+      "description": "Twist yourself"
+    },
+    {
+      "id": 36,
+      "name": "SNAKES AND LADDERS",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "Saraswati Idol",
+      "time": "9:00AM to 5:00PM",
+      "heads": "ANIKET CHOPADA",
+      "phone_no":"9960351165",
+      "category": "Informals",
+      "description": "Step into Life Size board Game"
+    },
+    {
+      "id": 37,
+      "name": "HUMAN LUDO",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "Saraswati Idol",
+      "time": "9:00AM to 5:00PM",
+      "heads": "ANIKET CHOPADA",
+      "phone_no":"9960351165",
+      "category": "Informals",
+      "description": "Step into Life Size board Game"
+    },
+   {
+      "id": 37,
+      "name": "Harmony Hive",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "008",
+      "time": "11:00AM to 1:00PM",
+      "heads": "Vivek Behra",
+      "phone_no":"9321815952",
+      "category": "Performing Arts",
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+    },
+   {
+      "id": 38,
+      "name": "Dance",
+      "date": "2025-03-26T18:00:00Z",
+      "venue": "DR. Kashinath Ghanekar Natyagraha",
+      "time": "11:00AM to 1:00PM",
+      "heads": "Pranav Sathe",
+      "phone_no":"9321815952",
+      "category": "Performing Arts",
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+    },
+   {
+      "id": 39,
+      "name": "Drama",
+      "date": "2025-03-26T18:00:00Z",
+      "venue": "DR. Kashinath Ghanekar Natyagraha",
+      "time": "11:00AM to 1:00PM",
+      "heads": "Pranav Sathe",
+      "phone_no":"9321815952",
+      "category": "Performing Arts",
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+    },
+   {
+      "id": 40,
+      "name": "Fashion Show",
+      "date": "2025-03-26T18:00:00Z",
+      "venue": "DR. Kashinath Ghanekar Natyagraha",
+      "time": "11:00AM to 1:00PM",
+      "heads": "Pranav Sathe",
+      "phone_no":"9321815952",
+      "category": "Performing Arts",
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+    },
+   {
+      "id": 41,
+      "name": "Singing",
+      "date": "2025-03-26T18:00:00Z",
+      "venue": "DR. Kashinath Ghanekar Natyagraha",
+      "time": "11:00AM to 1:00PM",
+      "heads": "Pranav Sathe",
+      "phone_no":"9321815952",
+      "category": "Performing Arts",
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+    }
+  ]
+}
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
  // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
-  const reg = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
+  const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
