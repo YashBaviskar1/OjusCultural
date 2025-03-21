@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { APIURL } from "../url.config";
 // Events data from the JSON document
 const eventsData = {
 
@@ -87,6 +88,7 @@ const eventsData = {
     },
     {
       "id": 9,
+      "backend_id" : 39,
       "name": "TREASURE HUNT",
       "date": "2025-03-10T18:00:00Z",
       "venue": "{Day-1,2: 203} (V-12)",
@@ -277,6 +279,7 @@ const eventsData = {
     }, 
 	{
       "id": 28,
+      "backend_id" : 38,
       "name": "BGMI",
       "date": "2025-03-11T18:00:00Z",
       "venue": "{Day-2: 201}",
@@ -287,8 +290,9 @@ const eventsData = {
     },
     {
       "id": 29,
+      "backend_id" : 34,
       "name": "Valorant",
-      "date": "2025-03-10T18:00:00Z",
+      "date": "2025-03-24T18:00:00Z",
       "venue": "{Day-1: 301}",
       "time": "8H",
       "heads": "Karan Vethody, Jay Patil",
@@ -307,6 +311,7 @@ const eventsData = {
     },
     {
       "id": 31,
+      "backend_id" : 40,
       "name": "FIFA",
       "date": "2025-03-11T18:00:00Z",
       "venue": "{Day-2: 301}",
@@ -332,6 +337,7 @@ const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
   const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
+  const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
     (event) => event.category.toLowerCase().replace(" ", "-") === category
@@ -350,8 +356,12 @@ const EventDetailPage = () => {
     day: '2-digit',
     year: 'numeric',
   }); // e.g., "March 10, 2025"
+
   const handleRegistration = async () => {
     const accessToken = localStorage.getItem("accessToken");
+    const isTeamEvent = teams.some(
+      teamName => teamName.toLowerCase() === event.name.toLowerCase()
+    );
   
     if (!accessToken) {
       alert("Please login first");
@@ -360,14 +370,14 @@ const EventDetailPage = () => {
     }
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/events/register/', {
+      const response = await fetch(`${APIURL}/api/events/register/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accessToken}`
         },
         body: JSON.stringify({
-          event: event.id // Ensure this matches backend event IDs
+          event: event.backend_id || event.id
         })
       });
   
@@ -382,17 +392,35 @@ const EventDetailPage = () => {
               needsInfo: true 
             }
           });
+        } else if (data.error === "Already registered for this event" && isTeamEvent) {
+          // Redirect to team display page for team events
+          navigate("/team", { 
+            state: { 
+              eventId: event.backend_id || event.id,
+              eventName: event.name
+            }
+          });
         } else {
           alert(`Error: ${data.error}`);
         }
       } else {
-        alert("Successfully registered for the event!");
+        if (isTeamEvent) {
+          navigate("/team", { 
+            state: { 
+              eventId: event.backend_id || event.id,
+              eventName: event.name
+            }
+          });
+        } else {
+          alert("Successfully registered for the event!");
+        }
       }
     } catch (error) {
       console.error('Registration error:', error);
       alert("Registration failed. Please try again.");
     }
   };
+
   const shouldShowRegistration = reg.some(
     (regName) => regName.toLowerCase() === event.name.toLowerCase()
   );

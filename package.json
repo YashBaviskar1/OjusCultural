@@ -15,6 +15,7 @@
     "@react-three/drei": "^9.56.28",
     "@react-three/fiber": "^8.11.5",
     "@react-three/postprocessing": "^2.7.1",
+    "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
     "gsap": "^3.11.5",
     "lamina": "^1.1.23",

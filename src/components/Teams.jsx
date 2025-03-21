@@ -1,30 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const JoinTeam = () => {
-  const [view, setView] = useState(null);
-  const [teamId, setTeamId] = useState("");
-  const [teamDetails, setTeamDetails] = useState(null);
+import { APIURL } from "../url.config";
+const Teams = ({ eventId }) => {
+  const [teamStatus, setTeamStatus] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [teamCode, setTeamCode] = useState("");
   const [teamName, setTeamName] = useState("");
-  const [generatedTeamId, setGeneratedTeamId] = useState(null);
-  const [joined, setJoined] = useState(false);
 
-  const handleJoinTeam = () => {
-    if (teamId) {
-      setTeamDetails({
-        teamName: "Alpha Squad",
-        leaderName: "John Doe",
-        members: ["Alice", "Bob", "Charlie"],
+  // Fetch team status when component mounts
+  useEffect(() => {
+    const fetchTeamStatus = async () => {
+      try {
+        const response = await axios.get(`${APIURL}api/check-team/34/`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('access_token')}`
+          }
+        });
+        setTeamStatus(response.data);
+      } catch (err) {
+        setError(err.response?.data?.error || 'Error fetching team status');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeamStatus();
+  }, [eventId]);
+
+  const handleJoinTeam = async () => {
+    try {
+      await axios.post('/api/join-team/', { code: teamCode }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        }
       });
+      // Refresh team status after successful join
+      const response = await axios.get(`/api/check-team/${eventId}/`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        }
+      });
+      setTeamStatus(response.data);
+      setTeamCode("");
+    } catch (err) {
+      setError(err.response?.data?.error || 'Error joining team');
     }
   };
 
-  const handleCreateTeam = () => {
-    if (teamName) {
-      const newTeamId = Math.floor(1000 + Math.random() * 9000);
-      setGeneratedTeamId(newTeamId);
+  const handleCreateTeam = async () => {
+    try {
+      await axios.post('/api/create-team/', { 
+        event_id: eventId,
+        team_name: teamName 
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        }
+      });
+      // Refresh team status after creation
+      const response = await axios.get(`/api/check-team/${eventId}/`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        }
+      });
+      setTeamStatus(response.data);
+      setTeamName("");
+    } catch (err) {
+      setError(err.response?.data?.error || 'Error creating team');
     }
   };
+
+  if (loading) {
+    return <div className="text-center mt-4">Loading team status...</div>;
+  }
+
+  if (error) {
+    return <div className="alert alert-danger mt-4">{error}</div>;
+  }
 
   return (
     <div
@@ -35,107 +89,76 @@ const JoinTeam = () => {
         backgroundPosition: "center",
       }}
     >
-      {!view && (
-        <div>
-          <button
-            className="btn btn-dark btn-lg mb-3 d-block mx-auto"
-            onClick={() => setView("join")}
-          >
-            Join Team
-          </button>
-          <button
-            className="btn btn-secondary btn-lg d-block mx-auto"
-            onClick={() => setView("create")}
-          >
-            Create Team
-          </button>
+      {teamStatus.in_team ? (
+        <div className="card mt-4 p-4 shadow-lg" style={{ maxWidth: "600px" }}>
+          <h2>Your Team Details</h2>
+          <div className="text-start">
+            <p><strong>Team Name:</strong> {teamStatus.team.name}</p>
+            <p><strong>Team Code:</strong> {teamStatus.team.code}</p>
+            <p><strong>Leader:</strong> {teamStatus.team.leader}</p>
+            <h5 className="mt-3">Members:</h5>
+            <ul className="list-group">
+              {teamStatus.team.members.map((member, index) => (
+                <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+                  {member.member}
+                  <span className="text-muted small">
+                    Joined: {new Date(member.joined_at).toLocaleDateString()}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      )}
+      ) : (
+        <div className="row gap-3">
+          {teamStatus.max_team_size > 1 ? (
+            <>
+              <div className="card p-4 shadow-lg">
+                <h3>Join Existing Team</h3>
+                <input
+                  type="text"
+                  className="form-control mt-3"
+                  value={teamCode}
+                  onChange={(e) => setTeamCode(e.target.value.toUpperCase())}
+                  placeholder="Enter 5-digit Team Code"
+                  maxLength="5"
+                />
+                <button 
+                  className="btn btn-dark w-100 mt-3"
+                  onClick={handleJoinTeam}
+                  disabled={teamCode.length !== 5}
+                >
+                  Join Team
+                </button>
+              </div>
 
-      {view === "join" && !teamDetails && (
-        <div className="card mt-4 p-4 shadow-lg" style={{ maxWidth: "400px" }}>
-          <h2>Enter Team ID</h2>
-          <input
-            type="text"
-            className="form-control mt-3"
-            value={teamId}
-            onChange={(e) => setTeamId(e.target.value)}
-            placeholder="Team ID"
-          />
-          <button className="btn btn-dark w-100 mt-3" onClick={handleJoinTeam}>
-            Submit
-          </button>
-          {/* Modified back button color for better visibility */}
-          <button
-            className="btn btn-warning w-100 mt-2"
-            onClick={() => setView(null)}
-          >
-            Back
-          </button>
-        </div>
-      )}
-
-      {teamDetails && !joined && (
-        <div className="card mt-4 p-4 shadow-lg" style={{ maxWidth: "400px" }}>
-          <h2>Team Details</h2>
-          <p><strong>Team Name:</strong> {teamDetails.teamName}</p>
-          <p><strong>Leader:</strong> {teamDetails.leaderName}</p>
-          <p><strong>Members:</strong> {teamDetails.members.join(", ")}</p>
-          <button
-            className="btn btn-dark w-100 mt-3"
-            onClick={() => setJoined(true)}
-          >
-            Join
-          </button>
-          <button
-            className="btn btn-warning w-100 mt-2"
-            onClick={() => { setTeamDetails(null); setView(null); }}
-          >
-            Back
-          </button>
-        </div>
-      )}
-
-      {joined && (
-        <div className="alert alert-success mt-4" style={{ maxWidth: "400px" }}>
-          <h4>Thanks for Joining!</h4>
-          <button
-            className="btn btn-warning w-100 mt-2"
-            onClick={() => { setJoined(false); setTeamDetails(null); setView(null); }}
-          >
-            Back to Home
-          </button>
-        </div>
-      )}
-
-      {view === "create" && (
-        <div className="card mt-4 p-4 shadow-lg" style={{ maxWidth: "400px" }}>
-          <h2>Create Team</h2>
-          <input
-            type="text"
-            className="form-control mt-3"
-            value={teamName}
-            onChange={(e) => setTeamName(e.target.value)}
-            placeholder="Enter Team Name"
-          />
-          <button className="btn btn-dark w-100 mt-3" onClick={handleCreateTeam}>
-            Submit
-          </button>
-          {generatedTeamId && (
-            <div className="alert alert-info mt-3">
-              <strong>Your Team ID:</strong> {generatedTeamId} <br /> Share it with your friends!
+              <div className="card p-4 shadow-lg">
+                <h3>Create New Team</h3>
+                <input
+                  type="text"
+                  className="form-control mt-3"
+                  value={teamName}
+                  onChange={(e) => setTeamName(e.target.value)}
+                  placeholder="Enter Team Name"
+                />
+                <button 
+                  className="btn btn-secondary w-100 mt-3"
+                  onClick={handleCreateTeam}
+                  disabled={!teamName.trim()}
+                >
+                  Create Team
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="alert alert-info">
+              This event doesn't require team registration
             </div>
           )}
-          <button
-            className="btn btn-warning w-100 mt-2"
-            onClick={() => setView(null)}
-          >
-            Back
-          </button>
         </div>
       )}
     </div>
   );
 };
 
-export default JoinTeam;
+export default Teams;
