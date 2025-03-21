@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import image from "../assets/andhadhun.jpg"
 
 // Events data from the JSON document (unchanged)
 const eventsData = {
@@ -14,7 +15,8 @@ const eventsData = {
       "heads": "Mitali Nerpagar ",
       "phone_no": "8355839204",
       "category": "Informals",
-      "description": "A grand fashion show event."
+      "description": "A grand fashion show event.",
+      "src" :  "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588976/apsit_oopryt.jpg"
     },
     {
       "id": 2,
@@ -25,7 +27,8 @@ const eventsData = {
       "heads": "Nayan Pingat (Head)",
       "phone_no": "8767369835",
       "category": "Informals",
-      "description": "A high-energy dance competition."
+      "description": "A high-energy dance competition.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588586/justdance_av2fo2.jpg"
     },
     {
       "id": 3,
@@ -36,7 +39,8 @@ const eventsData = {
       "heads": "Pawan Boda",
       "phone_no":"9082747148",
       "category": "Informals",
-      "description": "A fun and interactive karaoke event."
+      "description": "A fun and interactive karaoke event.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588586/karaoke_i8pqnl.jpg"
     },
     {
       "id": 5,
@@ -47,7 +51,8 @@ const eventsData = {
       "heads": "Harshal Patil , Soham Shivangan",
       "phone_no":"9222474104, 9767205460",
       "category": "Informals",
-      "description": "A simulated IPL auction event."
+      "description": "A simulated IPL auction event.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588977/auction_oszthd.jpg"
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@ const eventsData = {
       "heads": "Ayush Kanase , Shivam Patil",
       "phone_no":"9867228830, 7058221605",
       "category": "Informals",
-      "description": "A mystery-solving event."
+      "description": "A mystery-solving event.",
+      "src" :  "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588977/andhadhun_qgh65i.jpg"
     },
     {
       "id": 7,
@@ -69,7 +75,8 @@ const eventsData = {
       "heads": "PRANITI AHIRE, ABBAS SANGAMESHWARI",
       "phone_no":"8097092120, 8591246669",
       "category": "Informals",
-      "description": "A challenging escape room experience."
+      "description": "A challenging escape room experience.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589121/escaperoom_y2slat.jpg"
     },
     {
       "id": 8,
@@ -80,7 +87,8 @@ const eventsData = {
       "heads": "Swaraj Paranjape, Ojas patrikar",
       "phone_no":"9920131934, 8085846892",
       "category": "Informals",
-      "description": "A series of competitive challenges."
+      "description": "A series of competitive challenges.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589312/squid_bkva6f.jpg"
     },
     {
       "id": 9,
@@ -92,7 +100,8 @@ const eventsData = {
       "heads": "Vaishanvi Bhojak, Aanya Singh, Rutu Desai",
       "phone_no":"8591067050, 9324357482, 7448168628",
       "category": "Informals",
-      "description": "An adventurous treasure hunt game."
+      "description": "An adventurous treasure hunt game.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589478/hunt_nbfeev.jpg"
     },
     {
       "id": 10,
@@ -103,7 +112,8 @@ const eventsData = {
       "heads": "Ritesh Pandey, Nikhil Sawant, Prathamesh Pawar",
       "phone_no":"9960435308, 9137369097, 8169605420",
       "category": "Informals",
-      "description": "A funfair with various activities."
+      "description": "A funfair with various activities.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589388/funfair_lkvcua.jpg"
     },
     {
       "id": 11,
@@ -114,7 +124,8 @@ const eventsData = {
       "heads": "Manthan More , Unnati Jain ",
       "phone_no":"7020834048, 9320005645",
       "category": "Informals",
-      "description": "A fun and engaging team game."
+      "description": "A fun and engaging team game.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589591/couch_pdpmef.jpg"
     },
     {
       "id": 12,
@@ -125,7 +136,8 @@ const eventsData = {
       "heads": "SONIKA SAWANT, PARSHV SHAH, PRANAV SATHE",
       "phone_no":"8657434372, 9921617179, 9067253739",
       "category": "Informals",
-      "description": "A thrilling horror experience."
+      "description": "A thrilling horror experience.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589532/horror_goj6ec.jpg"
     },
     {
       "id": 13,
@@ -136,7 +148,8 @@ const eventsData = {
       "heads": "Lucky Sharma (Head)",
       "phone_no":"9670240625",
       "category": "Informals",
-      "description": "A real-life version of Rocket League."
+      "description": "A real-life version of Rocket League.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589637/rocket_1_h90m2c.jpg"
     },
 	    {
       "id": 14,
@@ -191,7 +204,8 @@ const eventsData = {
       "heads": "Swayam Sangave, Piyush Mahankal",
       "phone_no":"8087619562, 7758854971",
       "category": "Performing Arts",
-      "description": "A talent show where participants showcase their hidden talents."
+      "description": "A talent show where participants showcase their hidden talents.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590453/latentapsit_n5oryt.jpg"
     },
 	{
       "id": 22,
@@ -202,7 +216,8 @@ const eventsData = {
       "heads": "Arpit Chopda",
       "phone_no":"9022331132",
       "category": "Recreational",
-      "description": "A thrilling paintball game experience."
+      "description": "A thrilling paintball game experience.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590341/paintball_lctcw3.jpg"
     },
     {
       "id": 23,
@@ -245,7 +260,8 @@ const eventsData = {
       "phone_no":"7045464624, 7021344084",
       "heads": "Vinit Rane, Chinmay Sawant",
       "category": "Informals",
-      "description": "An interactive event based on choices and fate."
+      "description": "An interactive event based on choices and fate.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590221/doors_hup7xb.jpg"
     },
     {
       "id": 27,
@@ -256,7 +272,8 @@ const eventsData = {
       "heads": "Divya Keni, Abhirami",
       "phone_no":"9324547628, 8691960219",
       "category": "Informals",
-      "description": "A thrilling event exploring the themes of heaven and hell."
+      "description": "A thrilling event exploring the themes of heaven and hell.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590152/hellheaven_alm9ew.jpg"
     }, 
 	{
       "id": 28,
@@ -268,7 +285,8 @@ const eventsData = {
       "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
-      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament."
+      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589957/bgmi_zboyqh.jpg"
     },
     {
       "id": 29,
@@ -280,7 +298,8 @@ const eventsData = {
       "heads": "Karan Vethody, Jay Patil",
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
-      "description": "A high-stakes Valorant eSports competition."
+      "description": "A high-stakes Valorant eSports competition.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589959/valo_udtbmu.jpg"
     },
     {
       "id": 30,
@@ -302,7 +321,8 @@ const eventsData = {
       "time": "8H",
       "heads": "Prakhar Asthana",
       "category": "Gaming & Sports",
-      "description": "A FIFA video game competition."
+      "description": "A FIFA video game competition.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589880/fifa_fiwupq.jpg"
     },
     {
       "id": 32,
@@ -313,7 +333,8 @@ const eventsData = {
       "heads": "Nishant Rathod, Sandesh Sarode, Lavanya Bakre (Co-head)",
       "phone_no":"8850409126, 9021677152",
       "category": "Gaming & Sports",
-      "description": "A unique cricket game played under neon lights."
+      "description": "A unique cricket game played under neon lights.",
+	  "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590069/neoncricket_d8q7ut.jpg"
     },
     {
       "id": 33,
@@ -379,7 +400,8 @@ const eventsData = {
       "heads": "Vivek Behra",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+	  "src" : "https://res.cloudinary.com/dth2rinzf/image/upload/v1742594144/harmony_hive_mgohrx.jpg"
     },
    {
       "id": 38,
@@ -390,7 +412,8 @@ const eventsData = {
       "heads": "Pranav Sathe",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+	  "src" : "https://res.cloudinary.com/dth2rinzf/image/upload/v1742594241/dance_ljdjoy.jpg"
     },
    {
       "id": 39,
@@ -423,10 +446,12 @@ const eventsData = {
       "heads": "Pranav Sathe",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590632/musicevent_edlvgm.jpg"
     }
   ]
 }
+
 // Transform events data into subCardData structure (image removed)
 const subCardData = eventsData.events.reduce((acc, event) => {
   const categoryKey = event.category.toLowerCase().replace(" ", "-");
@@ -442,7 +467,8 @@ const subCardData = eventsData.events.reduce((acc, event) => {
     text: event.name,
     month,
     date,
-    description: event.description
+    description: event.description,
+    src: event.src
   });
 
   return acc;
@@ -471,12 +497,12 @@ const SubCardsPage = () => {
       <div className="top container">
         <div className=" row justify-content-center">
           {cards.map((card, index) => (
-            <div
+            <div 
               key={index}
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleSubCardClick(index)}
             >
-              <div className="card bg-dark text-white card-overlay">
+              <div className="card text-white card-overlay"   style={{ background: `url("${card.src}")`, borderRadius:'10px', backgroundPositionX:'center', backgroundPositionY : 'center', backgroundSize : 'cover', backgroundRepeat : 'no-repeat' }}>
                 <div className="card-img-overlay d-flex flex-column justify-content-between align-items-center">
                   <h5 className="card-title text-center">{card.text}</h5>
                   <p className="card-text text-center">{card.description}</p>
@@ -497,10 +523,6 @@ const SubCardsPage = () => {
 
         .sub-cards-page {
           width: 100vw;
-          {/* min-height: 100vh; */}
-          background: #000000;
-          background-size: 200% 200%;
-          animation: gradientAnimation 12s ease infinite;
           color: white;
           display: flex;
           flex-direction: column;
@@ -549,19 +571,9 @@ const SubCardsPage = () => {
           overflow: hidden;
           border-radius: 10px;
           width: 100%;
-          height: 220px; /* Fixed height to match previous image height */
+          height: 220px;
           cursor: pointer;
-          animation: gradientAnimation 12s ease infinite;
-          background: linear-gradient(
-            45deg,
-            #0a0a0a,  /* Deep Black */
-            #1a1a1a,  /* Dark Black */
-            #2b2b2b,  /* Medium Black */
-            #3c3c3c,  /* Light Black */
-            #4d4d4d,  /* Lighter Black (shine highlight) */
-            #2b2b2b,  /* Medium Black */
-            #1c1c1c   /* Slightly Darker Black */
-          );
+       
         }
           
         @keyframes gradientAnimation {
@@ -574,12 +586,6 @@ const SubCardsPage = () => {
           100% {
             background-position: 0% 0%;
           }
-        }
-
-        .card-img-overlay {
-          background: rgba(0, 0, 0, 0.5);
-          transition: background 0.3s ease-in-out;
-          padding: 15px;
         }
 
         .card-overlay:hover .card-img-overlay {
@@ -607,10 +613,6 @@ const SubCardsPage = () => {
             font-size: 1.5rem;
             margin-bottom: 20px;
           }
-
-          {/* .top{
-          margin-top: 65rem
-          } */}
 
           .card-overlay {
             height: 150px;
