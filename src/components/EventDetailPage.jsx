@@ -8,13 +8,13 @@ const eventsData = {
     {
       "id": 1,
       "name": "MR & MRS APSIT FASHION SHOW",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "008(Auditorium) (V-2)",
-      "time": "8:00-10:10:00",
-      "heads": "Mitali Nerpagar (Head), Furqan Ali Syed (Co-head)",
-      "phone_no": "8855071947",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "008(Auditorium)",
+      "time": "10:00 AM to 12:30 PM",
+      "heads": "Mitali Nerpagar ",
+      "phone_no": "8355832904",
       "category": "Informals",
-      "description": "A grand fashion show event."
+      "description": "Step onto the ramp and showcase your style with elegance and confidence. Participants will compete in themed fashion rounds, flaunting their charisma. Judges will evaluate based on style, confidence, and stage presence.The ultimate fashion icons will be crowned as Mr. & Mrs. APSIT!"
     },
     {
       "id": 2,
@@ -52,7 +52,7 @@ const eventsData = {
       "date": "2025-03-10T18:00:00Z",
       "venue": "{Day-1: 201 / Day-2: 112(seminar hall)} (V-8)",
       "time": "Varied",
-      "heads": "Harshal Patil (Head), Soham Shivangan (Head), Rishabh Mishra (Co-head), Shreyash Gowda (Co-head)",
+      "heads": "Harshal Patil , Soham Shivangan ",
       "category": "Informals",
       "description": "A simulated IPL auction event."
     },
@@ -88,7 +88,7 @@ const eventsData = {
     },
     {
       "id": 9,
-      "backend_id" : 39,
+      "backend_id" : 36,
       "name": "TREASURE HUNT",
       "date": "2025-03-10T18:00:00Z",
       "venue": "{Day-1,2: 203} (V-12)",
@@ -279,7 +279,7 @@ const eventsData = {
     }, 
 	{
       "id": 28,
-      "backend_id" : 38,
+      "backend_id" : 35,
       "name": "BGMI",
       "date": "2025-03-11T18:00:00Z",
       "venue": "{Day-2: 201}",
@@ -311,7 +311,7 @@ const eventsData = {
     },
     {
       "id": 31,
-      "backend_id" : 40,
+      "backend_id" : 37,
       "name": "FIFA",
       "date": "2025-03-11T18:00:00Z",
       "venue": "{Day-2: 301}",
@@ -370,6 +370,7 @@ const EventDetailPage = () => {
     }
   
     try {
+      console.log("here")
       const response = await fetch(`${APIURL}/api/events/register/`, {
         method: 'POST',
         headers: {
@@ -394,6 +395,7 @@ const EventDetailPage = () => {
           });
         } else if (data.error === "Already registered for this event" && isTeamEvent) {
           // Redirect to team display page for team events
+          console.log("Here in teams")
           navigate("/team", { 
             state: { 
               eventId: event.backend_id || event.id,
