@@ -336,7 +336,8 @@ const eventsData = {
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
-  const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
+ // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
+  const reg = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
