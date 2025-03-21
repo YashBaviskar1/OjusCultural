@@ -1,163 +1,66 @@
-import React, { useState } from 'react';
-import {
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-} from 'mdb-react-ui-kit';
+import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
-export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+const imageLinks = [
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408276/uc_xor4he.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408294/uc_ysnjdz.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408486/uc_bc3heb.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408501/uc_lndx79.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408556/uc_agkee2.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408572/uc_lltnwo.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408608/uc_ac84bx.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408624/uc_kj7ykl.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408651/uc_niy1us.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408670/uc_tb0wca.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408697/uc_s3u7sa.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410222/uc_br912y.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410244/uc_rg0jpn.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410635/uc_p4ffuj.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410652/uc_uxt8qy.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410689/uc_ugwg0h.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410726/uc_h7vray.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410734/uc_tts73e.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410759/uc_blhv4p.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410987/uc_ri8a7t.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742411008/uc_xyaxg5.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742411023/uc_gnilxa.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742411032/uc_mkkwna.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742411059/uc_h3nb47.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742411075/uc_akkbcc.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742411111/uc_aiqkjq.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408670/uc_tb0wca.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408697/uc_s3u7sa.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742409272/uc_xjrgqn.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742409771/uc_qvtozh.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742409903/uc_ksnyrx.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742409923/uc_h1dgde.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410085/uc_wa0hs1.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410106/uc_u0mdfk.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410123/uc_pwmdxs.jpg",
+  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742410132/uc_ahh0dx.jpg",
 
-  const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc);
-  };
+];
 
+function App() {
   return (
-    <>
-      <MDBContainer fluid className="gallery-container">
-        <h1 className="gallery-title">Our Event Gallery</h1>
-        <MDBRow>
-          {/* Column 1 */}
-          <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
-            <img
-              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043782/IMG_0708_utvti5.jpg"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Boat on Calm Water"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-            <img
-              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043779/IMG_8486_p0frfi.jpg"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Wintry Mountain Landscape"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-          </MDBCol>
-
-          {/* Column 2 */}
-          <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
-            <img
-              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043778/ljkhgv_abb69i.jpg"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Yosemite National Park"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-            {/* <img
-              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043794/IMG_0648_ywvtlv.jpg"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Boat on Calm Water"
-              onClick={(e) => handleImageClick(e.target.src)}
-            /> */}
-          </MDBCol>
-
-          {/* Column 3 */}
-          <MDBCol lg={4} md={12} className="mb-4 mb-lg-0">
-          <img
-              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043778/jhui_uleclm.jpg"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Mountains in the Clouds"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-            <img
-              src="https://res.cloudinary.com/dpackji5g/image/upload/v1742043793/IMG_0756_tkyylh.jpg"
-              className="w-100 shadow-1-strong rounded mb-4 gallery-image"
-              alt="Waves at Sea"
-              onClick={(e) => handleImageClick(e.target.src)}
-            />
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <div className="lightbox-content">
-            <img src={selectedImage} alt="Enlarged view" />
-            <button className="close-button" onClick={() => setSelectedImage(null)}>×</button>
-          </div>
-        </div>
-      )}
-
-      <style jsx>{`
-        .gallery-container {
-          padding: 80px;
-          background: #000;
-          min-height: 100vh;
-        }
-
-        .gallery-title {
-          color: white;
-          text-align: center;
-          margin-bottom: 40px;
-          font-size: 2.5rem;
-          font-weight: bold;
-        }
-
-        .gallery-image {
-          cursor: pointer;
-          transition: transform 0.3s ease;
-        }
-
-        .gallery-image:hover {
-          transform: scale(1.02);
-        }
-
-        .lightbox {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.9);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-        }
-
-        .lightbox-content {
-          position: relative;
-          max-width: 90%;
-          max-height: 90vh;
-        }
-
-        .lightbox-content img {
-          max-width: 100%;
-          max-height: 90vh;
-          object-fit: contain;
-        }
-
-        .close-button {
-          position: absolute;
-          top: -40px;
-          right: -40px;
-          background: none;
-          border: none;
-          color: white;
-          font-size: 30px;
-          cursor: pointer;
-          padding: 10px;
-        }
-
-        .close-button:hover {
-          color: #ddd;
-        }
-
-        @media (max-width: 768px) {
-          .gallery-container {
-            padding: 40px 20px;
-          }
-
-          .gallery-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-          }
-
-          .close-button {
-            top: -30px;
-            right: -10px;
-          }
-        }
-      `}</style>
-    </>
+    <Container style={{ marginTop:'20rem' }}>
+      <h1 className="text-center mb-4 text-primary fw-bold">Image Gallery</h1>
+      <Row className="g-4 justify-content-center">
+        {imageLinks.map((url, index) => (
+          <Col key={index} xs={6} sm={4} md={3} lg={2}>
+            <Card className="border-0 shadow-lg overflow-hidden rounded-lg">
+              <Card.Img
+                variant="top"
+                src={url}
+                className="w-full h-auto rounded-lg transition-transform transform hover:scale-105"
+                alt={`Image ${index + 1}`}
+              />
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
+
+export default App;
