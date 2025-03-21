@@ -53,6 +53,13 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger Icon */}
+      {user ? (
+        <span className="navbar-text" style={{ color: 'white', fontFamily: 'cursive' }}>HELLO, {user.name}</span>
+
+        ) : (
+          <>
+          </>
+        )}
       <div
         className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -61,7 +68,6 @@ const Navbar = () => {
         <span></span>
         <span></span>
       </div>
-
       {/* Navigation Links */}
       <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
         <li>
@@ -73,7 +79,7 @@ const Navbar = () => {
        <div>
        {user ? (
           <div className="d-flex align-items-center gap-3" id="a">
-            <span className="navbar-text" style={{ color:'yellow' }}>Hello, {user.name}</span>
+            {/* <span className="navbar-text" style={{ color:'yellow' }}>Hello, {user.name}</span> */}
             <button
               onClick={handleLogout}
               className="btn btn-outline-danger"
@@ -644,4 +650,4 @@ export const Overlay = () => {
   );
 };
 
-export default Overlay;
+export default Overlay;
