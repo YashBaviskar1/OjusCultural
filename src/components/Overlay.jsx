@@ -2,17 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { usePlay } from "../contexts/Play";
 import { useNavigate } from "react-router-dom";
-import clogo from "../assets/clogo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { APIURL } from '../url.config';
+
+// Navbar Component
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
+
   const handleNavigation = (path) => {
     navigate(path);
-    setIsMobileMenuOpen(false); // Close menu after navigation
+    setIsMobileMenuOpen(false);
   };
+
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem('accessToken');
@@ -46,20 +49,21 @@ const Navbar = () => {
     setUser(null);
     navigate('/login');
   };
+
   return (
     <nav className="navbar fixed-top">
       <div className="navbar-brand">
         OJUS 25
       </div>
 
-      {/* Hamburger Icon */}
       {user ? (
-        <span className="navbar-text" style={{ color: 'white', fontFamily: 'cursive' }}>HELLO, {user.name}</span>
+        <span className="navbar-text" style={{ color: 'white', fontFamily: 'cursive' }}>
+          HELLO, {user.name}
+        </span>
+      ) : (
+        <></>
+      )}
 
-        ) : (
-          <>
-          </>
-        )}
       <div
         className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -68,7 +72,7 @@ const Navbar = () => {
         <span></span>
         <span></span>
       </div>
-      {/* Navigation Links */}
+
       <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
         <li>
           <button onClick={() => handleNavigation("/gallery")}>Gallery</button>
@@ -76,26 +80,24 @@ const Navbar = () => {
         <li>
           <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
         </li>
-       <div>
-       {user ? (
-          <div className="d-flex align-items-center gap-3" id="a">
-            {/* <span className="navbar-text" style={{ color:'yellow' }}>Hello, {user.name}</span> */}
-            <button
-              onClick={handleLogout}
-              className="btn btn-outline-danger"
-            >
-              Logout
-            </button>
-          </div>
-        ) : (
-          <li>
-            <button onClick={() => handleNavigation("/login")}>Login</button>
-          </li>
-        )}
-       </div>
+        <div>
+          {user ? (
+            <div className="d-flex align-items-center gap-3" id="a">
+              <button
+                onClick={handleLogout}
+                className="btn btn-outline-danger"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <li>
+              <button onClick={() => handleNavigation("/login")}>Login</button>
+            </li>
+          )}
+        </div>
       </ul>
 
-      {/* Navbar Styles */}
       <style jsx>{`
         .navbar {
           position: fixed;
@@ -145,7 +147,7 @@ const Navbar = () => {
           flex-direction: column;
           gap: 5px;
           cursor: pointer;
-          z-index: 2001; /* Above the menu */
+          z-index: 2001;
         }
 
         .hamburger span {
@@ -167,14 +169,13 @@ const Navbar = () => {
           transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Mobile Menu Styles */
         @media (max-width: 768px) {
           .hamburger {
             display: flex;
           }
 
-          #a{
-          flex-direction: column;
+          #a {
+            flex-direction: column;
           }
 
           .nav-links {
@@ -193,7 +194,7 @@ const Navbar = () => {
           }
 
           .nav-links.open {
-            right: 0; /* Slide in from right */
+            right: 0;
           }
 
           .nav-links button {
@@ -224,6 +225,7 @@ const Navbar = () => {
   );
 };
 
+// Overlay Component
 export const Overlay = () => {
   const { progress } = useProgress();
   const { play, end, setPlay, hasScroll } = usePlay();
@@ -261,12 +263,12 @@ export const Overlay = () => {
         const newProgress = oldProgress + 1;
         if (newProgress === 100) {
           clearInterval(timer);
-          setTimeout(() => setLoading(false), 500); // Add small delay before hiding
+          setTimeout(() => setLoading(false), 500);
           return 100;
         }
         return newProgress;
       });
-    }, 30); // Adjust timing as needed
+    }, 30);
 
     return () => clearInterval(timer);
   }, []);
@@ -328,8 +330,7 @@ export const Overlay = () => {
 
   return (
     <div
-      className={`overlay ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""
-        }`}
+      className={`overlay ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""}`}
     >
       <Navbar />
 
@@ -338,7 +339,11 @@ export const Overlay = () => {
       {progress === 100 && (
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           <h1 className="logo">
-            <img src="https://res.cloudinary.com/divma6tu0/image/upload/v1741954718/dept%20logos/qdutcbdds3ckshwobiiv.png" height={260} style={{ width: '100%' }} alt="Logo" />
+            <img
+              src="https://res.cloudinary.com/divma6tu0/image/upload/v1741954718/dept%20logos/qdutcbdds3ckshwobiiv.png"
+              alt="Logo"
+              className="logo-img"
+            />
           </h1>
           <p className="intro__scroll">Slowly Scroll to begin the journey</p>
           <button className="explore" onClick={() => setPlay(true)}>
@@ -359,7 +364,6 @@ export const Overlay = () => {
         <h2 className="section-title">Explore the Events</h2>
         <div className="container">
           <div className="row justify-content-center">
-            {/* Card 1: Informals */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("INFORMALS: 26H")}
@@ -372,7 +376,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* Card 2: Fine Arts */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("FINE ARTS: 5H")}
@@ -385,7 +388,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* Card 3: Performing Arts */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("PERFORMING ARTS: 2H")}
@@ -402,7 +404,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* Card 4: Recreational */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("RECREATIONAL: 3H")}
@@ -415,7 +416,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* Card 5: Pass N Go */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("PASS N GO: 1H")}
@@ -428,7 +428,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* Card 6: Theme Based */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("THEME BASED: 4H")}
@@ -441,7 +440,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* Card 7: Gaming & Sports */}
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("GAMING & SPORTS: 8H")}
@@ -457,7 +455,6 @@ export const Overlay = () => {
         </div>
       </div>
 
-      {/* Overlay Styles */}
       <style jsx>{`
         .overlay--hidden {
           pointer-events: none;
@@ -494,14 +491,13 @@ export const Overlay = () => {
             z-index: -1;
           }
 
-          /* Add dark gradient overlay */
           &::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 200px; /* Adjust this value to control the height of the dark overlay */
+            height: 200px;
             background: linear-gradient(to bottom, 
               rgba(0, 0, 0, 1) 60%,
               rgba(0, 0, 0, 0.5) 90%,
@@ -570,14 +566,19 @@ export const Overlay = () => {
           font-weight: bold;
         }
 
-        .logo-img {
-          width: 300px;
-          height: auto;
+        .logo {
+          padding-bottom: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
-        .logo{
-            padding-bottom: 70px;
-            }
+        .logo-img {
+          max-width: 80vw; /* Scale based on viewport width */
+          width: 100%;
+          height: auto; /* Maintain aspect ratio */
+          object-fit: contain; /* Prevent distortion */
+        }
 
         @media (max-width: 768px) {
           .auto-scroll-section {
@@ -618,11 +619,12 @@ export const Overlay = () => {
           }
 
           .logo-img {
-            width: 250px;
+            max-width: 70vw; /* Slightly smaller on tablets */
           }
-            .logo{
-            padding-bottom: 70px;
-            }
+
+          .logo {
+            padding-bottom: 50px;
+          }
         }
 
         @media (max-width: 480px) {
@@ -639,15 +641,24 @@ export const Overlay = () => {
           }
 
           .logo-img {
-            width: 200px;
+            max-width: 60vw; /* Even smaller on phones */
           }
-            .logo{
-            padding-bottom: 70px;
-            }
+
+          .logo {
+            padding-bottom: 40px;
+          }
+        }
+
+        /* Specific adjustments for iPhones in Safari */
+        @media only screen and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+          .logo-img {
+            max-width: 55vw; /* Fine-tune for iPhones */
+            height: auto;
+          }
         }
       `}</style>
     </div>
   );
 };
 
-export default Overlay;
+export default Overlay;
