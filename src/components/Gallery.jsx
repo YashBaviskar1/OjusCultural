@@ -43,7 +43,7 @@ const imageLinks = [
 
 function App() {
   return (
-    <Container style={{ marginTop:'20rem' }}>
+    <Container style={{ marginTop:'20rem', height: '125vh' }}>
       <h1 className="text-center mb-4 text-primary fw-bold">Image Gallery</h1>
       <Row className="g-4 justify-content-center">
         {imageLinks.map((url, index) => (
@@ -63,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
