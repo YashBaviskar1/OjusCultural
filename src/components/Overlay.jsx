@@ -574,10 +574,11 @@ export const Overlay = () => {
         }
 
         .logo-img {
-          max-width: 80vw; /* Scale based on viewport width */
-          width: 100%;
-          height: auto; /* Maintain aspect ratio */
+          /* Desktop default: Restore original behavior */
+          height: 260px;
+          width: auto; /* Let width adjust to maintain aspect ratio */
           object-fit: contain; /* Prevent distortion */
+          max-width: 100%; /* Ensure it doesn't overflow its container */
         }
 
         @media (max-width: 768px) {
@@ -619,7 +620,8 @@ export const Overlay = () => {
           }
 
           .logo-img {
-            max-width: 70vw; /* Slightly smaller on tablets */
+            height: auto; /* Switch to responsive scaling */
+            max-width: 70vw; /* Scale based on viewport width */
           }
 
           .logo {
