@@ -212,8 +212,8 @@ const eventsData = {
       "id": 22,
       "name": "Paintball",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "Collegeg turf",
-      "time": "3H",
+      "venue": "College Nets",
+      "time": "10AM to 5PM",
       "heads": "Arpit Chopda",
       "phone_no":"9022331132",
       "category": "Recreational",
@@ -235,8 +235,8 @@ const eventsData = {
       "id": 24,
       "name": "Human Foosball",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-1: Flagpost area} (V-2)",
-      "time": "3H",
+      "venue": "FLAGPOST",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Shailesh Mittapelli",
       "phone_no":"9970752318",
       "category": "Recreational",
@@ -450,7 +450,31 @@ const eventsData = {
       "category": "Performing Arts",
       "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590632/musicevent_edlvgm.jpg"
-    }
+    },
+    {
+      "id": 42,
+      "name": "Hells Tower",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "College Nets",
+      "time": "11AM to 5PM",
+      "heads": "Arpit Chopda",
+      "phone_no":"9022331132",
+      "category": "Recreational",
+      "description": "Giant Jenga – Stack it high, but don’t let it fall!",
+
+    },
+    {
+      "id": 43,
+      "name": "Catch the baton",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "Rancho",
+      "time": "11AM to 5PM",
+      "heads": "Arpit Chopda",
+      "phone_no":"9022331132",
+      "category": "Recreational",
+      "description": " Baton – A race that’s all about teamwork & speed!",
+
+    }
   ]
 }
 
