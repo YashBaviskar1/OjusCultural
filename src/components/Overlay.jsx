@@ -235,6 +235,48 @@ export const Overlay = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [hasSeenLoading, setHasSeenLoading] = useState(false);
+
+  // Check if the user has already seen the loading screen on the main page
+  useEffect(() => {
+    try {
+      const seenLoading = localStorage.getItem('hasSeenLoading');
+      if (seenLoading === 'true') {
+        setHasSeenLoading(true);
+        setLoading(false); // Skip the loading screen if already seen
+      }
+    } catch (error) {
+      console.error('Error accessing localStorage:', error);
+      // Fallback: show the loading screen if localStorage is unavailable
+      setHasSeenLoading(false);
+    }
+  }, []);
+
+  // Handle the loading progress animation for the first visit to the main page
+  useEffect(() => {
+    if (hasSeenLoading) return; // Skip if the user has already seen the loading screen
+
+    const timer = setInterval(() => {
+      setLoadingProgress((oldProgress) => {
+        const newProgress = oldProgress + 1;
+        if (newProgress === 100) {
+          clearInterval(timer);
+          setTimeout(() => {
+            setLoading(false);
+            try {
+              localStorage.setItem('hasSeenLoading', 'true'); // Mark as seen
+            } catch (error) {
+              console.error('Error setting localStorage:', error);
+            }
+          }, 500);
+          return 100;
+        }
+        return newProgress;
+      });
+    }, 30);
+
+    return () => clearInterval(timer);
+  }, [hasSeenLoading]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -256,22 +298,6 @@ export const Overlay = () => {
       }, 500);
     }
   }, [scrollAtBottom]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setLoadingProgress((oldProgress) => {
-        const newProgress = oldProgress + 1;
-        if (newProgress === 100) {
-          clearInterval(timer);
-          setTimeout(() => setLoading(false), 500);
-          return 100;
-        }
-        return newProgress;
-      });
-    }, 30);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const handleCardClick = (category) => {
     const categoryKey = category.split(":")[0].toLowerCase().replace(" ", "-");
@@ -428,18 +454,6 @@ export const Overlay = () => {
               </div>
             </div>
 
-            {/* <div
-              className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
-              onClick={() => handleCardClick("THEME BASED: 4H")}
-            >
-              <div className="card bg-dark text-white card-overlay">
-                <img src="/themebased.jpg" className="card-img" alt="THEME BASED: 4H" />
-                <div className="card-img-overlay d-flex justify-content-center align-items-center">
-                  <h5 className="card-title text-center">THEME BASED</h5>
-                </div>
-              </div>
-            </div> */}
-
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("GAMING & SPORTS: 8H")}
@@ -574,11 +588,10 @@ export const Overlay = () => {
         }
 
         .logo-img {
-          /* Desktop default: Restore original behavior */
           height: 260px;
-          width: auto; /* Let width adjust to maintain aspect ratio */
-          object-fit: contain; /* Prevent distortion */
-          max-width: 100%; /* Ensure it doesn't overflow its container */
+          width: auto;
+          object-fit: contain;
+          max-width: 100%;
         }
 
         @media (max-width: 768px) {
@@ -620,8 +633,8 @@ export const Overlay = () => {
           }
 
           .logo-img {
-            height: auto; /* Switch to responsive scaling */
-            max-width: 70vw; /* Scale based on viewport width */
+            height: auto;
+            max-width: 70vw;
           }
 
           .logo {
@@ -643,7 +656,7 @@ export const Overlay = () => {
           }
 
           .logo-img {
-            max-width: 60vw; /* Even smaller on phones */
+            max-width: 60vw;
           }
 
           .logo {
@@ -651,10 +664,9 @@ export const Overlay = () => {
           }
         }
 
-        /* Specific adjustments for iPhones in Safari */
         @media only screen and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
           .logo-img {
-            max-width: 55vw; /* Fine-tune for iPhones */
+            max-width: 55vw;
             height: auto;
           }
         }
