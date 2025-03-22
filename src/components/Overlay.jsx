@@ -80,6 +80,9 @@ const Navbar = () => {
         <li>
           <button onClick={() => handleNavigation("/schedule")}>Schedule</button>
         </li>
+        <li>
+          <button onClick={() => handleNavigation("/ghanekar")}>Ghanekar</button>
+        </li>
         <div>
           {user ? (
             <div className="d-flex align-items-center gap-3" id="a">

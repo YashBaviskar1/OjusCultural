@@ -17,6 +17,7 @@ import ProtectedRoute from "./components/ProctectedRoutes";
 import Schedule from "./components/Schedule";
 import Teams from "./components/Teams"
 import EventRegistration2 from "./components/EventRegistration2";
+import CurtainReveal from "./components/Ghanekar";
 function App() {
   const { play, end } = usePlay();
 
@@ -57,6 +58,7 @@ function App() {
         {/* Sub-cards page route */}
         <Route path="/events/:category" element={<SubCardsPage />} />
         <Route path="/events/:category/:eventId" element={<EventDetailPage />} />
+        <Route path="/ghanekar" element={<CurtainReveal />} />
         <Route path="/schedule" element={<GameMap />} />
         <Route path="/login" element = {<Login />} />
         <Route path="/gallery" element={<MyGallery />} />
