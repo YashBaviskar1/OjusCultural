@@ -16,6 +16,7 @@ import ComingSoon from "./components/ComingSoon";
 import ProtectedRoute from "./components/ProctectedRoutes";
 import Schedule from "./components/Schedule";
 import Teams from "./components/Teams"
+import EventRegistration2 from "./components/EventRegistration2";
 function App() {
   const { play, end } = usePlay();
 
@@ -63,6 +64,7 @@ function App() {
         <Route path="/ghanekar" element = {<ComingSoon />} />
         <Route path="/schedule" element = {<Schedule />} />
         <Route path = "/team" element = {<Teams />}/>
+        <Route path = "/register_latent" element = { < EventRegistration2 /> } />
         <Route element={<ProtectedRoute />}>
           <Route path="/register" element={<EventRegistration />} />
         </Route>
