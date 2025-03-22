@@ -45,7 +45,7 @@ const eventsData = {
     {
       "id": 5,
       "name": "IPL AUCTION",
-      "date": "2025-03-10T18:00:00Z",
+      "date": "2025-03-24T18:00:00Z",
       "venue": " Day-1: 201 / Day-2: 112(seminar hall)} ",
       "time": "11:00 AM to 3:00 PM / 11:00 AM to 4:00 PM",
       "heads": "Harshal Patil , Soham Shivangan",
