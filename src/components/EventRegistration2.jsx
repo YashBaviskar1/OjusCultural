@@ -47,7 +47,20 @@ const EventRegistration2 = () => {
       navigate("/login");
       return;
     }
-
+  
+    // Construct the request body dynamically
+    const requestBody = {
+      event: 3,
+      email: email,
+      phone_no: phone,
+      performance_description: performanceDescription,
+    };
+  
+    // Add google_drive_link only if it's provided
+    if (driveLink.trim() !== "") {
+      requestBody.google_drive_link = driveLink;
+    }
+  
     try {
       const response = await fetch(`${APIURL}/api/events/register/`, {
         method: "POST",
@@ -55,15 +68,9 @@ const EventRegistration2 = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
-        body: JSON.stringify({
-          event: 3, 
-          email : email,
-          phone_no : phone,
-          performance_description: performanceDescription,
-          google_drive_link: driveLink,
-        }),
+        body: JSON.stringify(requestBody),
       });
-
+  
       if (response.ok) {
         alert("Registration successful for the event");
       } else {
@@ -75,6 +82,7 @@ const EventRegistration2 = () => {
       alert("Registration failed due to network error");
     }
   };
+  
 
   return (
     <div 
@@ -117,7 +125,7 @@ const EventRegistration2 = () => {
         </div>
 
         <div className="mb-3">
-          <input type="text" className="form-control" placeholder="Google Drive Link of your perfermance" value={driveLink} onChange={e => setDriveLink(e.target.value)} />
+          <input type="text" className="form-control" placeholder="Google Drive Link of your background(Optional)" value={driveLink} onChange={e => setDriveLink(e.target.value)} />
         </div>
 
         <button className="btn btn-dark w-100 py-2" onClick={handleRegistration}>
