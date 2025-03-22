@@ -154,9 +154,9 @@ const eventsData = {
 	    {
       "id": 14,
       "name": "Facemask & Face Painting",
-      "date": "2025-03-25T18:00:00Z",
+      "date": "2025-03-24T18:00:00Z",
       "venue": "004",
-      "time": "5H",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Anisha Tiwari",
       "phone_no":"9967488072",
       "category": "Fine Arts",
@@ -167,7 +167,7 @@ const eventsData = {
       "name": "Braiding",
       "date": "2025-03-24T18:00:00Z",
       "venue": "004",
-      "time": "5H",
+      "time": "11:00 AM to  3:00 PM",
       "heads": "Sajni Shetty",
       "phone_no":"6361869221",
       "category": "Fine Arts",
@@ -175,25 +175,25 @@ const eventsData = {
     },
     {
       "id": 16,
-      "name": "Bracelet Making, Keychain Making, Earrings",
-      "date": "2025-03-24T18:00:00Z",
+      "name": "Canvas Painting",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "004",
       "time": "5H",
-      "heads": "Sanskruti Shelke, Radhika Lakhani",
-      "phone_no":"9076157274",
+      "heads": "Radhika Lakhani",
+      "phone_no":"6381844986",
       "category": "Fine Arts",
       "description": "A craft-based event where participants create bracelets, keychains, and earrings."
     },
     {
       "id": 17,
-      "name": "Canvas Painting",
+      "name": "Cosmic Chains",
       "date": "2025-03-24T18:00:00Z",
       "venue": "004",
-      "time": "5H",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Vaishanavi Jadhav",
-      "phone_no":"6381844986",
+      "phone_no":"9076157274",
       "category": "Fine Arts",
-      "description": "A painting event that allows participants to express creativity on canvas."
+      "description": "Cosmic Chains – Craft your own style statement!."
     },
     {
       "id": 21,
@@ -452,6 +452,7 @@ const eventsData = {
     }
   ]
 }
+
 
 // Transform events data into subCardData structure (image removed)
 const subCardData = eventsData.events.reduce((acc, event) => {
