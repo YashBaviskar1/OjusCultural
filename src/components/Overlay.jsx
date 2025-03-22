@@ -428,7 +428,7 @@ export const Overlay = () => {
               </div>
             </div>
 
-            <div
+            {/* <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
               onClick={() => handleCardClick("THEME BASED: 4H")}
             >
@@ -438,7 +438,7 @@ export const Overlay = () => {
                   <h5 className="card-title text-center">THEME BASED</h5>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div
               className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3"
