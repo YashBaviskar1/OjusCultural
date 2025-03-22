@@ -125,7 +125,7 @@ const EventRegistration2 = () => {
         </div>
 
         <div className="mb-3">
-          <input type="text" className="form-control" placeholder="Google Drive Link of your background(Optional)" value={driveLink} onChange={e => setDriveLink(e.target.value)} />
+          <input type="text" className="form-control" placeholder="Google Drive Link of your background (Optional)" value={driveLink} onChange={e => setDriveLink(e.target.value)} />
         </div>
 
         <button className="btn btn-dark w-100 py-2" onClick={handleRegistration}>
