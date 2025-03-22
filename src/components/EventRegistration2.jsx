@@ -49,7 +49,7 @@ const EventRegistration2 = () => {
     }
 
     try {
-      const response = await fetch(`${APIURL}api/events/register/`, {
+      const response = await fetch(`${APIURL}/api/events/register/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -117,14 +117,14 @@ const EventRegistration2 = () => {
         </div>
 
         <div className="mb-3">
-          <input type="text" className="form-control" placeholder="Google Drive Link" value={driveLink} onChange={e => setDriveLink(e.target.value)} />
+          <input type="text" className="form-control" placeholder="Google Drive Link of your perfermance" value={driveLink} onChange={e => setDriveLink(e.target.value)} />
         </div>
 
         <button className="btn btn-dark w-100 py-2" onClick={handleRegistration}>
           Register
         </button>
 
-        <p className="text-danger fw-bold mt-3">Make sure your file in Google Drive is visible to anyone with the link</p>
+        <p className="text-danger fw-bold mt-3">(Make sure your file in Google Drive is visible to anyone with the link)</p>
       </div>
     </div>
   );

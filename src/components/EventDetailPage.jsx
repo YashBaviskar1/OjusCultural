@@ -431,9 +431,9 @@ const eventsData = {
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
-  const reg = []
-  // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA", "APSIT's Got Latent"]
-  // const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
+ // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA", "APSIT's Got Latent"]
+  const reg = ["MR & MRS APSIT FASHION SHOW", "APSIT's Got Latent"]
+  const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
     (event) => event.category.toLowerCase().replace(" ", "-") === category
@@ -467,7 +467,7 @@ const EventDetailPage = () => {
     if (isApsitLatent) {
       navigate("/register_latent", { 
         state: { 
-          eventId: event.backend_id || event.id,
+          eventId: 3,
           eventName: event.name
         }
       });
