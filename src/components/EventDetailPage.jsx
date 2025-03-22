@@ -184,7 +184,7 @@ const eventsData = {
     },
     {
       "id": 21,
-      "backend_id" : 22,
+      "backend_id" : 3,
       "name": "APSIT's Got Latent",
       "date": "2025-03-24T18:00:00Z",
       "venue": "008",
@@ -431,7 +431,7 @@ const eventsData = {
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
-  const reg = ["MR & MRS APSIT FASHION SHOW"]
+  const reg = []
   // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA", "APSIT's Got Latent"]
   // const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   // Filter events by category and get the event by index
