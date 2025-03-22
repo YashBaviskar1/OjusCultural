@@ -56,7 +56,7 @@ const EventRegistration2 = () => {
           Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({
-          event: 22, 
+          event: 3, 
           email : email,
           phone_no : phone,
           performance_description: performanceDescription,
