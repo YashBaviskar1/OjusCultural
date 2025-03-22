@@ -14,7 +14,8 @@ const eventsData = {
       "heads": "Mitali Nerpagar ",
       "phone_no": "8355839204",
       "category": "Informals",
-      "description": "A grand fashion show event."
+      "description": "A grand fashion show event.",
+      "src" :  "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588976/apsit_oopryt.jpg"
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@ const eventsData = {
       "heads": "Nayan Pingat (Head)",
       "phone_no": "8767369835",
       "category": "Informals",
-      "description": "A high-energy dance competition."
+      "description": "A high-energy dance competition.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588586/justdance_av2fo2.jpg"
     },
     {
       "id": 3,
@@ -36,7 +38,8 @@ const eventsData = {
       "heads": "Pawan Boda",
       "phone_no":"9082747148",
       "category": "Informals",
-      "description": "A fun and interactive karaoke event."
+      "description": "A fun and interactive karaoke event.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588586/karaoke_i8pqnl.jpg"
     },
     {
       "id": 5,
@@ -47,7 +50,8 @@ const eventsData = {
       "heads": "Harshal Patil , Soham Shivangan",
       "phone_no":"9222474104, 9767205460",
       "category": "Informals",
-      "description": "A simulated IPL auction event."
+      "description": "A simulated IPL auction event.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588977/auction_oszthd.jpg"
     },
     {
       "id": 6,
@@ -58,7 +62,8 @@ const eventsData = {
       "heads": "Ayush Kanase , Shivam Patil",
       "phone_no":"9867228830, 7058221605",
       "category": "Informals",
-      "description": "A mystery-solving event."
+      "description": "A mystery-solving event.",
+      "src" :  "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742588977/andhadhun_qgh65i.jpg"
     },
     {
       "id": 7,
@@ -69,7 +74,8 @@ const eventsData = {
       "heads": "PRANITI AHIRE, ABBAS SANGAMESHWARI",
       "phone_no":"8097092120, 8591246669",
       "category": "Informals",
-      "description": "A challenging escape room experience."
+      "description": "A challenging escape room experience.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589121/escaperoom_y2slat.jpg"
     },
     {
       "id": 8,
@@ -80,7 +86,8 @@ const eventsData = {
       "heads": "Swaraj Paranjape, Ojas patrikar",
       "phone_no":"9920131934, 8085846892",
       "category": "Informals",
-      "description": "A series of competitive challenges."
+      "description": "A series of competitive challenges.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589312/squid_bkva6f.jpg"
     },
     {
       "id": 9,
@@ -92,7 +99,8 @@ const eventsData = {
       "heads": "Vaishanvi Bhojak, Aanya Singh, Rutu Desai",
       "phone_no":"8591067050, 9324357482, 7448168628",
       "category": "Informals",
-      "description": "An adventurous treasure hunt game. one member has to create a team and others have to join it!"
+      "description": "An adventurous treasure hunt game.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589478/hunt_nbfeev.jpg"
     },
     {
       "id": 10,
@@ -103,7 +111,8 @@ const eventsData = {
       "heads": "Ritesh Pandey, Nikhil Sawant, Prathamesh Pawar",
       "phone_no":"9960435308, 9137369097, 8169605420",
       "category": "Informals",
-      "description": "A funfair with various activities."
+      "description": "A funfair with various activities.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589388/funfair_lkvcua.jpg"
     },
     {
       "id": 11,
@@ -114,7 +123,8 @@ const eventsData = {
       "heads": "Manthan More , Unnati Jain ",
       "phone_no":"7020834048, 9320005645",
       "category": "Informals",
-      "description": "A fun and engaging team game."
+      "description": "A fun and engaging team game.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589591/couch_pdpmef.jpg"
     },
     {
       "id": 12,
@@ -125,7 +135,8 @@ const eventsData = {
       "heads": "SONIKA SAWANT, PARSHV SHAH, PRANAV SATHE",
       "phone_no":"8657434372, 9921617179, 9067253739",
       "category": "Informals",
-      "description": "A thrilling horror experience."
+      "description": "A thrilling horror experience.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589532/horror_goj6ec.jpg"
     },
     {
       "id": 13,
@@ -136,14 +147,15 @@ const eventsData = {
       "heads": "Lucky Sharma (Head)",
       "phone_no":"9670240625",
       "category": "Informals",
-      "description": "A real-life version of Rocket League."
+      "description": "A real-life version of Rocket League.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589637/rocket_1_h90m2c.jpg"
     },
 	    {
       "id": 14,
       "name": "Facemask & Face Painting",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 004} (V-1)",
-      "time": "5H",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "004",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Anisha Tiwari",
       "phone_no":"9967488072",
       "category": "Fine Arts",
@@ -152,9 +164,9 @@ const eventsData = {
     {
       "id": 15,
       "name": "Braiding",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 004} (V-1)",
-      "time": "5H",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "004",
+      "time": "11:00 AM to  3:00 PM",
       "heads": "Sajni Shetty",
       "phone_no":"6361869221",
       "category": "Fine Arts",
@@ -162,25 +174,25 @@ const eventsData = {
     },
     {
       "id": 16,
-      "name": "Bracelet Making, Keychain Making, Earrings",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 004}",
+      "name": "Canvas Painting",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "004",
       "time": "5H",
-      "heads": "Sanskruti Shelke, Radhika Lakhani",
-      "phone_no":"9076157274",
+      "heads": "Radhika Lakhani",
+      "phone_no":"6381844986",
       "category": "Fine Arts",
       "description": "A craft-based event where participants create bracelets, keychains, and earrings."
     },
     {
       "id": 17,
-      "name": "Canvas Painting",
-      "date": "2025-03-10T18:00:00Z",
-      "venue": "{Day-1,2: 004} (V-1)",
-      "time": "5H",
+      "name": "Cosmic Chains",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "004",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Vaishanavi Jadhav",
-      "phone_no":"6381844986",
+      "phone_no":"9076157274",
       "category": "Fine Arts",
-      "description": "A painting event that allows participants to express creativity on canvas."
+      "description": "Cosmic Chains – Craft your own style statement!."
     },
     {
       "id": 21,
@@ -192,23 +204,25 @@ const eventsData = {
       "heads": "Swayam Sangave, Piyush Mahankal",
       "phone_no":"8087619562, 7758854971",
       "category": "Performing Arts",
-      "description": "A talent show where participants showcase their hidden talents."
+      "description": "A talent show where participants showcase their hidden talents.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590453/latentapsit_n5oryt.jpg"
     },
 	{
       "id": 22,
       "name": "Paintball",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-1,2: College Turf} (V-2)",
+      "venue": "Collegeg turf",
       "time": "3H",
       "heads": "Arpit Chopda",
       "phone_no":"9022331132",
       "category": "Recreational",
-      "description": "A thrilling paintball game experience."
+      "description": "A thrilling paintball game experience.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590341/paintball_lctcw3.jpg"
     },
     {
       "id": 23,
       "name": "Giant Jenga",
-      "date": "2025-03-24T18:00:00Z",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "{Day-1,2: Flagpost area}",
       "time": "3H",
       "heads": "Chinmay Sawant",
@@ -219,7 +233,7 @@ const eventsData = {
     {
       "id": 24,
       "name": "Human Foosball",
-      "date": "2025-03-10T18:00:00Z",
+      "date": "2025-03-24T18:00:00Z",
       "venue": "{Day-1: Flagpost area} (V-2)",
       "time": "3H",
       "heads": "Shailesh Mittapelli",
@@ -230,7 +244,7 @@ const eventsData = {
 	{
       "id": 25,
       "name": "Jenga",
-      "date": "2025-03-10T18:00:00Z",
+      "date": "2025-03-24T18:00:00Z",
       "venue": "{Day-1,2: Nescafe} (V-2)",
       "time": "1H",
       "heads": "Darshan Jain",
@@ -246,7 +260,8 @@ const eventsData = {
       "phone_no":"7045464624, 7021344084",
       "heads": "Vinit Rane, Chinmay Sawant",
       "category": "Informals",
-      "description": "An interactive event based on choices and fate."
+      "description": "An interactive event based on choices and fate.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590221/doors_hup7xb.jpg"
     },
     {
       "id": 27,
@@ -257,39 +272,42 @@ const eventsData = {
       "heads": "Divya Keni, Abhirami",
       "phone_no":"9324547628, 8691960219",
       "category": "Informals",
-      "description": "A thrilling event exploring the themes of heaven and hell."
+      "description": "A thrilling event exploring the themes of heaven and hell.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590152/hellheaven_alm9ew.jpg"
     }, 
 	{
       "id": 28,
-	  "backend_id" : 5,
+	  "backend_id" :5,
       "name": "BGMI",
-      "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-2: 201}",
-      "time": "8H",
-      "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "201",
+      "time": "11AM to 4 PM",
+      "heads": "Hrishikesh Mishra",
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
-      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament. one member has to create a team and others have to join it!"
+      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589957/bgmi_zboyqh.jpg"
     },
     {
       "id": 29,
 	  "backend_id" : 4,
       "name": "Valorant",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-1: 301}",
-      "time": "8H",
+      "venue": "301",
+      "time": "11 AM to 5 PM ",
       "heads": "Karan Vethody, Jay Patil",
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
-      "description": "A high-stakes Valorant eSports competition. one member has to create a team and others have to join it!"
+      "description": "A high-stakes Valorant eSports competition.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589959/valo_udtbmu.jpg"
     },
     {
       "id": 30,
       "name": "Scatterball",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-1,2: BCR} (Full Day) (V-4)",
-      "time": "Full Day",
-      "heads": "Hitesh Kesharwani, Yash Madhavi (Co-head)",
+      "venue": "BCR",
+      "time": "10:00 AM to 5:00 PM",
+      "heads": "Ritesh Kesharwani",
       "phone_no":"9834791967",
       "category": "Gaming & Sports",
       "description": "A fast-paced, action-packed ball game."
@@ -299,22 +317,25 @@ const eventsData = {
       "name": "FIFA",
 	  "backend_id" : 37,
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-2: 301}",
-      "time": "8H",
+      "venue": "302",
+      "time": "11 AM to 5 PM ",
       "heads": "Prakhar Asthana",
+	  "phone_no":"9554958857",
       "category": "Gaming & Sports",
-      "description": "A FIFA video game competition."
+      "description": "A FIFA video game competition.",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589880/fifa_fiwupq.jpg"
     },
     {
       "id": 32,
       "name": "Neon Cricket",
-      "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-1,2: 206} (V-1)",
-      "time": "8H",
-      "heads": "Nishant Rathod, Sandesh Sarode, Lavanya Bakre (Co-head)",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "206",
+      "time": "10:00AM",
+      "heads": "Sandesh Sarode, Nishant Rathod",
       "phone_no":"8850409126, 9021677152",
       "category": "Gaming & Sports",
-      "description": "A unique cricket game played under neon lights."
+      "description": "A unique cricket game played under neon lights.",
+	  "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590069/neoncricket_d8q7ut.jpg"
     },
     {
       "id": 33,
@@ -380,7 +401,8 @@ const eventsData = {
       "heads": "Vivek Behra",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+	  "src" : "https://res.cloudinary.com/dth2rinzf/image/upload/v1742594144/harmony_hive_mgohrx.jpg"
     },
    {
       "id": 38,
@@ -391,7 +413,8 @@ const eventsData = {
       "heads": "Pranav Sathe",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+	  "src" : "https://res.cloudinary.com/dth2rinzf/image/upload/v1742594241/dance_ljdjoy.jpg"
     },
    {
       "id": 39,
@@ -424,10 +447,13 @@ const eventsData = {
       "heads": "Pranav Sathe",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590632/musicevent_edlvgm.jpg"
     }
   ]
 }
+
+
 const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();

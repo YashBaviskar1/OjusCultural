@@ -154,9 +154,9 @@ const eventsData = {
 	    {
       "id": 14,
       "name": "Facemask & Face Painting",
-      "date": "2025-03-25T18:00:00Z",
+      "date": "2025-03-24T18:00:00Z",
       "venue": "004",
-      "time": "5H",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Anisha Tiwari",
       "phone_no":"9967488072",
       "category": "Fine Arts",
@@ -167,7 +167,7 @@ const eventsData = {
       "name": "Braiding",
       "date": "2025-03-24T18:00:00Z",
       "venue": "004",
-      "time": "5H",
+      "time": "11:00 AM to  3:00 PM",
       "heads": "Sajni Shetty",
       "phone_no":"6361869221",
       "category": "Fine Arts",
@@ -175,25 +175,25 @@ const eventsData = {
     },
     {
       "id": 16,
-      "name": "Bracelet Making, Keychain Making, Earrings",
-      "date": "2025-03-24T18:00:00Z",
+      "name": "Canvas Painting",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "004",
       "time": "5H",
-      "heads": "Sanskruti Shelke, Radhika Lakhani",
-      "phone_no":"9076157274",
+      "heads": "Radhika Lakhani",
+      "phone_no":"6381844986",
       "category": "Fine Arts",
       "description": "A craft-based event where participants create bracelets, keychains, and earrings."
     },
     {
       "id": 17,
-      "name": "Canvas Painting",
+      "name": "Cosmic Chains",
       "date": "2025-03-24T18:00:00Z",
       "venue": "004",
-      "time": "5H",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Vaishanavi Jadhav",
-      "phone_no":"6381844986",
+      "phone_no":"9076157274",
       "category": "Fine Arts",
-      "description": "A painting event that allows participants to express creativity on canvas."
+      "description": "Cosmic Chains – Craft your own style statement!."
     },
     {
       "id": 21,
@@ -212,8 +212,8 @@ const eventsData = {
       "id": 22,
       "name": "Paintball",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "Collegeg turf",
-      "time": "3H",
+      "venue": "College Nets",
+      "time": "10AM to 5PM",
       "heads": "Arpit Chopda",
       "phone_no":"9022331132",
       "category": "Recreational",
@@ -235,8 +235,8 @@ const eventsData = {
       "id": 24,
       "name": "Human Foosball",
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-1: Flagpost area} (V-2)",
-      "time": "3H",
+      "venue": "FLAGPOST",
+      "time": "11:00 AM to 3:00 PM",
       "heads": "Shailesh Mittapelli",
       "phone_no":"9970752318",
       "category": "Recreational",
@@ -280,10 +280,10 @@ const eventsData = {
       "id": 28,
 	  "backend_id" :5,
       "name": "BGMI",
-      "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-2: 201}",
-      "time": "8H",
-      "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "201",
+      "time": "11AM to 4 PM",
+      "heads": "Hrishikesh Mishra",
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
       "description": "A competitive Battlegrounds Mobile India (BGMI) tournament.",
@@ -295,7 +295,7 @@ const eventsData = {
       "name": "Valorant",
       "date": "2025-03-24T18:00:00Z",
       "venue": "301",
-      "time": "full day",
+      "time": "11 AM to 5 PM ",
       "heads": "Karan Vethody, Jay Patil",
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
@@ -307,8 +307,8 @@ const eventsData = {
       "name": "Scatterball",
       "date": "2025-03-24T18:00:00Z",
       "venue": "BCR",
-      "time": "Full Day",
-      "heads": "Hitesh Kesharwani, Yash Madhavi (Co-head)",
+      "time": "10:00 AM to 5:00 PM",
+      "heads": "Ritesh Kesharwani",
       "phone_no":"9834791967",
       "category": "Gaming & Sports",
       "description": "A fast-paced, action-packed ball game."
@@ -318,9 +318,10 @@ const eventsData = {
       "name": "FIFA",
 	  "backend_id" : 37,
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-2: 301}",
-      "time": "8H",
+      "venue": "302",
+      "time": "11 AM to 5 PM ",
       "heads": "Prakhar Asthana",
+	  "phone_no":"9554958857",
       "category": "Gaming & Sports",
       "description": "A FIFA video game competition.",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589880/fifa_fiwupq.jpg"
@@ -328,10 +329,10 @@ const eventsData = {
     {
       "id": 32,
       "name": "Neon Cricket",
-      "date": "2025-03-24T18:00:00Z",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "206",
       "time": "10:00AM",
-      "heads": "Nishant Rathod, Sandesh Sarode",
+      "heads": "Sandesh Sarode, Nishant Rathod",
       "phone_no":"8850409126, 9021677152",
       "category": "Gaming & Sports",
       "description": "A unique cricket game played under neon lights.",
@@ -449,9 +450,35 @@ const eventsData = {
       "category": "Performing Arts",
       "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742590632/musicevent_edlvgm.jpg"
-    }
+    },
+    {
+      "id": 42,
+      "name": "Hells Tower",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "College Nets",
+      "time": "11AM to 5PM",
+      "heads": "Arpit Chopda",
+      "phone_no":"9022331132",
+      "category": "Recreational",
+      "description": "Giant Jenga – Stack it high, but don’t let it fall!",
+
+    },
+    {
+      "id": 43,
+      "name": "Catch the baton",
+      "date": "2025-03-24T18:00:00Z",
+      "venue": "Rancho",
+      "time": "11AM to 5PM",
+      "heads": "Arpit Chopda",
+      "phone_no":"9022331132",
+      "category": "Recreational",
+      "description": " Baton – A race that’s all about teamwork & speed!",
+
+    }
   ]
 }
+
+
 
 // Transform events data into subCardData structure (image removed)
 const subCardData = eventsData.events.reduce((acc, event) => {
