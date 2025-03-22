@@ -84,7 +84,7 @@ const eventsData = {
     },
     {
       "id": 9,
-	  "backend_id" : 36,
+	  "backend_id" : 6,
       "name": "TREASURE HUNT",
       "date": "2025-03-24T18:00:00Z",
       "venue": "203",
@@ -261,7 +261,7 @@ const eventsData = {
     }, 
 	{
       "id": 28,
-	  "backend_id" : 35,
+	  "backend_id" : 5,
       "name": "BGMI",
       "date": "2025-03-24T18:00:00Z",
       "venue": "{Day-2: 201}",
@@ -273,7 +273,7 @@ const eventsData = {
     },
     {
       "id": 29,
-	  "backend_id" : 34,
+	  "backend_id" : 4,
       "name": "Valorant",
       "date": "2025-03-24T18:00:00Z",
       "venue": "{Day-1: 301}",
@@ -432,8 +432,8 @@ const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
  // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA", "APSIT's Got Latent"]
-  const reg = ["MR & MRS APSIT FASHION SHOW", "APSIT's Got Latent"]
-  const teams = ["BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
+  const reg = ["MR & MRS APSIT FASHION SHOW", "APSIT's Got Latent", "BGMI", "VALORANT", "TREASURE HUNT"]
+  const teams = ["BGMI", "VALORANT", "TREASURE HUNT"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
     (event) => event.category.toLowerCase().replace(" ", "-") === category
@@ -501,6 +501,7 @@ const EventDetailPage = () => {
         } else if (data.error === "Already registered for this event" && isTeamEvent) {
           // Redirect to team display page for team events
           console.log("Here in teams")
+          console.log(event)
           navigate("/team", { 
             state: { 
               eventId: event.backend_id || event.id,
