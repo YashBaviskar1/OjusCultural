@@ -280,10 +280,10 @@ const eventsData = {
       "id": 28,
 	  "backend_id" :5,
       "name": "BGMI",
-      "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-2: 201}",
-      "time": "8H",
-      "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
+      "date": "2025-03-25T18:00:00Z",
+      "venue": "201",
+      "time": "11AM to 4 PM",
+      "heads": "Hrishikesh Mishra",
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
       "description": "A competitive Battlegrounds Mobile India (BGMI) tournament.",
@@ -295,7 +295,7 @@ const eventsData = {
       "name": "Valorant",
       "date": "2025-03-24T18:00:00Z",
       "venue": "301",
-      "time": "full day",
+      "time": "11 AM to 5 PM ",
       "heads": "Karan Vethody, Jay Patil",
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
@@ -307,8 +307,8 @@ const eventsData = {
       "name": "Scatterball",
       "date": "2025-03-24T18:00:00Z",
       "venue": "BCR",
-      "time": "Full Day",
-      "heads": "Hitesh Kesharwani, Yash Madhavi (Co-head)",
+      "time": "10:00 AM to 5:00 PM",
+      "heads": "Ritesh Kesharwani",
       "phone_no":"9834791967",
       "category": "Gaming & Sports",
       "description": "A fast-paced, action-packed ball game."
@@ -318,9 +318,10 @@ const eventsData = {
       "name": "FIFA",
 	  "backend_id" : 37,
       "date": "2025-03-24T18:00:00Z",
-      "venue": "{Day-2: 301}",
-      "time": "8H",
+      "venue": "302",
+      "time": "11 AM to 5 PM ",
       "heads": "Prakhar Asthana",
+	  "phone_no":"9554958857",
       "category": "Gaming & Sports",
       "description": "A FIFA video game competition.",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589880/fifa_fiwupq.jpg"
@@ -328,10 +329,10 @@ const eventsData = {
     {
       "id": 32,
       "name": "Neon Cricket",
-      "date": "2025-03-24T18:00:00Z",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "206",
       "time": "10:00AM",
-      "heads": "Nishant Rathod, Sandesh Sarode",
+      "heads": "Sandesh Sarode, Nishant Rathod",
       "phone_no":"8850409126, 9021677152",
       "category": "Gaming & Sports",
       "description": "A unique cricket game played under neon lights.",
@@ -452,6 +453,7 @@ const eventsData = {
     }
   ]
 }
+
 
 
 // Transform events data into subCardData structure (image removed)
