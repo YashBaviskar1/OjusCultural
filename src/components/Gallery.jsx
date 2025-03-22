@@ -44,7 +44,7 @@ const imageLinks = [
 function App() {
   return (
     <Container style={{ marginTop:'20rem', height: '125vh' }}>
-      <h1 className="text-center mb-4 text-primary fw-bold">Image Gallery</h1>
+      <h1 className="text-center mb-4 text-primary fw-bold">Memories</h1>
       <Row className="g-4 justify-content-center">
         {imageLinks.map((url, index) => (
           <Col key={index} xs={6} sm={4} md={3} lg={2}>

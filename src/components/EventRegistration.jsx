@@ -41,9 +41,11 @@ const EventRegistration = () => {
 
   const Events = [
     { id: 1, name: "MR & MRS APSIT FASHION SHOW" },
-    { id: 29, name: "BGMI" }
+    { id: 4, name: "VALORANT" },
+    { id: 5, name: "BGMI" },
+    { id: 6, name: "TREASURE HUNT" },
   ];
-
+  const teams = ["BGMI", "VALORANT", "TREASURE HUNT"]
   const handleRegistration = async () => {
     const accessToken = localStorage.getItem("accessToken");
     if (!accessToken) {
@@ -51,13 +53,13 @@ const EventRegistration = () => {
       navigate("/login");
       return;
     }
-
+  
     const event = Events.find(e => e.name === eventName);
     if (!event) {
       console.log("Event not found!");
       return;
     }
-
+  
     try {
       const response = await fetch(`${APIURL}/api/events/register/`, {
         method: 'POST',
@@ -71,10 +73,18 @@ const EventRegistration = () => {
           phone_no: phone
         })
       });
-
+  
       if (response.ok) {
         alert("Registration successful for the event");
         console.log(`Registered Event: ${eventName}, Event ID: ${event.id}`);
+        if (teams.some(teamName => teamName.toLowerCase() === event.name.toLowerCase())) {
+          navigate("/team", { 
+            state: { 
+              eventId: event.id,
+              eventName: event.name
+            }
+          });
+        }
       } else {
         const errorData = await response.json();
         alert(`Registration failed: ${errorData.message || "Unknown error"}`);
@@ -84,7 +94,6 @@ const EventRegistration = () => {
       alert("Registration failed due to network error");
     }
   };
-
   return (
     <div 
       style={{ 

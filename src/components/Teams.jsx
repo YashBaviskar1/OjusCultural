@@ -11,6 +11,15 @@ const Teams = () => {
   const [error, setError] = useState(null);
   const [teamCode, setTeamCode] = useState("");
   const [teamName, setTeamName] = useState("");
+  
+  const Events = [
+    { id: 1, name: "MR & MRS APSIT FASHION SHOW" },
+    { id: 4, name: "VALORANT" },
+    { id: 5, name: "BGMI" },
+    { id: 6, name: "TREASURE HUNT" },
+  ];
+
+  const currentEvent = Events.find(event => event.id === eventId)?.name || "Unknown Event";
 
   useEffect(() => {
     const fetchTeamStatus = async () => {
@@ -51,7 +60,7 @@ const Teams = () => {
       }
 
       const teamData = await response.json();
-      setTeamStatus(prev => ({
+      setTeamStatus((prev) => ({
         ...prev,
         in_team: true,
         team: teamData,
@@ -80,7 +89,7 @@ const Teams = () => {
       }
 
       const teamData = await response.json();
-      setTeamStatus(prev => ({
+      setTeamStatus((prev) => ({
         ...prev,
         in_team: true,
         team: teamData,
@@ -96,19 +105,31 @@ const Teams = () => {
 
   return (
     <div
-      className="container d-flex flex-column align-items-center justify-content-center min-vh-100"
+      className="d-flex flex-column align-items-center justify-content-center min-vh-100"
       style={{
-        backgroundImage: "url('https://example.com/background.jpg')",
+        width: "100vw",
+        height: "100vh",
+        backgroundImage:
+          "url('https://images.squarespace-cdn.com/content/v1/571a8a1ab6aa6012a71e3971/1547218070587-DSKXEM4CF22JXMAHTDZC/Craft_Republic_header_background.jpg')",
         backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
+      <h2 className="text-white mb-4">Game: {currentEvent}</h2>
       {teamStatus.in_team ? (
-        <div className="card p-4 shadow-lg" style={{ maxWidth: "600px" }}>
+        <div className="card p-4 shadow-lg" style={{ maxWidth: "600px", background: "white" }}>
           <h2>Team Details</h2>
           <div className="text-start">
-            <p><strong>Name:</strong> {teamStatus.team.name}</p>
-            <p><strong>Code:</strong> {teamStatus.team.code}</p>
-            <p><strong>Leader:</strong> {teamStatus.team.leader}</p>
+            <p>
+              <strong>Name:</strong> {teamStatus.team.name}
+            </p>
+            <p>
+              <strong>Code:</strong> {teamStatus.team.code}
+            </p>
+            <p>
+              <strong>Leader:</strong> {teamStatus.team.leader}
+            </p>
             <h5>Members:</h5>
             <ul className="list-group">
               {teamStatus.team.members.map((member, index) => (
@@ -122,51 +143,39 @@ const Teams = () => {
             </ul>
           </div>
         </div>
-      ) : (
-        teamStatus.max_team_size > 1 ? (
-          <div className="row gap-3">
-            <div className="card p-4 shadow-lg">
-              <h3>Join Team</h3>
-              <input
-                type="text"
-                className="form-control mt-3"
-                value={teamCode}
-                onChange={(e) => setTeamCode(e.target.value.toUpperCase())}
-                placeholder="Enter team code"
-                maxLength="5"
-              />
-              <button
-                className="btn btn-dark mt-3"
-                onClick={handleJoinTeam}
-                disabled={teamCode.length !== 5}
-              >
-                Join
-              </button>
-            </div>
+      ) : teamStatus.max_team_size > 1 ? (
+        <div className="row gap-3">
+          <div className="card p-4 shadow-lg" style={{ background: "white" }}>
+            <h3>Join Team</h3>
+            <input
+              type="text"
+              className="form-control mt-3"
+              value={teamCode}
+              onChange={(e) => setTeamCode(e.target.value.toUpperCase())}
+              placeholder="Enter team code"
+              maxLength="5"
+            />
+            <button className="btn btn-dark mt-3" onClick={handleJoinTeam} disabled={teamCode.length !== 5}>
+              Join
+            </button>
+          </div>
 
-            <div className="card p-4 shadow-lg">
-              <h3>Create Team</h3>
-              <input
-                type="text"
-                className="form-control mt-3"
-                value={teamName}
-                onChange={(e) => setTeamName(e.target.value)}
-                placeholder="Enter team name"
-              />
-              <button
-                className="btn btn-secondary mt-3"
-                onClick={handleCreateTeam}
-                disabled={!teamName.trim()}
-              >
-                Create
-              </button>
-            </div>
+          <div className="card p-4 shadow-lg" style={{ background: "white" }}>
+            <h3>Create Team</h3>
+            <input
+              type="text"
+              className="form-control mt-3"
+              value={teamName}
+              onChange={(e) => setTeamName(e.target.value)}
+              placeholder="Enter team name"
+            />
+            <button className="btn btn-secondary mt-3" onClick={handleCreateTeam} disabled={!teamName.trim()}>
+              Create
+            </button>
           </div>
-        ) : (
-          <div className="alert alert-info">
-            Individual event - No team required
-          </div>
-        )
+        </div>
+      ) : (
+        <div className="alert alert-info">Individual event - No team required</div>
       )}
     </div>
   );

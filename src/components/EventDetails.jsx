@@ -92,7 +92,7 @@ const eventsData = {
     },
     {
       "id": 9,
-	  "backend_id" : 36,
+	  "backend_id" : 6,
       "name": "TREASURE HUNT",
       "date": "2025-03-24T18:00:00Z",
       "venue": "203",
@@ -278,7 +278,7 @@ const eventsData = {
     }, 
 	{
       "id": 28,
-	  "backend_id" : 35,
+	  "backend_id" :5,
       "name": "BGMI",
       "date": "2025-03-24T18:00:00Z",
       "venue": "{Day-2: 201}",
@@ -291,7 +291,7 @@ const eventsData = {
     },
     {
       "id": 29,
-	  "backend_id" : 34,
+	  "backend_id" : 4,
       "name": "Valorant",
       "date": "2025-03-24T18:00:00Z",
       "venue": "301",
