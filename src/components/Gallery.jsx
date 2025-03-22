@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 const imageLinks = [
-  "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408276/uc_xor4he.jpg",
+  "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742660741/InShot_20250322_215251155_su1ksn.jpg",
   "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408294/uc_ysnjdz.jpg",
   "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408486/uc_bc3heb.jpg",
   "https://res.cloudinary.com/dqb3l5f98/image/upload/v1742408501/uc_lndx79.jpg",

@@ -160,7 +160,8 @@ const eventsData = {
       "heads": "Anisha Tiwari",
       "phone_no":"9967488072",
       "category": "Fine Arts",
-      "description": "An artistic event focused on facemask and face painting."
+      "description": "An artistic event focused on facemask and face painting.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660122/schedule/sakkk3wdgszcvxhjx5v1.jpg"
     },
     {
       "id": 15,
@@ -171,7 +172,8 @@ const eventsData = {
       "heads": "Sajni Shetty",
       "phone_no":"6361869221",
       "category": "Fine Arts",
-      "description": "A creative hairstyling event featuring braiding techniques."
+      "description": "A creative hairstyling event featuring braiding techniques.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660178/schedule/ivth6d9vnt2ymuulsh8h.jpg"
     },
     {
       "id": 16,
@@ -182,7 +184,8 @@ const eventsData = {
       "heads": "Radhika Lakhani",
       "phone_no":"6381844986",
       "category": "Fine Arts",
-      "description": "A craft-based event where participants create bracelets, keychains, and earrings."
+      "description": "A craft-based event where participants create bracelets, keychains, and earrings.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660229/schedule/wgg9fqkcnsyqkkuthx7m.jpg"
     },
     {
       "id": 17,
@@ -193,7 +196,8 @@ const eventsData = {
       "heads": "Vaishanavi Jadhav",
       "phone_no":"9076157274",
       "category": "Fine Arts",
-      "description": "Cosmic Chains – Craft your own style statement!."
+      "description": "Cosmic Chains – Craft your own style statement!.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660310/schedule/f8mvnqir2iatvnqpwunk.webp"
     },
     {
       "id": 21,
@@ -229,7 +233,8 @@ const eventsData = {
       "heads": "Chinmay Sawant",
       "phone_no":"9960351165",
       "category": "Recreational",
-      "description": "A larger-than-life version of the classic Jenga game."
+      "description": "A larger-than-life version of the classic Jenga game.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660550/schedule/kfvbf9wjgvgzz6offkcc.jpg"
     },
     {
       "id": 24,
@@ -240,7 +245,8 @@ const eventsData = {
       "heads": "Shailesh Mittapelli",
       "phone_no":"9970752318",
       "category": "Recreational",
-      "description": "A fun and interactive game of human-sized foosball."
+      "description": "A fun and interactive game of human-sized foosball.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660660/schedule/ltqgzhysiqvy5c5shcik.jpg"
     },
 	{
       "id": 25,
@@ -250,7 +256,8 @@ const eventsData = {
       "time": "1H",
       "heads": "Darshan Jain",
       "category": "Pass N Go",
-      "description": "A fun and strategic game of Jenga."
+      "description": "A fun and strategic game of Jenga.",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742661639/schedule/qw6qpuyvscilxzkkqe0v.webp"
     },
 	    {
       "id": 26,
@@ -287,7 +294,7 @@ const eventsData = {
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
       "description": "A competitive Battlegrounds Mobile India (BGMI) tournament.",
-      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589957/bgmi_zboyqh.jpg"
+      "src" : "https://res.cloudinary.com/divma6tu0/image/upload/v1742662110/schedule/o8tsjjo30g6lyl5jgemm.jpg"
     },
     {
       "id": 29,
@@ -300,7 +307,7 @@ const eventsData = {
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
       "description": "A high-stakes Valorant eSports competition.",
-      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589959/valo_udtbmu.jpg"
+      "src" : "https://res.cloudinary.com/divma6tu0/image/upload/v1742661886/schedule/csolcr2wwsoj9bqssgt2.jpg"
     },
     {
       "id": 30,
@@ -311,7 +318,8 @@ const eventsData = {
       "heads": "Ritesh Kesharwani",
       "phone_no":"9834791967",
       "category": "Gaming & Sports",
-      "description": "A fast-paced, action-packed ball game."
+      "description": "A fast-paced, action-packed ball game.",
+      "src": 'https://res.cloudinary.com/divma6tu0/image/upload/v1742662209/schedule/bsbwd3sxk6hyinjrtbxt.jpg'
     },
     {
       "id": 31,
@@ -324,7 +332,7 @@ const eventsData = {
 	  "phone_no":"9554958857",
       "category": "Gaming & Sports",
       "description": "A FIFA video game competition.",
-      "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589880/fifa_fiwupq.jpg"
+      "src" : "https://res.cloudinary.com/divma6tu0/image/upload/v1742662251/schedule/tz5zim1yhlu3zw6yuify.webp"
     },
     {
       "id": 32,
@@ -347,7 +355,8 @@ const eventsData = {
       "heads": "AARYAN GHAWALI, PREETI YADAV",
       "phone_no":"7304372657, 842501072",
       "category": "Informals",
-      "description": "Party Packed Mini Games"
+      "description": "Party Packed Mini Games",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742659722/schedule/wz8rl1sxqykhppct8dri.jpg"
     },
     {
       "id": 34,
@@ -358,7 +367,8 @@ const eventsData = {
       "heads": "AARYAN GHAWALI, PREETI YADAV",
       "phone_no":"7304372657, 842501072",
       "category": "Informals",
-      "description": "Unleash your inner story telling!"
+      "description": "Unleash your inner story telling!",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742659793/schedule/wkoyh4h9jmkqcnnrggn2.jpg"
     },
     {
       "id": 35,
@@ -369,7 +379,8 @@ const eventsData = {
       "heads": "ANIKET CHOPADA",
       "phone_no":"9960351165",
       "category": "Informals",
-      "description": "Twist yourself"
+      "description": "Twist yourself",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742659895/schedule/ujjqtm2q8n0gpryymuil.jpg"
     },
     {
       "id": 36,
@@ -380,7 +391,8 @@ const eventsData = {
       "heads": "ANIKET CHOPADA",
       "phone_no":"9960351165",
       "category": "Informals",
-      "description": "Step into Life Size board Game"
+      "description": "Step into Life Size board Game",
+      "src": 'https://res.cloudinary.com/divma6tu0/image/upload/v1742659963/schedule/uspsswzb9m9xlo0papgn.jpg'
     },
     {
       "id": 37,
@@ -391,7 +403,8 @@ const eventsData = {
       "heads": "ANIKET CHOPADA",
       "phone_no":"9960351165",
       "category": "Informals",
-      "description": "Step into Life Size board Game"
+      "description": "Step into Life Size board Game",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660017/schedule/y9u4vsizfv4v9vtpkgdt.jpg"
     },
    {
       "id": 37,
@@ -426,7 +439,8 @@ const eventsData = {
       "heads": "Pranav Sathe",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660424/schedule/fbco3qucxsjimxo4yoly.jpg"
     },
    {
       "id": 40,
@@ -437,7 +451,8 @@ const eventsData = {
       "heads": "Pranav Sathe",
       "phone_no":"9321815952",
       "category": "Performing Arts",
-      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression"
+      "description": "Lights, music, and pure talent—get ready for a spectacular showcase of creativity and expression",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660467/schedule/farofdcdvaxtx2zjidyg.jpg"
     },
    {
       "id": 41,
@@ -461,6 +476,7 @@ const eventsData = {
       "phone_no":"9022331132",
       "category": "Recreational",
       "description": "Giant Jenga – Stack it high, but don’t let it fall!",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742660831/schedule/ksxbvokmmx6grn2mqj5q.jpg"
 
     },
     {
@@ -473,6 +489,7 @@ const eventsData = {
       "phone_no":"9022331132",
       "category": "Recreational",
       "description": " Baton – A race that’s all about teamwork & speed!",
+      "src": "https://res.cloudinary.com/divma6tu0/image/upload/v1742661234/schedule/dr6ac0dfysaqrktxxbxe.jpg"
 
     }
   ]
