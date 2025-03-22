@@ -92,7 +92,7 @@ const eventsData = {
       "heads": "Vaishanvi Bhojak, Aanya Singh, Rutu Desai",
       "phone_no":"8591067050, 9324357482, 7448168628",
       "category": "Informals",
-      "description": "An adventurous treasure hunt game."
+      "description": "An adventurous treasure hunt game. one member has to create a team and others have to join it!"
     },
     {
       "id": 10,
@@ -269,7 +269,7 @@ const eventsData = {
       "heads": "Hrishikesh Mishra, Aditya Mishra (Co-head), Sahik Nayak (Co-head)",
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
-      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament."
+      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament. one member has to create a team and others have to join it!"
     },
     {
       "id": 29,
@@ -281,7 +281,7 @@ const eventsData = {
       "heads": "Karan Vethody, Jay Patil",
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
-      "description": "A high-stakes Valorant eSports competition."
+      "description": "A high-stakes Valorant eSports competition. one member has to create a team and others have to join it!"
     },
     {
       "id": 30,
