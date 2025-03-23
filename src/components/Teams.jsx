@@ -102,7 +102,9 @@ const Teams = () => {
 
   if (loading) return <div className="text-center mt-4">Loading...</div>;
   if (error) return <div className="alert alert-danger mt-4">{error}</div>;
-
+  const handleLink = () => {
+    window.location.href = "https://forms.gle/UAoNmMH8uSJoS5KG6"
+  }
   return (
     <div
       className="d-flex flex-column align-items-center justify-content-center min-vh-100"
@@ -141,6 +143,10 @@ const Teams = () => {
                 </li>
               ))}
             </ul>
+            <p> Invite your friends to join from the code above </p>
+            {currentEvent === "VALORANT" && (
+            <button onClick={handleLink}>Google Form</button>
+            )}
           </div>
         </div>
       ) : teamStatus.max_team_size > 1 ? (
