@@ -316,7 +316,7 @@ const eventsData = {
       "id": 31,
       "name": "FIFA",
 	  "backend_id" : 37,
-      "date": "2025-03-24T18:00:00Z",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "302",
       "time": "11 AM to 5 PM ",
       "heads": "Prakhar Asthana",
