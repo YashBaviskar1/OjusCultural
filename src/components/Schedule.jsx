@@ -10,6 +10,7 @@ import escaperoom from "../assets/escaperoom.jpg";
 import doors from "../assets/doors.jpg";
 import snake from "../assets/snake.jpg";
 import horror from "../assets/horror.jpg";
+
 import neoncricket from "../assets/neoncricket.jpg";
 import auction from "../assets/auction.jpg";
 import carnival from "../assets/carnival.jpg";
