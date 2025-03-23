@@ -299,7 +299,7 @@ const eventsData = {
     {
       "id": 29,
 	  "backend_id" : 4,
-      "name": "Valorant",
+      "name": "VALORANT",
       "date": "2025-03-24T18:00:00Z",
       "venue": "301",
       "time": "11 AM to 5 PM ",
