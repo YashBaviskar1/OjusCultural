@@ -18,6 +18,7 @@ import Schedule from "./components/Schedule";
 import Teams from "./components/Teams"
 import EventRegistration2 from "./components/EventRegistration2";
 import CurtainReveal from "./components/Ghanekar";
+import Ticket from "./components/Ticket";
 function App() {
   const { play, end } = usePlay();
 
@@ -67,6 +68,7 @@ function App() {
         <Route path="/schedule" element = {<Schedule />} />
         <Route path = "/team" element = {<Teams />}/>
         <Route path = "/register_latent" element = { < EventRegistration2 /> } />
+        <Route path = "/ticket" element = { <Ticket />}/>
         <Route element={<ProtectedRoute />}>
           <Route path="/register" element={<EventRegistration />} />
         </Route>
