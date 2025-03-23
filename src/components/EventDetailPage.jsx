@@ -99,7 +99,7 @@ const eventsData = {
       "heads": "Vaishanvi Bhojak, Aanya Singh, Rutu Desai",
       "phone_no":"8591067050, 9324357482, 7448168628",
       "category": "Informals",
-      "description": "An adventurous treasure hunt game.",
+      "description": "An adventurous treasure hunt game. Create a Team and invite your friends with the code",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589478/hunt_nbfeev.jpg"
     },
     {
@@ -285,20 +285,20 @@ const eventsData = {
       "heads": "Hrishikesh Mishra",
       "phone_no":"9321839469",
       "category": "Gaming & Sports",
-      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament.",
+      "description": "A competitive Battlegrounds Mobile India (BGMI) tournament. Create a Team and invite your friends with the code",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589957/bgmi_zboyqh.jpg"
     },
     {
       "id": 29,
 	  "backend_id" : 4,
-      "name": "Valorant",
+      "name": "VALORANT",
       "date": "2025-03-24T18:00:00Z",
       "venue": "301",
       "time": "11 AM to 5 PM ",
       "heads": "Karan Vethody, Jay Patil",
       "phone_no":"8850106942, 9106311774",
       "category": "Gaming & Sports",
-      "description": "A high-stakes Valorant eSports competition.",
+      "description": "A high-stakes Valorant eSports competition. Create a Team and invite your friends with the code",
       "src" : "https://res.cloudinary.com/dfkkdv8et/image/upload/v1742589959/valo_udtbmu.jpg"
     },
     {
@@ -316,7 +316,7 @@ const eventsData = {
       "id": 31,
       "name": "FIFA",
 	  "backend_id" : 37,
-      "date": "2025-03-24T18:00:00Z",
+      "date": "2025-03-25T18:00:00Z",
       "venue": "302",
       "time": "11 AM to 5 PM ",
       "heads": "Prakhar Asthana",
@@ -458,7 +458,7 @@ const EventDetailPage = () => {
   const { category, eventId } = useParams();
   const navigate = useNavigate();
  // const reg = ["MR & MRS APSIT FASHION SHOW", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA", "APSIT's Got Latent"]
-  const reg = ["MR & MRS APSIT FASHION SHOW", "APSIT's Got Latent", "BGMI", "VALORANT", "TREASURE HUNT"]
+  const reg = ["MR & MRS APSIT FASHION SHOW", "APSIT's Got Latent", "BGMI", "VALORANT", "TREASURE HUNT", "FIFA"]
   const teams = ["BGMI", "VALORANT", "TREASURE HUNT"]
   // Filter events by category and get the event by index
   const eventsInCategory = eventsData.events.filter(
@@ -484,6 +484,12 @@ const EventDetailPage = () => {
     const isTeamEvent = teams.some(
       teamName => teamName.toLowerCase() === event.name.toLowerCase()
     );
+    const isFifa = event.name === "FIFA";
+
+    if (isFifa) {
+      window.location.href = "https://forms.gle/XaRzadWdexHR8RSt5";
+      return; 
+    }
     const isApsitLatent = event.name === "APSIT's Got Latent";
     if (!accessToken) {
       alert("Please login first");
@@ -499,7 +505,7 @@ const EventDetailPage = () => {
       });
       return; // Exit early to prevent normal registration flow
     }
-  
+
     try {
       console.log("here")
       const response = await fetch(`${APIURL}/api/events/register/`, {
@@ -577,11 +583,11 @@ const EventDetailPage = () => {
           <p><strong>Category:</strong> {event.category}</p>
           <p><strong>Description:</strong> {event.description}</p>
         </div>
-        {shouldShowRegistration && (
-          <button className="register-btn" onClick={handleRegistration}>
-            Register
-          </button>
-        )}
+        {(shouldShowRegistration) && (
+  <button className="register-btn" onClick={handleRegistration}>
+    Register
+  </button>
+)}
       </div>
     
       {/* Styles */}
