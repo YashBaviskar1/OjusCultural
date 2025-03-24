@@ -71,10 +71,11 @@ function App() {
         <Route path="/schedule" element = {<Schedule />} />
         <Route path = "/team" element = {<Teams />}/>
         <Route path = "/register_latent" element = { < EventRegistration2 /> } />
-        <Route path = "/ticket9981257890" element = { <Ticket />}/>
+        <Route path = "/ticket" element = { <Ticket />}/>
         <Route path = "/ticket-qr" element = { <TicketQRGenerator /> }/>
                 <Route element={<ProtectedRoute />}>
           <Route path="/register" element={<EventRegistration />} />
+
         </Route>
       </Routes>
 
