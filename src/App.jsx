@@ -19,6 +19,8 @@ import Teams from "./components/Teams"
 import EventRegistration2 from "./components/EventRegistration2";
 import CurtainReveal from "./components/Ghanekar";
 import Ticket from "./components/Ticket";
+import Login2 from "./components/Login";
+import TicketQRGenerator from "./components/TicketQR";
 function App() {
   const { play, end } = usePlay();
 
@@ -62,14 +64,16 @@ function App() {
         <Route path="/ghanekar" element={<CurtainReveal />} />
         <Route path="/schedule" element={<GameMap />} />
         <Route path="/login" element = {<Login />} />
+        <Route path="/login2" element = {<Login2 />} />
         <Route path="/gallery" element={<MyGallery />} />
         <Route path="/register" element = {<EventRegistration />} />
         <Route path="/ghanekar" element = {<ComingSoon />} />
         <Route path="/schedule" element = {<Schedule />} />
         <Route path = "/team" element = {<Teams />}/>
         <Route path = "/register_latent" element = { < EventRegistration2 /> } />
-        <Route path = "/ticket" element = { <Ticket />}/>
-        <Route element={<ProtectedRoute />}>
+        <Route path = "/ticket9981257890" element = { <Ticket />}/>
+        <Route path = "/ticket-qr" element = { <TicketQRGenerator /> }/>
+                <Route element={<ProtectedRoute />}>
           <Route path="/register" element={<EventRegistration />} />
         </Route>
       </Routes>

@@ -1,27 +1,70 @@
-import { useState } from "react";
-import "../components/Ghanekar.css"; // Ensure the CSS file is linked properly
+import { useState, useEffect } from "react";
+import "../components/Ghanekar.css";
+import { APIURL } from "../url.config";
+// Make sure to set this in your environment
 
 const CurtainReveal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
-  const [formData, setFormData] = useState({ name: "", dept: "", moodleid: "" });
+  const [user, setUser] = useState(null);
 
-  // Handle form input changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // Check authentication status on component mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem('accessToken');
+      if (!token) return;
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("User Signed Up:", formData);
-    alert("Theatre Booking Confirmed! 🎭");
-    setShowSignup(false);
+      try {
+        const response = await fetch(`${APIURL}/api/get/`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+        } else {
+          localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
+        }
+      } catch (error) {
+        console.error('Error verifying token:', error);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  const handleBookSeat = async () => {
+    const token = localStorage.getItem('accessToken');
+    
+    if (!token) {
+      window.location.href = '/Login2';
+      return;
+    }
+
+    try {
+      const response = await fetch(`${APIURL}/api/get/`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        window.location.href = '/ticket-qr';
+      } else {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        window.location.href = '/Login2';
+      }
+    } catch (error) {
+      console.error('Error verifying token:', error);
+      window.location.href = '/Login2';
+    }
   };
 
   return (
     <div className="curtain-wrapper">
-      {/* Curtain Body */}
       <div className="curtainBody">
         <div id="leftCurtain" className={`curtainContainer ${isOpen ? "open-left" : ""}`}>
           {Array.from({ length: 12 }).map((_, i) => (
@@ -35,55 +78,19 @@ const CurtainReveal = () => {
         </div>
       </div>
 
-      {/* Background Image */}
       <div className="content">
-        {/* Introductory Text */}
         {!isOpen && <p className="intro-text">🎭 Welcome to Ghanekar Theatre 🎞️</p>}
 
-        {/* Welcome Button */}
         {!isOpen && (
           <button className="welcome-button" onClick={() => setIsOpen(true)}>
-         Let the Show Begin 🎬
+            Let the Show Begin 🎬
           </button>
         )}
 
-        {/* Signup Button */}
-        {isOpen && !showSignup && (
-          <button className="signup-button" onClick={() => setShowSignup(true)}>
+        {isOpen && (
+          <button className="signup-button" onClick={handleBookSeat}>
             Book Your Seat 🎟️
           </button>
-        )}
-
-        {/* Signup Form */}
-        {showSignup && (
-          <form className="signup-form" onSubmit={handleSubmit}>
-            <h2>🎭 Book Your Show 🎟️</h2>
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="dept"
-              placeholder="Department"
-              value={formData.dept}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="moodleid"
-              placeholder="MoodleId"
-              value={formData.moodleid}
-              onChange={handleChange}
-              required
-            />
-            <button type="submit">Confirm Booking</button>
-          </form>
         )}
       </div>
     </div>
