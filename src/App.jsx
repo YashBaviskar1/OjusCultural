@@ -71,7 +71,7 @@ function App() {
         <Route path="/schedule" element = {<Schedule />} />
         <Route path = "/team" element = {<Teams />}/>
         <Route path = "/register_latent" element = { < EventRegistration2 /> } />
-        <Route path="/ticket/:ticketId" element={<Ticket />} />
+        <Route path="/ticket17333345672129899234/:ticketId" element={<Ticket />} />
         <Route path = "/ticket-qr" element = { <TicketQRGenerator /> }/>
                 <Route element={<ProtectedRoute />}>
           <Route path="/register" element={<EventRegistration />} />

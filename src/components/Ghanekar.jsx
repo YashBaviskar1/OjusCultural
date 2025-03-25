@@ -1,4 +1,4 @@
-import { useState, useEffect, setError } from "react";
+import { useState, useEffect } from "react";
 import "../components/Ghanekar.css";
 import { APIURL } from "../url.config";
 // Make sure to set this in your environment
@@ -6,7 +6,7 @@ import { APIURL } from "../url.config";
 const CurtainReveal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
-
+  const [error, setError] = useState("none");
   // Check authentication status on component mount
   useEffect(() => {
     const checkAuth = async () => {
