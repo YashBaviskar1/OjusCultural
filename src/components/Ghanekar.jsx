@@ -61,6 +61,7 @@ const CurtainReveal = () => {
         window.location.href = '/ticket-qr';
       } else if (response.status === 400) {
         const data = await response.json();
+        alert("All tickets have been booked")
         setError(data.error || "All tickets have been booked");
       } else {
         localStorage.removeItem('accessToken');
