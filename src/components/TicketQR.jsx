@@ -70,7 +70,25 @@ const TicketQRGenerator = () => {
     );
   }
 
-  const qrValue = `https://ojus-culturals.vercel.app/ticket?name=${encodeURIComponent(
+  const ticketIds = [
+    "98406510456013475623405610576134587346985327456145",
+    "10985714098561049857140958703458714098751908745048701957",
+    "7434957234957209382043820934820934849850348908",
+    "1594169847104283503853405834905",
+    "16491874092384028342034820348209348209",
+    "34139847142934729347923479237428934729834",
+    "742937429374293472934729347239092342342323",
+    "80192810298088438881281928739487230471048304",
+  ];
+  
+  // Function to pick a random ticket ID
+  const getRandomTicket = () => {
+    const randomIndex = Math.floor(Math.random() * ticketIds.length);
+    return ticketIds[randomIndex];
+  };
+  
+  // Generate the QR value with a random ticket ID
+  const qrValue = `https://ojus-culturals.vercel.app/ticket/${getRandomTicket()}?name=${encodeURIComponent(
     userData.name
   )}&moodleId=${encodeURIComponent(userData.moodle_id)}`;
 

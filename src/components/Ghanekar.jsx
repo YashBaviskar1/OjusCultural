@@ -37,29 +37,34 @@ const CurtainReveal = () => {
 
   const handleBookSeat = async () => {
     const token = localStorage.getItem('accessToken');
-    
+    setError("");
+  
     if (!token) {
       window.location.href = '/Login2';
       return;
     }
-
+  
     try {
-      const response = await fetch(`${APIURL}/api/get/`, {
+      const response = await fetch(`${APIURL}/api/book-ticket/`, {
+        method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
-
-      if (response.ok) {
+  
+      if (response.status === 200) {
         window.location.href = '/ticket-qr';
+      } else if (response.status === 400) {
+        const data = await response.json();
+        setError(data.error || "All tickets have been booked");
       } else {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
         window.location.href = '/Login2';
       }
     } catch (error) {
-      console.error('Error verifying token:', error);
-      window.location.href = '/Login2';
+      console.error('Booking error:', error);
+      setError("Failed to book ticket");
     }
   };
 
