@@ -89,7 +89,7 @@ const TicketQRGenerator = () => {
   };
   
   // Generate the QR value with a random ticket ID
-  const qrValue = `https://ojus-culturals.vercel.app/ticket/${getRandomTicket()}?name=${encodeURIComponent(
+  const qrValue = `https://ojus-culturals.vercel.app/ticket17333345672129899234/${getRandomTicket()}?name=${encodeURIComponent(
     userData.name
   )}&moodleId=${encodeURIComponent(userData.moodle_id)}`;
 
