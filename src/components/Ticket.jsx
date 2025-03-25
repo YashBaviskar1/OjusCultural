@@ -1,9 +1,11 @@
-
-
-
 import React from 'react';
+import { useSearchParams } from "react-router-dom";
 
 const Ticket = () => {
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get("name") || "Unknown";
+  const moodleId = searchParams.get("moodleId") || "N/A";
+
   return (
     <>
       <div className="main-content">
@@ -13,17 +15,18 @@ const Ticket = () => {
             
             <div className="info passenger">
               <div className="info__item">Passenger</div>
-              <div className="info__detail">Yash Baviskar</div>
+              <div className="info__detail">{name}</div>
             </div>
+
 
             <div className="info departure">
               <div className="info__item">Moodle ID</div>
-              <div className="info__detail">23102210</div>
+              <div className="info__detail">{moodleId}</div>
             </div>
 
             <div className="info arrival">
               <div className="info__item">Arrive</div>
-              <div className="info__detail">Thane</div>
+              <div className="info__detail">THANE</div>
             </div>
 
             <div className="info date">
@@ -34,7 +37,7 @@ const Ticket = () => {
             <div className="info time">
               <div className="info__item">Time</div>
               <div className="info__detail">10:00AM</div>
-            </div>
+            </div> {/* Closing tag was missing */}
 
             <div className="fineprint">
               <p>OJUS CULTURALS • Ghanekar Theatre</p>
@@ -85,7 +88,6 @@ const Ticket = () => {
           justify-content: space-between;
           align-items: center;
         }
-
         .info__item {
           font-size: 0.9rem;
           color: #000000;
