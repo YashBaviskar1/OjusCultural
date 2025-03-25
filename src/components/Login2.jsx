@@ -31,7 +31,7 @@ const Login2 = () => {
       if (response.ok) {
         localStorage.setItem("accessToken", data.access);
         localStorage.setItem("refreshToken", data.refresh);
-        navigate("/ticket-qr"); // Redirects to /ticket-qr upon successful login
+        navigate("/ghanekar"); // Redirects to /ticket-qr upon successful login
       } else {
         setError(data.error || "Login failed");
       }
