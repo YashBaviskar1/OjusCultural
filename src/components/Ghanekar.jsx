@@ -1,11 +1,79 @@
 import { useState, useEffect } from "react";
 import "../components/Ghanekar.css";
 import { APIURL } from "../url.config";
+// Make sure to set this in your environment
 
 const CurtainReveal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const [isFull, setIsFull] = useState(true);
+  const [error, setError] = useState("none");
+  // Check authentication status on component mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem('accessToken');
+      if (!token) return;
+
+      try {
+
+        const response = await fetch(`${APIURL}/api/get/`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+        } else {
+          localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
+        }
+      } catch (error) {
+        alert("Booking is full")
+        console.error('Error verifying token:', error);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  const handleBookSeat = async () => {
+    const token = localStorage.getItem('accessToken');
+    setError("");
+  
+    if (!token) {
+      alert("Be logged in first");
+      setTimeout(() => {
+        window.location.href = '/Login2';
+      }, 1000); 
+      return;
+    }
+  
+    try {
+      const response = await fetch(`${APIURL}/api/book-ticket/`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+  
+      if (response.status === 200) {
+        window.location.href = '/ticket-qr';
+      } else if (response.status === 400) {
+        const data = await response.json();
+        alert("All tickets have been booked")
+        setError(data.error || "All tickets have been booked");
+      } else {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        window.location.href = '/Login2';
+      }
+    } catch (error) {
+      alert("All tickets have been booked")
+      console.error('Booking error:', error);
+      setError("Failed to book ticket");
+    }
+  };
 
   return (
     <div className="curtain-wrapper">
@@ -32,8 +100,8 @@ const CurtainReveal = () => {
         )}
 
         {isOpen && (
-          <button className="signup-button" disabled>
-            It's Full
+          <button className="signup-button" onClick={handleBookSeat}>
+            Book Your Seat 🎟️
           </button>
         )}
       </div>
