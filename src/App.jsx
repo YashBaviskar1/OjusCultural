@@ -19,7 +19,7 @@ import Teams from "./components/Teams"
 import EventRegistration2 from "./components/EventRegistration2";
 import CurtainReveal from "./components/Ghanekar";
 import Ticket from "./components/Ticket";
-import Login2 from "./components/Login";
+import Login2 from "./components/Login2";
 import TicketQRGenerator from "./components/TicketQR";
 function App() {
   const { play, end } = usePlay();
