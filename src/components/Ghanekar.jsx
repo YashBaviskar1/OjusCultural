@@ -14,7 +14,7 @@ const CurtainReveal = () => {
       if (!token) return;
 
       try {
-        alert("Booking is full")
+
         const response = await fetch(`${APIURL}/api/get/`, {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -29,6 +29,7 @@ const CurtainReveal = () => {
           localStorage.removeItem('refreshToken');
         }
       } catch (error) {
+        alert("Booking is full")
         console.error('Error verifying token:', error);
       }
     };
