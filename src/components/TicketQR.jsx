@@ -104,7 +104,7 @@ const TicketQRGenerator = () => {
         <ul className="list-unstyled text-start mx-auto text-white" style={{ maxWidth: "300px" }}>
           <li>Present this QR code at the venue for entry</li>
           <li>Bring your ID card</li>
-          <li>Be on time or QR will be expired</li>
+          <li>Be on time or No Entry!</li>
         </ul>
       </div>
     </div>
