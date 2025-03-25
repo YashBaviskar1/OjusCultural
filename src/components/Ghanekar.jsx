@@ -40,8 +40,10 @@ const CurtainReveal = () => {
     setError("");
   
     if (!token) {
-      alert("Be logged in first")
-      window.location.href = '/Login2';
+      alert("Be logged in first");
+      setTimeout(() => {
+        window.location.href = '/Login2';
+      }, 1000); // Redirect after 1 second
       return;
     }
   
