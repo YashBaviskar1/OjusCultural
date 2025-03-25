@@ -14,6 +14,7 @@ const CurtainReveal = () => {
       if (!token) return;
 
       try {
+        alert("Booking is full")
         const response = await fetch(`${APIURL}/api/get/`, {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -43,7 +44,7 @@ const CurtainReveal = () => {
       alert("Be logged in first");
       setTimeout(() => {
         window.location.href = '/Login2';
-      }, 1000); // Redirect after 1 second
+      }, 1000); 
       return;
     }
   
